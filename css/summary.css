@@ -1,0 +1,210 @@
+/* =====================================================
+   SALARY DIARY
+   FILE : css/summary.css
+   DESCRIPTION : Summary Section
+===================================================== */
+
+
+/* =====================================================
+   SUMMARY SECTION
+===================================================== */
+
+.summary{
+
+    position:relative;
+
+    margin-top:-55px;
+
+    padding:0 20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    z-index:5;
+
+}
+
+
+/* =====================================================
+   SUMMARY CARD
+===================================================== */
+
+.summary-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    background:var(--surface);
+
+    border-radius:var(--radius-large);
+
+    padding:22px;
+
+    box-shadow:var(--shadow-medium);
+
+}
+
+
+/* =====================================================
+   SUMMARY ICON
+===================================================== */
+
+.summary-header{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+    flex-shrink:0;
+
+}
+
+.summary-header
+
+.material-symbols-rounded{
+
+    font-size:30px;
+
+}
+
+
+/* =====================================================
+   SUMMARY BODY
+===================================================== */
+
+.summary-body{
+
+    flex:1;
+
+}
+
+.summary-body p{
+
+    font-size:13px;
+
+    color:var(--text-light);
+
+}
+
+.summary-body h2{
+
+    margin-top:4px;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+}
+
+.summary-body span{
+
+    display:block;
+
+    margin-top:6px;
+
+    font-size:13px;
+
+    color:var(--text-soft);
+
+}
+
+
+/* =====================================================
+   CARD EFFECT
+===================================================== */
+
+.summary-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-large);
+
+}
+
+
+/* =====================================================
+   DIFFERENT ICON COLOR
+===================================================== */
+
+#lastIncomeCard
+
+.summary-header{
+
+    background:#FFE5EF;
+
+    color:#FF5D9E;
+
+}
+
+#weekIncomeCard
+
+.summary-header{
+
+    background:#F7E9FF;
+
+    color:#A855F7;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(
+
+max-width:390px){
+
+.summary{
+
+padding:
+
+0
+
+16px;
+
+margin-top:-45px;
+
+}
+
+.summary-card{
+
+padding:18px;
+
+}
+
+.summary-body h2{
+
+font-size:24px;
+
+}
+
+.summary-header{
+
+width:54px;
+
+height:54px;
+
+}
+
+}
