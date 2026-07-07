@@ -1,0 +1,237 @@
+/* =====================================================
+   SALARY DIARY
+   FILE : css/responsive.css
+   DESCRIPTION : Responsive Layout
+===================================================== */
+
+
+/* =====================================================
+   LARGE MOBILE
+===================================================== */
+
+@media (min-width:390px){
+
+.hero-content{
+
+padding-left:24px;
+
+padding-right:24px;
+
+}
+
+.summary,
+
+.chart-section,
+
+.stat-summary,
+
+.filter-section,
+
+.timeline-section,
+
+.salary-period,
+
+.salary-slip,
+
+.salary-total,
+
+.salary-action{
+
+padding-left:20px;
+
+padding-right:20px;
+
+}
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (min-width:768px){
+
+body{
+
+background:
+
+linear-gradient(
+
+180deg,
+
+#FFEAF3,
+
+#FFF7FB
+
+);
+
+padding:30px;
+
+}
+
+.app{
+
+border-radius:32px;
+
+overflow:hidden;
+
+box-shadow:
+
+0 25px 70px
+
+rgba(0,0,0,.15);
+
+min-height:900px;
+
+}
+
+.bottom-navigation{
+
+left:50%;
+
+max-width:398px;
+
+}
+
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width:1024px){
+
+body{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+min-height:100vh;
+
+padding:40px;
+
+}
+
+.app{
+
+max-width:430px;
+
+height:900px;
+
+overflow:hidden;
+
+border-radius:36px;
+
+background:#FFF7FB;
+
+box-shadow:
+
+0 35px 90px
+
+rgba(0,0,0,.18);
+
+}
+
+}
+
+
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
+
+@media (min-width:1440px){
+
+body{
+
+padding:60px;
+
+}
+
+}
+
+
+/* =====================================================
+   LANDSCAPE
+===================================================== */
+
+@media (orientation:landscape)
+
+and
+
+(max-height:500px){
+
+.hero-background{
+
+min-height:260px;
+
+}
+
+.hero-time{
+
+font-size:42px;
+
+}
+
+.summary{
+
+margin-top:-40px;
+
+}
+
+}
+
+
+/* =====================================================
+   SMALL DEVICE
+===================================================== */
+
+@media (max-width:360px){
+
+.hero-content{
+
+padding:
+
+28px
+
+18px
+
+60px;
+
+}
+
+.hero-time{
+
+font-size:42px;
+
+}
+
+.summary{
+
+padding:0 14px;
+
+}
+
+.section-header h2{
+
+font-size:18px;
+
+}
+
+.salary-row.total strong{
+
+font-size:24px;
+
+}
+
+.bottom-navigation{
+
+width:calc(100% - 20px);
+
+}
+
+}
