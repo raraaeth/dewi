@@ -339,3 +339,29 @@ const MESSAGE={
     ]
 
 };
+
+/* =====================================================
+   DEBUG
+===================================================== */
+
+const DEBUG={
+
+    APP:true,
+
+    API:true,
+
+    PROCESS:true,
+
+    HOME:true,
+
+    STATISTIC:true,
+
+    SALARY:true,
+
+    TIMELINE:true,
+
+    EVENT:true,
+
+    PERFORMANCE:false
+
+};
