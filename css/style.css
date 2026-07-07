@@ -1,0 +1,325 @@
+/* =====================================================
+   SALARY DIARY
+   FILE : css/style.css
+   DESCRIPTION : Global Style
+===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#FFF7FB;
+
+    color:#3E3E3E;
+
+    display:flex;
+
+    justify-content:center;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =====================================================
+   APPLICATION
+===================================================== */
+
+.app{
+
+    width:100%;
+
+    max-width:430px;
+
+    min-height:100vh;
+
+    background:#FFF7FB;
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding-bottom:90px;
+
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page{
+
+    display:none;
+
+    width:100%;
+
+    min-height:100vh;
+
+    animation:fade .25s ease;
+
+}
+
+.page.active{
+
+    display:block;
+
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+section{
+
+    width:100%;
+
+    padding:20px;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.page-header{
+
+    padding-top:30px;
+
+    padding-bottom:10px;
+
+}
+
+.page-header h1{
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.page-header p{
+
+    font-size:14px;
+
+    color:#8B8B8B;
+
+    margin-top:4px;
+
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card,
+
+.summary-card,
+
+.quick-card,
+
+.stat-card,
+
+.salary-total-card,
+
+.salary-period-card,
+
+.chart-card,
+
+.insight-card{
+
+    background:#FFFFFF;
+
+    border-radius:24px;
+
+    padding:18px;
+
+    box-shadow:
+
+    0 10px 30px
+
+    rgba(0,0,0,.05);
+
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.section-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:16px;
+
+}
+
+.section-header h2{
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+
+.section-header span{
+
+    font-size:13px;
+
+    color:#9A9A9A;
+
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+button{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+    background:none;
+
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+img{
+
+    display:block;
+
+    width:100%;
+
+}
+
+
+/* =====================================================
+   CANVAS
+===================================================== */
+
+canvas{
+
+    width:100% !important;
+
+    height:220px !important;
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#FFF7FB;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.loading-content{
+
+    text-align:center;
+
+}
+
+.loading-logo{
+
+    font-size:52px;
+
+    margin-bottom:10px;
+
+}
+
+.loading-content h1{
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.loading-content p{
+
+    margin-top:6px;
+
+    color:#888;
+
+}
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
