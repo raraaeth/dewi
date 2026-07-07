@@ -1,0 +1,405 @@
+/* =====================================================
+   SALARY DIARY
+   FILE : css/salary.css
+   DESCRIPTION : Salary Page
+===================================================== */
+
+
+/* =====================================================
+   SALARY HEADER
+===================================================== */
+
+#salaryHeaderSection{
+
+    padding-top:28px;
+
+    padding-bottom:10px;
+
+}
+
+
+/* =====================================================
+   SALARY PERIOD
+===================================================== */
+
+.salary-period{
+
+    padding-top:0;
+
+}
+
+.salary-period-card{
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        var(--primary),
+
+        #FFB6D5
+
+    );
+
+    border-radius:
+
+    var(--radius-xl);
+
+    padding:26px;
+
+    color:#FFFFFF;
+
+    text-align:center;
+
+    box-shadow:
+
+    var(--shadow-medium);
+
+}
+
+.salary-period-card span{
+
+    color:
+
+    rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        .85
+
+    );
+
+    font-size:14px;
+
+}
+
+.salary-period-card h2{
+
+    margin-top:10px;
+
+    color:#FFFFFF;
+
+    font-size:24px;
+
+    line-height:1.5;
+
+}
+
+
+/* =====================================================
+   SALARY SLIP
+===================================================== */
+
+.salary-slip{
+
+    padding-top:20px;
+
+}
+
+.salary-slip-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+
+/* =====================================================
+   SALARY ITEM
+===================================================== */
+
+.salary-item{
+
+    display:flex;
+
+    gap:16px;
+
+    align-items:center;
+
+    background:#FFFFFF;
+
+    border-radius:22px;
+
+    padding:20px;
+
+    box-shadow:var(--shadow-small);
+
+}
+
+.salary-item-icon{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+    flex-shrink:0;
+
+}
+
+.salary-item-icon
+
+.material-symbols-rounded{
+
+    font-size:28px;
+
+}
+
+.salary-item-content{
+
+    flex:1;
+
+}
+
+.salary-item-title{
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+}
+
+.salary-item-detail{
+
+    margin-top:6px;
+
+    font-size:13px;
+
+    color:var(--text-light);
+
+}
+
+.salary-item-price{
+
+    margin-top:10px;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+
+/* =====================================================
+   SALARY TOTAL
+===================================================== */
+
+.salary-total{
+
+    padding-top:24px;
+
+}
+
+.salary-total-card{
+
+    border-radius:
+
+    var(--radius-xl);
+
+    background:#FFFFFF;
+
+    padding:24px;
+
+    box-shadow:
+
+    var(--shadow-medium);
+
+}
+
+.salary-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:16px;
+
+}
+
+.salary-row span{
+
+    color:var(--text-light);
+
+}
+
+.salary-row strong{
+
+    font-size:18px;
+
+    color:var(--text);
+
+}
+
+.salary-divider{
+
+    width:100%;
+
+    height:1px;
+
+    background:var(--border);
+
+    margin:18px 0;
+
+}
+
+.salary-row.total strong{
+
+    color:var(--primary);
+
+    font-size:30px;
+
+}
+
+
+/* =====================================================
+   APPRECIATION
+===================================================== */
+
+.salary-appreciation{
+
+    margin-top:18px;
+
+    border-radius:
+
+    20px;
+
+    background:#FFF0F6;
+
+    padding:18px;
+
+    text-align:center;
+
+}
+
+.salary-appreciation h3{
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+
+}
+
+.salary-appreciation p{
+
+    color:var(--text-light);
+
+}
+
+
+/* =====================================================
+   ACTION
+===================================================== */
+
+.salary-action{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:16px;
+
+    padding-top:24px;
+
+    padding-bottom:30px;
+
+}
+
+.action-button{
+
+    height:56px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    border-radius:
+
+    var(--radius-round);
+
+    background:#FFFFFF;
+
+    color:var(--text);
+
+    box-shadow:
+
+    var(--shadow-small);
+
+    font-weight:600;
+
+}
+
+.action-button.primary{
+
+    background:var(--primary);
+
+    color:#FFFFFF;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:390px){
+
+.salary-period-card{
+
+padding:22px;
+
+}
+
+.salary-period-card h2{
+
+font-size:20px;
+
+}
+
+.salary-item{
+
+padding:18px;
+
+}
+
+.salary-item-price{
+
+font-size:20px;
+
+}
+
+.salary-row.total strong{
+
+font-size:26px;
+
+}
+
+}
