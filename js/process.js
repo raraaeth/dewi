@@ -1248,9 +1248,7 @@ function buildSalarySlip(){
 
                     const key=
 
-                    item.jenis ||
-
-                    item.dept;
+                    item.name;
 
                     if(
 
@@ -1264,7 +1262,7 @@ function buildSalarySlip(){
 
                             TYPE.WORK,
 
-                            jenis:key,
+                            name:key,
 
                             qty:0,
 
@@ -1310,16 +1308,6 @@ function buildSalarySlip(){
 
             period.slip
 
-            .filter(
-
-                item=>
-
-                item.type===
-
-                TYPE.WORK
-
-            )
-
             .reduce(
 
                 (
@@ -1330,9 +1318,15 @@ function buildSalarySlip(){
 
                 )=>
 
-                total+
+                item.type===TYPE.WORK
 
-                item.nominal,
+                ?
+
+                total+item.nominal
+
+                :
+
+                total,
 
                 0
 
@@ -1386,17 +1380,11 @@ function buildSalarySlip(){
 
                     TYPE.ALLOWANCE,
 
-                    jenis:
+                    name:"Makan",
 
-                    "Makan",
+                    qty:mealDay,
 
-                    qty:
-
-                    mealDay,
-
-                    harga:
-
-                    mealPrice,
+                    harga:mealPrice,
 
                     nominal:
 
@@ -1438,9 +1426,7 @@ function buildSalarySlip(){
 
                     TYPE.DEDUCTION,
 
-                    jenis:
-
-                    "BPJS",
+                    name:"BPJS",
 
                     qty:1,
 
@@ -1457,7 +1443,7 @@ function buildSalarySlip(){
             }
 
             /* =====================================
-               TOTAL
+               TOTAL SALARY
             ===================================== */
 
             period.totalSalary=
@@ -1488,6 +1474,8 @@ function buildSalarySlip(){
 
             console.log(
 
+                "Periode :",
+
                 period.title
 
             );
@@ -1500,9 +1488,13 @@ function buildSalarySlip(){
 
             console.log(
 
-                "Work :",
+                "Total Work :",
 
-                period.totalWork
+                formatCurrency(
+
+                    period.totalWork
+
+                )
 
             );
 
@@ -1510,7 +1502,11 @@ function buildSalarySlip(){
 
                 "Allowance :",
 
-                period.totalAllowance
+                formatCurrency(
+
+                    period.totalAllowance
+
+                )
 
             );
 
@@ -1518,15 +1514,23 @@ function buildSalarySlip(){
 
                 "Deduction :",
 
-                period.totalDeduction
+                formatCurrency(
+
+                    period.totalDeduction
+
+                )
 
             );
 
             console.log(
 
-                "Salary :",
+                "Total Salary :",
 
-                period.totalSalary
+                formatCurrency(
+
+                    period.totalSalary
+
+                )
 
             );
 
