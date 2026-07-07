@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<!-- ======================================
+META
+====================================== -->
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta
+name="theme-color"
+content="#FF7EB6">
+
+<meta
+name="description"
+content="Salary Diary">
+
+<meta
+name="apple-mobile-web-app-capable"
+content="yes">
+
+<meta
+name="apple-mobile-web-app-status-bar-style"
+content="default">
+
+<meta
+name="apple-mobile-web-app-title"
+content="Salary Diary">
+
+<title>Salary Diary</title>
+
+<!-- ======================================
+GOOGLE FONT
+====================================== -->
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<!-- ======================================
+MATERIAL SYMBOLS
+====================================== -->
+
+<link
+rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
+
+<!-- ======================================
+MANIFEST
+====================================== -->
+
+<link
+rel="manifest"
+href="manifest.json">
+
+<!-- ======================================
+CSS
+====================================== -->
+
+<link
+rel="stylesheet"
+href="css/style.css">
+
+<link
+rel="stylesheet"
+href="css/theme.css">
+
+<link
+rel="stylesheet"
+href="css/hero.css">
+
+<link
+rel="stylesheet"
+href="css/summary.css">
+
+<link
+rel="stylesheet"
+href="css/statistic.css">
+
+<link
+rel="stylesheet"
+href="css/salary.css">
+
+<link
+rel="stylesheet"
+href="css/bottomnav.css">
+
+<link
+rel="stylesheet"
+href="css/responsive.css">
+
+</head>
+
+<body>
+
+<!-- ======================================
+LOADING SCREEN
+====================================== -->
+
+<div
+id="loadingScreen"
+class="loading-screen">
+
+<div
+class="loading-content">
+
+<div
+class="loading-logo">
+
+💖
+
+</div>
+
+<h1>
+
+Salary Diary
+
+</h1>
+
+<p>
+
+Loading...
+
+</p>
+
+</div>
+
+</div>
+
+<!-- ======================================
+APPLICATION
+====================================== -->
+
+<div
+id="app"
+class="app">
+
+<!-- ======================================
+HOME PAGE
+====================================== -->
+
+<main
+id="homePage"
+class="page active">
+
+<!-- ======================================
+HERO SECTION
+====================================== -->
+
+<section
+id="heroSection"
+class="hero">
+
+<div
+id="heroBackground"
+class="hero-background">
+
+<div
+id="heroContent"
+class="hero-content">
+
+<!-- ======================================
+HERO TEXT
+====================================== -->
+
+<div
+id="heroText"
+class="hero-text">
+
+<span
+id="heroGreeting"
+class="hero-greeting">
+
+Halo Sayang ❤️
+
+</span>
+
+<h1
+id="heroTime"
+class="hero-time">
+
+00:00
+
+</h1>
+
+<p
+id="heroDay"
+class="hero-day">
+
+Senin
+
+</p>
+
+<p
+id="heroDate"
+class="hero-date">
+
+01 Januari 2026
+
+</p>
+
+<div
+id="heroMessage"
+class="hero-message">
+
+Semoga pekerjaanmu lancar hari ini ✨
+
+</div>
+
+</div>
+
+<!-- ======================================
+HERO CHARACTER
+====================================== -->
+
+<div
+id="heroCharacterContainer"
+class="hero-character">
+
+<img
+
+id="heroCharacter"
+
+src="assets/images/happy.png"
+
+alt="Salary Diary Character">
+
+</div>
+
+</div>
+
+<!-- ======================================
+WAVE
+====================================== -->
+
+<div
+id="heroWave"
+class="hero-wave">
+
+<svg
+viewBox="0 0 1440 160"
+preserveAspectRatio="none">
+
+<path
+fill="#FFF7FB"
+d="M0,96L80,90.7C160,85,320,75,480,80C640,85,800,107,960,117.3C1120,128,1280,128,1360,128L1440,128L1440,160L1360,160C1280,160,1120,160,960,160C800,160,640,160,480,160C320,160,160,160,80,160L0,160Z">
+
+</path>
+
+</svg>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ======================================
+SUMMARY SECTION
+====================================== -->
+
+<section
+id="summarySection"
+class="summary">
+
+<div
+id="lastIncomeCard"
+class="summary-card">
+
+<div
+class="summary-header">
+
+<span
+class="material-symbols-rounded">
+
+payments
+
+</span>
+
+</div>
+
+<div
+class="summary-body">
+
+<p>
+
+Pendapatan Terakhir
+
+</p>
+
+<h2
+id="lastIncome">
+
+Rp0
+
+</h2>
+
+<span
+id="lastIncomeDate">
+
+-
+
+</span>
+
+</div>
+
+</div>
+
+<div
+id="weekIncomeCard"
+class="summary-card">
+
+<div
+class="summary-header">
+
+<span
+class="material-symbols-rounded">
+
+monitoring
+
+</span>
+
+</div>
+
+<div
+class="summary-body">
+
+<p>
+
+Pendapatan Minggu Ini
+
+</p>
+
+<h2
+id="weekIncome">
+
+Rp0
+
+</h2>
+
+<span
+id="weekIncomeRange">
+
+Senin - Minggu
+
+</span>
+
+</div>
+
+</div>
+
+  </section>
+
+  <!-- ======================================
+QUICK STATISTIC SECTION
+====================================== -->
+
+<section
+id="quickStatSection"
+class="quick-stat">
+
+<div
+id="quickStatHeader"
+class="section-header">
+
+<h2>
+
+Ringkasan Hari Ini
+
+</h2>
+
+<span>
+
+Update Otomatis
+
+</span>
+
+</div>
+
+<div
+id="quickStatGrid"
+class="quick-grid">
+
+<div
+id="todayIncomeCard"
+class="quick-card">
+
+<span
+class="material-symbols-rounded">
+
+payments
+
+</span>
+
+<h3
+id="todayIncome">
+
+Rp0
+
+</h3>
+
+<p>
+
+Pendapatan
+
+</p>
+
+</div>
+
+<div
+id="todayQtyCard"
+class="quick-card">
+
+<span
+class="material-symbols-rounded">
+
+inventory_2
+
+</span>
+
+<h3
+id="todayQty">
+
+0
+
+</h3>
+
+<p>
+
+Total Qty
+
+</p>
+
+</div>
+
+<div
+id="todayWorkCard"
+class="quick-card">
+
+<span
+class="material-symbols-rounded">
+
+calendar_month
+
+</span>
+
+<h3
+id="todayWork">
+
+0
+
+</h3>
+
+<p>
+
+Pekerjaan
+
+</p>
+
+</div>
+
+<div
+id="todayDeptCard"
+class="quick-card">
+
+<span
+class="material-symbols-rounded">
+
+factory
+
+</span>
+
+<h3
+id="todayDept">
+
+-
+
+</h3>
+
+<p>
+
+Departemen
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ======================================
+INSIGHT SECTION
+====================================== -->
+
+<section
+id="insightSection"
+class="insight">
+
+<div
+id="insightHeader"
+class="section-header">
+
+<h2>
+
+Insight
+
+</h2>
+
+<span>
+
+Salary Diary
+
+</span>
+
+</div>
+
+<div
+id="insightCard"
+class="insight-card">
+
+<div
+id="insightCharacter"
+class="insight-character">
+
+<img
+
+id="insightCharacterImage"
+
+src="assets/images/happy.png"
+
+alt="Salary Diary">
+
+</div>
+
+<div
+id="insightContent"
+class="insight-content">
+
+<h3
+id="insightTitle">
+
+Selamat Datang 💖
+
+</h3>
+
+<p
+id="insightText">
+
+Semoga pekerjaanmu hari ini berjalan lancar dan selalu diberikan kesehatan.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ======================================
+HOME PAGE END
+====================================== -->
+
+</main>
+
+<!-- ======================================
+STATISTIC PAGE
+====================================== -->
+
+<main
+id="statisticPage"
+class="page">
+
+<!-- ======================================
+STATISTIC HEADER
+====================================== -->
+
+<section
+id="statisticHeaderSection"
+class="page-header">
+
+<h1>
+
+Statistik
+
+</h1>
+
+<p>
+
+Pantau perkembangan pekerjaanmu
+
+</p>
+
+</section>
+
+<!-- ======================================
+MONTHLY CHART
+====================================== -->
+
+<section
+id="chartSection"
+class="chart-section">
+
+<div
+id="chartCard"
+class="chart-card">
+
+<canvas
+id="monthlyChart">
+
+</canvas>
+
+</div>
+
+</section>
+
+<!-- ======================================
+STATISTIC SUMMARY
+====================================== -->
+
+<section
+id="statSummarySection"
+class="stat-summary">
+
+<div
+id="yesterdayIncomeCard"
+class="stat-card">
+
+<p>
+
+Kemarin
+
+</p>
+
+<h3
+id="yesterdayIncome">
+
+Rp0
+
+</h3>
+
+</div>
+
+<div
+id="bestWeekIncomeCard"
+class="stat-card">
+
+<p>
+
+Terbaik Minggu Ini
+
+</p>
+
+<h3
+id="bestWeekIncome">
+
+Rp0
+
+</h3>
+
+</div>
+
+<div
+id="bestMonthIncomeCard"
+class="stat-card">
+
+<p>
+
+Terbaik Bulan Ini
+
+</p>
+
+<h3
+id="bestMonthIncome">
+
+Rp0
+
+</h3>
+
+</div>
+
+<div
+id="workingDayCard"
+class="stat-card">
+
+<p>
+
+Hari Kerja
+
+</p>
+
+<h3
+id="workingDays">
+
+0 Hari
+
+</h3>
+
+</div>
+
+</section>
+
+<!-- ======================================
+FILTER
+====================================== -->
+
+<section
+id="filterSection"
+class="filter-section">
+
+<div
+id="filterGroup"
+class="filter-group">
+
+<button
+id="filterMonthButton"
+class="filter-button active">
+
+1 Bulan
+
+</button>
+
+<button
+id="filterThreeMonthButton"
+class="filter-button">
+
+3 Bulan
+
+</button>
+
+<button
+id="filterSixMonthButton"
+class="filter-button">
+
+6 Bulan
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ======================================
+WORK TIMELINE
+====================================== -->
+
+<section
+id="timelineSection"
+class="timeline-section">
+
+<div
+class="section-header">
+
+<h2>
+
+Riwayat Pekerjaan
+
+</h2>
+
+</div>
+
+<div
+id="timelineContainer"
+class="timeline-container">
+
+<!-- Javascript -->
+
+</div>
+
+</section>
+
+</main>
+
+<!-- ======================================
+SALARY PAGE
+====================================== -->
+
+<main
+id="salaryPage"
+class="page">
+
+<!-- ======================================
+SALARY HEADER
+====================================== -->
+
+<section
+id="salaryHeaderSection"
+class="page-header">
+
+<h1>
+
+Gaji
+
+</h1>
+
+<p>
+
+Perhitungan Periode Gaji
+
+</p>
+
+</section>
+
+<!-- ======================================
+SALARY PERIOD
+====================================== -->
+
+<section
+id="salaryPeriodSection"
+class="salary-period">
+
+<div
+id="salaryPeriodCard"
+class="salary-period-card">
+
+<span>
+
+Periode Gaji
+
+</span>
+
+<h2
+id="salaryPeriod">
+
+28 Mei 2026
+-
+27 Juni 2026
+
+</h2>
+
+</div>
+
+</section>
+
+<!-- ======================================
+SALARY SLIP
+====================================== -->
+
+<section
+id="salarySlipSection"
+class="salary-slip">
+
+<div
+id="salarySlipContainer"
+class="salary-slip-container">
+
+<!-- Javascript -->
+
+</div>
+
+</section>
+
+<!-- ======================================
+SALARY TOTAL
+====================================== -->
+
+<section
+id="salaryTotalSection"
+class="salary-total">
+
+<div
+id="salaryTotalCard"
+class="salary-total-card">
+
+<div
+class="salary-row">
+
+<span>
+
+Total Pendapatan
+
+</span>
+
+<strong
+id="salaryGross">
+
+Rp0
+
+</strong>
+
+</div>
+
+<div
+class="salary-row">
+
+<span>
+
+BPJS
+
+</span>
+
+<strong
+id="salaryBpjs">
+
+Rp0
+
+</strong>
+
+</div>
+
+<div
+class="salary-divider">
+
+</div>
+
+<div
+class="salary-row total">
+
+<span>
+
+Total Gaji
+
+</span>
+
+<strong
+id="salaryNet">
+
+Rp0
+
+</strong>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ======================================
+SALARY ACTION
+====================================== -->
+
+<section
+id="salaryActionSection"
+class="salary-action">
+
+<button
+id="exportImageButton"
+class="action-button">
+
+<span
+class="material-symbols-rounded">
+
+image
+
+</span>
+
+Export Image
+
+</button>
+
+<button
+id="exportPdfButton"
+class="action-button primary">
+
+<span
+class="material-symbols-rounded">
+
+picture_as_pdf
+
+</span>
+
+Export PDF
+
+</button>
+
+</section>
+
+</main>
+
+  <!-- ======================================
+BOTTOM NAVIGATION
+====================================== -->
+
+<nav
+id="bottomNavigation"
+class="bottom-navigation">
+
+<button
+id="homeButton"
+class="nav-button active">
+
+<span
+class="material-symbols-rounded">
+
+home
+
+</span>
+
+<span>
+
+Home
+
+</span>
+
+</button>
+
+<button
+id="statisticButton"
+class="nav-button">
+
+<span
+class="material-symbols-rounded">
+
+bar_chart
+
+</span>
+
+<span>
+
+Statistik
+
+</span>
+
+</button>
+
+<button
+id="salaryButton"
+class="nav-button">
+
+<span
+class="material-symbols-rounded">
+
+payments
+
+</span>
+
+<span>
+
+Gaji
+
+</span>
+
+</button>
+
+</nav>
+
+</div>
+
+<!-- ======================================
+JAVASCRIPT
+====================================== -->
+
+<script src="js/config.js"></script>
+
+<script src="js/utils.js"></script>
+
+<script src="js/api.js"></script>
+
+<script src="js/process.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+<script src="js/statistic.js"></script>
+
+<script src="js/salary.js"></script>
+
+<script src="js/events.js"></script>
+
+<script src="js/ui.js"></script>
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
