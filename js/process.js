@@ -4,7 +4,6 @@
    DESCRIPTION : Data Processor
 ===================================================== */
 
-
 /* =====================================================
    NORMALIZE
 ===================================================== */
@@ -57,9 +56,31 @@ function normalizeData(){
 
             );
 
+            const isIroning=
+
+            dept
+
+            .toLowerCase()
+
+            ===
+
+            DEPARTMENT.IRONING;
+
+            const name=
+
+            isIroning
+
+            ?
+
+            jenis
+
+            :
+
+            dept;
+
             const harga=
 
-            dept==="Ironing"
+            isIroning
 
             ?
 
@@ -127,6 +148,8 @@ function normalizeData(){
 
                 jenis,
 
+                name,
+
                 qty,
 
                 harga,
@@ -141,9 +164,7 @@ function normalizeData(){
 
                 "",
 
-                isIroning:
-
-                dept==="Ironing",
+                isIroning,
 
                 isWeekend:
 
@@ -153,9 +174,7 @@ function normalizeData(){
 
                 ),
 
-                periodeGaji:
-
-                null
+                periodeGaji:null
 
             });
 
@@ -169,9 +188,33 @@ function normalizeData(){
 
     );
 
-}
+    /* =====================================
+       DEBUG
+    ===================================== */
 
+    console.group(
 
+        "Normalize Data"
+
+    );
+
+    console.table(
+
+        Salary.data.kerja
+
+    );
+
+    console.log(
+
+        "Total Data :",
+
+        Salary.data.kerja.length
+
+    );
+
+    console.groupEnd();
+
+               }
 
 /* =====================================================
    PRICE MAP
@@ -270,7 +313,6 @@ function buildExtMap(){
 
 }
 
-
 /* =====================================================
    TIMELINE
 ===================================================== */
@@ -329,6 +371,8 @@ function buildTimeline(){
 
                     workCount:0,
 
+                    subtitle:"",
+
                     items:[]
 
                 };
@@ -341,11 +385,9 @@ function buildTimeline(){
 
             .push({
 
-                jenis:
+                name:
 
-                item.jenis ||
-
-                item.dept,
+                item.name,
 
                 qty:
 
@@ -405,6 +447,22 @@ function buildTimeline(){
 
     );
 
+    timeline.forEach(
+
+        item=>{
+
+            item.subtitle=
+
+            `${
+
+                item.workCount
+
+            } Jenis Pekerjaan`;
+
+        }
+
+    );
+
     Salary.timeline.pages=[];
 
     for(
@@ -434,6 +492,54 @@ function buildTimeline(){
     }
 
     Salary.timeline.currentPage=0;
+
+    /* =====================================
+       DEBUG
+    ===================================== */
+
+    console.group(
+
+        "Timeline"
+
+    );
+
+    console.log(
+
+        "Page :",
+
+        Salary.timeline.pages.length
+
+    );
+
+    console.table(
+
+        timeline.map(
+
+            item=>({
+
+                Tanggal:
+
+                item.tanggalText,
+
+                Qty:
+
+                item.totalQty,
+
+                Nominal:
+
+                item.totalNominal,
+
+                Pekerjaan:
+
+                item.workCount
+
+            })
+
+        )
+
+    );
+
+    console.groupEnd();
 
 }
 
@@ -520,7 +626,6 @@ function buildHome(){
 
 }
 
-
 /* =====================================================
    STATISTIC
 ===================================================== */
@@ -560,7 +665,7 @@ function buildStatistic(){
     }
 
     /* =====================================
-       MONTHLY
+       MONTHLY INCOME
     ===================================== */
 
     const monthly={};
@@ -571,13 +676,7 @@ function buildStatistic(){
 
             const key=
 
-            `${
-
-                item.tahun
-
-            }-${
-                item.bulan+1
-            }`;
+            `${item.tahun}-${item.bulan}`;
 
             if(
 
@@ -594,7 +693,9 @@ function buildStatistic(){
                         item.bulanNama
 
                     } ${
+
                         item.tahun
+
                     }`,
 
                     income:0
@@ -623,9 +724,19 @@ function buildStatistic(){
 
     null;
 
-    const bestDay=
+    const recentWeek=
 
-    timeline.reduce(
+    timeline.slice(
+
+        0,
+
+        7
+
+    );
+
+    const bestWeek=
+
+    recentWeek.reduce(
 
         (
 
@@ -645,47 +756,85 @@ function buildStatistic(){
 
         :
 
-        best
+        best,
+
+        recentWeek[0]
 
     );
 
-    const workingDays=
+    const currentMonth=
 
-    timeline.length;
+    timeline.filter(
 
-    const totalQty=
+        item=>
 
-    sum(
+        item.bulan===
 
-        kerja,
+        timeline[0].bulan &&
 
-        "qty"
+        item.tahun===
+
+        timeline[0].tahun
 
     );
 
-    const jenisMap={};
+    const bestMonth=
+
+    currentMonth.reduce(
+
+        (
+
+            best,
+
+            item
+
+        )=>
+
+        item.totalNominal>
+
+        best.totalNominal
+
+        ?
+
+        item
+
+        :
+
+        best,
+
+        currentMonth[0]
+
+    );
+
+    const workMap={};
 
     kerja.forEach(
 
         item=>{
 
-            const key=
-
-            item.jenis ||
-
-            item.dept;
-
             if(
 
-                !jenisMap[key]
+                !workMap[
+
+                    item.name
+
+                ]
 
             ){
 
-                jenisMap[key]=0;
+                workMap[
+
+                    item.name
+
+                ]=0;
 
             }
 
-            jenisMap[key]+=
+            workMap[
+
+                item.name
+
+            ]+=
 
             item.qty;
 
@@ -717,21 +866,47 @@ function buildStatistic(){
 
             0,
 
-            bestDayIncome:
+            bestWeekIncome:
 
-            bestDay.totalNominal,
+            bestWeek
 
-            bestDayDate:
+            ?
 
-            bestDay.tanggalText,
+            bestWeek.totalNominal
 
-            workingDays,
+            :
 
-            totalQty,
+            0,
 
-            totalJenis:
+            bestMonthIncome:
 
-            jenisMap
+            bestMonth
+
+            ?
+
+            bestMonth.totalNominal
+
+            :
+
+            0,
+
+            workingDays:
+
+            timeline.length,
+
+            totalQty:
+
+            sum(
+
+                kerja,
+
+                "qty"
+
+            ),
+
+            totalWork:
+
+            workMap
 
         },
 
@@ -739,8 +914,32 @@ function buildStatistic(){
 
     };
 
-}
+    /* =====================================
+       DEBUG
+    ===================================== */
 
+    console.group(
+
+        "Statistic"
+
+    );
+
+    console.table(
+
+        Salary.statistic.monthly
+
+    );
+
+    console.log(
+
+        Salary.statistic.summary
+
+    );
+
+    console.groupEnd();
+
+}
+            
 
 /* =====================================================
    SALARY PERIOD
