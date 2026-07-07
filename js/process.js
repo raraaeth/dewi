@@ -1021,6 +1021,322 @@ function buildSalaryPeriod(){
 
 function buildSalarySlip(){
 
+    Salary.salary.periods.forEach(
+
+        period=>{
+
+            period.slip=[];
+
+            period.totalWork=0;
+
+            period.totalAllowance=0;
+
+            period.totalDeduction=0;
+
+            period.totalSalary=0;
+
+            const workMap={};
+
+            let mealDay=0;
+
+            /* =====================================
+               WORK
+            ===================================== */
+
+            period.items.forEach(
+
+                item=>{
+
+                    const key=
+
+                    item.jenis ||
+
+                    item.dept;
+
+                    if(
+
+                        !workMap[key]
+
+                    ){
+
+                        workMap[key]={
+
+                            type:
+
+                            TYPE.WORK,
+
+                            jenis:key,
+
+                            qty:0,
+
+                            harga:item.harga,
+
+                            nominal:0
+
+                        };
+
+                    }
+
+                    workMap[key]
+
+                    .qty+=
+
+                    item.qty;
+
+                    workMap[key]
+
+                    .nominal+=
+
+                    item.nominal;
+
+                }
+
+            );
+
+            period.slip.push(
+
+                ...Object.values(
+
+                    workMap
+
+                )
+
+            );
+
+            /* =====================================
+               TOTAL WORK
+            ===================================== */
+
+            period.totalWork=
+
+            period.slip
+
+            .filter(
+
+                item=>
+
+                item.type===
+
+                TYPE.WORK
+
+            )
+
+            .reduce(
+
+                (
+
+                    total,
+
+                    item
+
+                )=>
+
+                total+
+
+                item.nominal,
+
+                0
+
+            );
+
+            /* =====================================
+               MEAL
+            ===================================== */
+
+            mealDay=
+
+            unique(
+
+                period.items
+
+                .filter(
+
+                    item=>
+
+                    item.isWeekend
+
+                )
+
+                .map(
+
+                    item=>
+
+                    item.tanggalText
+
+                )
+
+            ).length;
+
+            if(
+
+                mealDay>0
+
+            ){
+
+                const mealPrice=
+
+                Salary.cache.extMap
+
+                [EXT.MEAL] ||
+
+                0;
+
+                period.slip.push({
+
+                    type:
+
+                    TYPE.ALLOWANCE,
+
+                    jenis:
+
+                    "Makan",
+
+                    qty:
+
+                    mealDay,
+
+                    harga:
+
+                    mealPrice,
+
+                    nominal:
+
+                    mealDay*
+
+                    mealPrice
+
+                });
+
+                period.totalAllowance=
+
+                mealDay*
+
+                mealPrice;
+
+            }
+
+            /* =====================================
+               BPJS
+            ===================================== */
+
+            const bpjs=
+
+            Salary.cache.extMap
+
+            [EXT.BPJS] ||
+
+            0;
+
+            if(
+
+                bpjs>0
+
+            ){
+
+                period.slip.push({
+
+                    type:
+
+                    TYPE.DEDUCTION,
+
+                    jenis:
+
+                    "BPJS",
+
+                    qty:1,
+
+                    harga:bpjs,
+
+                    nominal:bpjs
+
+                });
+
+                period.totalDeduction=
+
+                bpjs;
+
+            }
+
+            /* =====================================
+               TOTAL
+            ===================================== */
+
+            period.totalSalary=
+
+            period.totalWork+
+
+            period.totalAllowance-
+
+            period.totalDeduction;
+
+        }
+
+    );
+
+    /* =====================================
+       DEBUG
+    ===================================== */
+
+    console.group(
+
+        "Salary Slip"
+
+    );
+
+    Salary.salary.periods.forEach(
+
+        period=>{
+
+            console.log(
+
+                period.title
+
+            );
+
+            console.table(
+
+                period.slip
+
+            );
+
+            console.log(
+
+                "Work :",
+
+                period.totalWork
+
+            );
+
+            console.log(
+
+                "Allowance :",
+
+                period.totalAllowance
+
+            );
+
+            console.log(
+
+                "Deduction :",
+
+                period.totalDeduction
+
+            );
+
+            console.log(
+
+                "Salary :",
+
+                period.totalSalary
+
+            );
+
+        }
+
+    );
+
+    console.groupEnd();
+
 }
 
 /* =====================================================
