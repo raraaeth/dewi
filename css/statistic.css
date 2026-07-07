@@ -1,0 +1,337 @@
+/* =====================================================
+   SALARY DIARY
+   FILE : css/statistic.css
+   DESCRIPTION : Statistic Section
+===================================================== */
+
+
+/* =====================================================
+   STATISTIC HEADER
+===================================================== */
+
+#statisticHeaderSection{
+
+    padding-top:28px;
+
+    padding-bottom:10px;
+
+}
+
+
+/* =====================================================
+   CHART
+===================================================== */
+
+.chart-section{
+
+    padding-top:0;
+
+}
+
+.chart-card{
+
+    background:var(--surface);
+
+    border-radius:var(--radius-large);
+
+    padding:20px;
+
+    box-shadow:var(--shadow-medium);
+
+}
+
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.stat-summary{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:16px;
+
+}
+
+.stat-card{
+
+    background:var(--surface);
+
+    border-radius:20px;
+
+    padding:18px;
+
+    box-shadow:var(--shadow-small);
+
+}
+
+.stat-card p{
+
+    font-size:13px;
+
+    color:var(--text-light);
+
+}
+
+.stat-card h3{
+
+    margin-top:8px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+
+/* =====================================================
+   FILTER
+===================================================== */
+
+.filter-section{
+
+    padding-top:10px;
+
+}
+
+.filter-group{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+}
+
+.filter-button{
+
+    padding:
+
+    10px
+
+    20px;
+
+    border-radius:
+
+    var(--radius-round);
+
+    background:#FFFFFF;
+
+    color:var(--text-light);
+
+    box-shadow:var(--shadow-small);
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.filter-button.active{
+
+    background:var(--primary);
+
+    color:#FFFFFF;
+
+}
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.timeline-section{
+
+    padding-top:10px;
+
+}
+
+.timeline-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+/* =====================================================
+   TIMELINE CARD
+===================================================== */
+
+.timeline-card{
+
+    background:#FFFFFF;
+
+    border-radius:22px;
+
+    padding:20px;
+
+    box-shadow:var(--shadow-small);
+
+}
+
+.timeline-date{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:var(--primary);
+
+}
+
+.timeline-income{
+
+    margin-top:10px;
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+}
+
+.timeline-detail{
+
+    margin-top:16px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+}
+
+.timeline-chip{
+
+    padding:
+
+    6px
+
+    12px;
+
+    border-radius:
+
+    var(--radius-round);
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+
+/* =====================================================
+   TIMELINE NAVIGATION
+===================================================== */
+
+.timeline-navigation{
+
+    margin-top:24px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.timeline-button{
+
+    padding:
+
+    10px
+
+    20px;
+
+    border-radius:
+
+    var(--radius-round);
+
+    background:var(--surface);
+
+    box-shadow:var(--shadow-small);
+
+    font-weight:600;
+
+}
+
+.timeline-indicator{
+
+    display:flex;
+
+    gap:8px;
+
+}
+
+.timeline-dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#E5E5E5;
+
+}
+
+.timeline-dot.active{
+
+    background:var(--primary);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:390px){
+
+.stat-summary{
+
+grid-template-columns:1fr;
+
+}
+
+.timeline-income{
+
+font-size:24px;
+
+}
+
+.filter-group{
+
+gap:8px;
+
+}
+
+.filter-button{
+
+padding:
+
+10px
+
+16px;
+
+font-size:13px;
+
+}
+
+}
