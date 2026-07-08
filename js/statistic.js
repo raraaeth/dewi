@@ -1,4 +1,4 @@
-/*=====================================================
+/* =====================================================
    SALARY DIARY
    FILE : js/statistic.js
    DESCRIPTION : Statistic Renderer
@@ -9,7 +9,8 @@
    CHART
 ===================================================== */
 
-let statisticChart = null;
+let statisticChart=null;
+
 
 /* =====================================================
    RENDER CHART
@@ -19,9 +20,9 @@ function renderChart(){
 
     if(
 
-        typeof Chart==="undefined" ||
+        !DOM.STATISTIC.chart ||
 
-        !DOM.STATISTIC.chart
+        typeof Chart==="undefined"
 
     ){
 
@@ -83,7 +84,9 @@ function renderChart(){
 
                     borderRadius:12,
 
-                    backgroundColor:"#D94F8A"
+                    backgroundColor:"#D94F8A",
+
+                    borderSkipped:false
 
                 }]
 
@@ -119,7 +122,19 @@ function renderChart(){
 
                     y:{
 
-                        beginAtZero:true
+                        beginAtZero:true,
+
+                        ticks:{
+
+                            callback:value=>
+
+                            formatCurrency(
+
+                                value
+
+                            )
+
+                        }
 
                     }
 
@@ -133,14 +148,42 @@ function renderChart(){
 
 }
 
+
 /* =====================================================
-   RENDER FILTER
+   RENDER SUMMARY
 ===================================================== */
 
-function renderFilter(){
+function renderSummary(){
+
+    const summary=
+
+    Salary.statistic.summary;
+
+    DOM.STATISTIC.summaryWorkingDays.textContent=
+
+    summary.workingDays;
+
+    DOM.STATISTIC.summaryQty.textContent=
+
+    summary.totalQty;
+
+    DOM.STATISTIC.summaryIncome.textContent=
+
+    formatCurrency(
+
+        summary.income
+
+    );
+
+    DOM.STATISTIC.summaryAverage.textContent=
+
+    formatCurrency(
+
+        summary.average
+
+    );
 
 }
-
 
 /* =====================================================
    RENDER TIMELINE
@@ -164,13 +207,23 @@ function renderTimeline(){
 
     );
 
-    Salary.statistic
+    const pages=
 
-    .filtered
+    Salary.statistic.timeline.pages;
 
-    .forEach(
+    const current=
 
-        item=>{
+    Salary.statistic.timeline.currentPage;
+
+    const items=
+
+    pages[current] ||
+
+    [];
+
+    items.forEach(
+
+        day=>{
 
             DOM.TIMELINE.container
 
@@ -182,59 +235,65 @@ function renderTimeline(){
 
 <div class="timeline-card">
 
-<div class="timeline-top">
+<div class="timeline-header">
+
+<div>
 
 <h3>
 
-${item.tanggalText}
+${day.tanggalText}
 
 </h3>
 
-<span>
+<p>
 
-${item.hari}
+${day.hari}
 
-</span>
+</p>
 
 </div>
 
-<div class="timeline-list">
+<strong>
 
-${item.items.map(work=>`
+${formatCurrency(day.totalNominal)}
+
+</strong>
+
+</div>
+
+<div class="timeline-body">
+
+${day.items.map(item=>`
 
 <div class="timeline-item">
 
+<div>
+
+<b>
+
+${item.name}
+
+</b>
+
+<br>
+
+<small>
+
+${item.qty} pcs
+
+</small>
+
+</div>
+
 <span>
 
-${work.name}
+${formatCurrency(item.nominal)}
 
 </span>
-
-<strong>
-
-${work.qty} × ${formatCurrency(work.harga)}
-
-</strong>
 
 </div>
 
 `).join("")}
-
-</div>
-
-<div class="timeline-total">
-
-<span>
-
-Total
-
-</span>
-
-<strong>
-
-${formatCurrency(item.totalNominal)}
-
-</strong>
 
 </div>
 
@@ -248,24 +307,210 @@ ${formatCurrency(item.totalNominal)}
 
     );
 
+    updateTimelineIndicator();
+
+   }
+
+/* =====================================================
+   TIMELINE INDICATOR
+===================================================== */
+
+function updateTimelineIndicator(){
+
+    DOM.TIMELINE.dots
+
+    .forEach(
+
+        (
+
+            dot,
+
+            index
+
+        )=>{
+
+            dot.classList.toggle(
+
+                "active",
+
+                index===
+
+                Salary.statistic.timeline.currentPage
+
+            );
+
+        }
+
+    );
+
+}
+
+/* =====================================================
+   NEXT PAGE
+===================================================== */
+
+function nextTimeline(){
+
+    const timeline=
+
+    Salary.statistic.timeline;
+
+    if(
+
+        timeline.currentPage<
+
+        timeline.pages.length-1
+
+    ){
+
+        timeline.currentPage++;
+
+    }
+
+    renderTimeline();
+
 }
 
 
 /* =====================================================
-   RENDER WORK SUMMARY
+   PREVIOUS PAGE
 ===================================================== */
 
-function renderWorkSummary(){
+function previousTimeline(){
+
+    if(
+
+        Salary.statistic.timeline.currentPage>
+
+        0
+
+    ){
+
+        Salary.statistic.timeline.currentPage--;
+
+    }
+
+    renderTimeline();
+
+           }
+
+/* =====================================================
+   CHANGE FILTER
+===================================================== */
+
+function changeStatisticFilter(filter){
+
+    Salary.statistic.currentFilter=
+
+    filter;
+
+    applyStatisticFilter();
+
+    renderStatistic();
 
 }
 
+/* =====================================================
+   UPDATE FILTER BUTTON
+===================================================== */
 
+function renderFilter(){
 
+    const buttons=[
 
+        DOM.STATISTIC.filterWeek,
 
+        DOM.STATISTIC.filterLastWeek,
 
+        DOM.STATISTIC.filterMonth,
 
+        DOM.STATISTIC.filterLastMonth,
 
+        DOM.STATISTIC.filterThreeMonth
+
+    ];
+
+    const filters=[
+
+        "week",
+
+        "lastWeek",
+
+        "month",
+
+        "lastMonth",
+
+        "threeMonth"
+
+    ];
+
+    buttons.forEach(
+
+        (
+
+            button,
+
+            index
+
+        )=>{
+
+            button.classList.toggle(
+
+                "active",
+
+                Salary.statistic.currentFilter===
+
+                filters[index]
+
+            );
+
+        }
+
+    );
+
+}
+
+/* =====================================================
+   UPDATE PERIOD TEXT
+===================================================== */
+
+function renderPeriod(){
+
+    const text={
+
+        week:"Minggu Ini",
+
+        lastWeek:"Minggu Lalu",
+
+        month:"Bulan Ini",
+
+        lastMonth:"Bulan Lalu",
+
+        threeMonth:"3 Bulan"
+
+    };
+
+    const value=
+
+    text[
+
+        Salary.statistic.currentFilter
+
+    ];
+
+    DOM.STATISTIC.chartPeriod.textContent=
+    value;
+
+    DOM.STATISTIC.filterChip.textContent=
+    value;
+
+    DOM.TIMELINE.period.textContent=
+    value;
+
+    DOM.STATISTIC.summaryPeriod.textContent=
+    value;
+
+}
 
 /* =====================================================
    RENDER STATISTIC
@@ -273,12 +518,90 @@ function renderWorkSummary(){
 
 function renderStatistic(){
 
-    renderChart();
-
     renderFilter();
+
+    renderPeriod();
+
+    renderChart();
 
     renderTimeline();
 
-    renderWorkSummary();
+    renderSummary();
 
 }
+
+/* =====================================================
+   FILTER ACTION
+===================================================== */
+
+function filterWeek(){
+
+    changeStatisticFilter(
+
+        "week"
+
+    );
+
+}
+
+
+function filterLastWeek(){
+
+    changeStatisticFilter(
+
+        "lastWeek"
+
+    );
+
+}
+
+
+function filterMonth(){
+
+    changeStatisticFilter(
+
+        "month"
+
+    );
+
+}
+
+
+function filterLastMonth(){
+
+    changeStatisticFilter(
+
+        "lastMonth"
+
+    );
+
+}
+
+
+function filterThreeMonth(){
+
+    changeStatisticFilter(
+
+        "threeMonth"
+
+    );
+
+       }
+
+/* =====================================================
+   TIMELINE ACTION
+===================================================== */
+
+function timelineNext(){
+
+    nextTimeline();
+
+}
+
+
+function timelineBack(){
+
+    previousTimeline();
+
+}
+
