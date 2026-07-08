@@ -584,18 +584,12 @@ Salary.home={
     ),
 
     periodIncome:
-    currentPeriod
-    ?
-    currentPeriod.totalSalary
-    :
-    0,
 
-    periodDate:
-    currentPeriod
-    ?
-    currentPeriod.title
-    :
-    "-",
+periodIncome,
+
+periodDate:
+
+periodDate,
 
     todayIncome:
     last.totalNominal,
