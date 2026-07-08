@@ -67,6 +67,10 @@ const DOM={
 
         weekDate:$("#weekIncomeDate"),
 
+        periodIncome:$("#periodIncome"),
+
+        periodIncomeDate:$("#periodIncomeDate"),
+
         todayIncome:$("#todayIncome"),
 
         todayQty:$("#todayQty"),
