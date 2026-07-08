@@ -9,22 +9,14 @@
    SELECTOR
 ===================================================== */
 
-const $=(selector)=>
+const $ = selector =>
 
-document.querySelector(
-
-    selector
-
-);
+document.querySelector(selector);
 
 
-const $$=(selector)=>
+const $$ = selector =>
 
-document.querySelectorAll(
-
-    selector
-
-);
+document.querySelectorAll(selector);
 
 
 /* =====================================================
@@ -33,216 +25,128 @@ document.querySelectorAll(
 
 const DOM={
 
+    LOADING:{
 
-/* =====================================================
-   LOADING
-===================================================== */
+        screen:$("#loadingScreen")
 
-loadingScreen:
+    },
 
-$("#loadingScreen"),
+    PAGE:{
 
+        home:$("#homePage"),
 
-/* =====================================================
-   PAGE
-===================================================== */
+        statistic:$("#statisticPage"),
 
-homePage:
+        salary:$("#salaryPage")
 
-$("#homePage"),
+    },
 
-statisticPage:
+    HERO:{
 
-$("#statisticPage"),
+        greeting:$("#heroGreeting"),
 
-salaryPage:
+        time:$("#heroTime"),
 
-$("#salaryPage"),
+        day:$("#heroDay"),
 
+        date:$("#heroDate"),
 
-/* =====================================================
-   HERO
-===================================================== */
+        message:$("#heroMessage"),
 
-heroGreeting:
+        character:$("#heroCharacter")
 
-$("#heroGreeting"),
+    },
 
-heroTime:
+    SUMMARY:{
 
-$("#heroTime"),
+        lastIncome:$("#lastIncome"),
 
-heroDay:
+        lastDate:$("#lastIncomeDate"),
 
-$("#heroDay"),
+        weekIncome:$("#weekIncome"),
 
-heroDate:
+        weekDate:$("#weekIncomeDate"),
 
-$("#heroDate"),
+        todayIncome:$("#todayIncome"),
 
-heroMessage:
+        todayQty:$("#todayQty"),
 
-$("#heroMessage"),
+        todayWork:$("#todayWork"),
 
-heroCharacter:
+        insightTitle:$("#insightTitle"),
 
-$("#heroCharacter"),
+        insightText:$("#insightText")
 
+    },
 
-/* =====================================================
-   SUMMARY
-===================================================== */
+    STATISTIC:{
 
-lastIncome:
+        chart:$("#monthlyChart"),
 
-$("#lastIncome"),
+        yesterdayIncome:$("#yesterdayIncome"),
 
-lastIncomeDate:
+        bestWeekIncome:$("#bestWeekIncome"),
 
-$("#lastIncomeDate"),
+        bestMonthIncome:$("#bestMonthIncome"),
 
-weekIncome:
+        workingDays:$("#workingDays"),
 
-$("#weekIncome"),
+        totalQty:$("#totalQty"),
 
-weekIncomeDate:
+        workSummary:$("#workSummary"),
 
-$("#weekIncomeDate"),
+        month:$("#filterMonthButton"),
 
+        threeMonth:$("#filterThreeMonthButton"),
 
-/* =====================================================
-   QUICK STAT
-===================================================== */
+        sixMonth:$("#filterSixMonthButton")
 
-todayIncome:
+    },
 
-$("#todayIncome"),
+    TIMELINE:{
 
-todayQty:
+        container:$("#timelineContainer"),
 
-$("#todayQty"),
+        back:$("#timelineBackButton"),
 
-todayWork:
+        next:$("#timelineNextButton"),
 
-$("#todayWork"),
+        indicator:$$(".timeline-indicator")
 
+    },
 
-/* =====================================================
-   INSIGHT
-===================================================== */
+    SALARY:{
 
-insightTitle:
+        period:$("#salaryPeriod"),
 
-$("#insightTitle"),
+        slip:$("#salarySlipContainer"),
 
-insightText:
+        totalWork:$("#salaryGross"),
 
-$("#insightText"),
+        totalAllowance:$("#salaryMeal"),
 
+        totalDeduction:$("#salaryBpjs"),
 
-/* =====================================================
-   STATISTIC
-===================================================== */
+        totalSalary:$("#salaryNet"),
 
-monthlyChart:
+        back:$("#salaryBackButton"),
 
-$("#monthlyChart"),
+        next:$("#salaryNextButton"),
 
-yesterdayIncome:
+        exportImage:$("#exportImageButton"),
 
-$("#yesterdayIncome"),
+        exportPdf:$("#exportPdfButton")
 
-bestWeekIncome:
+    },
 
-$("#bestWeekIncome"),
+    BUTTON:{
 
-bestMonthIncome:
+        home:$("#homeButton"),
 
-$("#bestMonthIncome"),
+        statistic:$("#statisticButton"),
 
-workingDays:
+        salary:$("#salaryButton")
 
-$("#workingDays"),
-
-
-/* =====================================================
-   FILTER
-===================================================== */
-
-filterMonth:
-
-$("#filterMonthButton"),
-
-filterThreeMonth:
-
-$("#filterThreeMonthButton"),
-
-filterSixMonth:
-
-$("#filterSixMonthButton"),
-
-
-/* =====================================================
-   TIMELINE
-===================================================== */
-
-timelineContainer:
-
-$("#timelineContainer"),
-
-
-/* =====================================================
-   SALARY
-===================================================== */
-
-salaryPeriod:
-
-$("#salaryPeriod"),
-
-salarySlip:
-
-$("#salarySlipContainer"),
-
-salaryGross:
-
-$("#salaryGross"),
-
-salaryBpjs:
-
-$("#salaryBpjs"),
-
-salaryNet:
-
-$("#salaryNet"),
-
-
-/* =====================================================
-   EXPORT
-===================================================== */
-
-exportImage:
-
-$("#exportImageButton"),
-
-exportPdf:
-
-$("#exportPdfButton"),
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-homeButton:
-
-$("#homeButton"),
-
-statisticButton:
-
-$("#statisticButton"),
-
-salaryButton:
-
-$("#salaryButton")
+    }
 
 };
