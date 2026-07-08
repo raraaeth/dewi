@@ -67,13 +67,13 @@ function renderHero(){
 
     setText(
 
-        DOM.HERO.message,
+    DOM.HERO.message,
 
-        Salary.home.insight ||
+    Salary.home.insight ||
 
-        randomGreeting()
+    getInsightMessage()
 
-    );
+);
 
     setImage(
 
