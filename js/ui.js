@@ -60,22 +60,38 @@ function showPage(page){
 
 function showLoading(){
 
-    DOM.LOADING.classList.add(
+    if(
 
-        "show"
+        DOM.LOADING.screen
 
-    );
+    ){
+
+        DOM.LOADING.screen.classList.add(
+
+            "show"
+
+        );
+
+    }
 
 }
 
 
 function hideLoading(){
 
-    DOM.LOADING.classList.remove(
+    if(
 
-        "show"
+        DOM.LOADING.screen
 
-    );
+    ){
+
+        DOM.LOADING.screen.classList.remove(
+
+            "show"
+
+        );
+
+    }
 
 }
 
