@@ -187,6 +187,7 @@ function randomGreeting(){
 
 }
 
+
 /* =====================================================
    SUMMARY
 ===================================================== */
@@ -220,6 +221,18 @@ function renderSummary(){
         formatCurrency(
 
             Salary.home.weekIncome
+
+        )
+
+    );
+
+    setText(
+
+        DOM.SUMMARY.todayIncome,
+
+        formatCurrency(
+
+            Salary.home.todayIncome
 
         )
 
