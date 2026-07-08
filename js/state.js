@@ -99,13 +99,15 @@ cache:{
 
     statistic:{
 
-        monthly:[],
+    currentFilter:"week",
 
-        summary:{},
+    chart:[],
 
-        filter:1
+    timeline:[],
 
-    },
+    summary:{}
+
+},
 
 
 /* =====================================================
