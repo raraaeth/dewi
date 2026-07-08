@@ -616,55 +616,85 @@ Salary.home={
 
     const last=
 
-    timeline[0];
+timeline[0];
 
-    const week=
+const week=
 
-    timeline
+timeline
 
-    .slice(
+.slice(
 
-        0,
+    0,
 
-        7
+    7
 
-    );
+);
 
-    Salary.home={
+const currentPeriod=
 
-        lastIncome:
+Salary.salary.periods[
+    Salary.salary.currentIndex
+];
 
-        last.totalNominal,
+Salary.home={
 
-        lastWorkDate:
+    lastIncome:
 
-        last.tanggalText,
+    last.totalNominal,
 
-        weekIncome:
+    lastWorkDate:
 
-        sum(
+    last.tanggalText,
 
-            week,
+    weekIncome:
 
-            "totalNominal"
+    sum(
 
-        ),
+        week,
 
-        todayIncome:
+        "totalNominal"
 
-        last.totalNominal,
+    ),
 
-        todayQty:
+    periodIncome:
 
-        last.totalQty,
+    currentPeriod
 
-        todayWork:
+    ?
 
-        last.workCount,
+    currentPeriod.totalSalary
 
-        insight:null
+    :
 
-    };
+    0,
+
+    periodDate:
+
+    currentPeriod
+
+    ?
+
+    currentPeriod.title
+
+    :
+
+    "-",
+
+    todayIncome:
+
+    last.totalNominal,
+
+    todayQty:
+
+    last.totalQty,
+
+    todayWork:
+
+    last.workCount,
+
+    insight:null
+
+};
 
 }
 
