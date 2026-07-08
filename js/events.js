@@ -218,38 +218,57 @@ function bindEvents(){
 
 
     /* =========================
-       FILTER
-    ========================= */
+   FILTER
+========================= */
 
-    DOM.STATISTIC.month
 DOM.STATISTIC.filterWeek
+
 .addEventListener(
+
     "click",
+
     onFilterWeek
+
 );
 
 DOM.STATISTIC.filterLastWeek
+
 .addEventListener(
+
     "click",
+
     onFilterLastWeek
+
 );
 
 DOM.STATISTIC.filterMonth
+
 .addEventListener(
+
     "click",
+
     onFilterMonth
+
 );
 
 DOM.STATISTIC.filterLastMonth
+
 .addEventListener(
+
     "click",
+
     onFilterLastMonth
+
 );
 
 DOM.STATISTIC.filterThreeMonth
+
 .addEventListener(
+
     "click",
+
     onFilterThreeMonth
+
 );
 
 
