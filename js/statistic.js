@@ -1,4 +1,4 @@
-=====================================================
+/*=====================================================
    SALARY DIARY
    FILE : js/statistic.js
    DESCRIPTION : Statistic Renderer
