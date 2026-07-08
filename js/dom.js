@@ -81,39 +81,47 @@ const DOM={
 
     STATISTIC:{
 
-        chart:$("#monthlyChart"),
+    chart:$("#monthlyChart"),
 
-        yesterdayIncome:$("#yesterdayIncome"),
+    chartPeriod:$("#chartPeriod"),
 
-        bestWeekIncome:$("#bestWeekIncome"),
+    filterChip:$("#statisticFilterChip"),
 
-        bestMonthIncome:$("#bestMonthIncome"),
+    filterWeek:$("#filterWeekButton"),
 
-        workingDays:$("#workingDays"),
+    filterLastWeek:$("#filterLastWeekButton"),
 
-        totalQty:$("#totalQty"),
+    filterMonth:$("#filterMonthButton"),
 
-        workSummary:$("#workSummary"),
+    filterLastMonth:$("#filterLastMonthButton"),
 
-        month:$("#filterMonthButton"),
+    filterThreeMonth:$("#filterThreeMonthButton"),
 
-        threeMonth:$("#filterThreeMonthButton"),
+    summaryWorkingDays:$("#summaryWorkingDays"),
 
-        sixMonth:$("#filterSixMonthButton")
+    summaryQty:$("#summaryQty"),
 
-    },
+    summaryIncome:$("#summaryIncome"),
+
+    summaryAverage:$("#summaryAverage")
+
+},
 
     TIMELINE:{
 
-        container:$("#timelineContainer"),
+    container:$("#timelineContainer"),
 
-        back:$("#timelineBackButton"),
+    period:$("#timelinePeriod"),
 
-        next:$("#timelineNextButton"),
+    back:$("#timelineBackButton"),
 
-        indicator:$$(".timeline-indicator")
+    next:$("#timelineNextButton"),
 
-    },
+    indicator:$("#timelineIndicator"),
+
+    dots:$$(".timeline-dot")
+
+},
 
     SALARY:{
 
