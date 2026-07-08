@@ -564,23 +564,51 @@ function buildHome(){
 
     ){
 
-        Salary.home={
+        const currentPeriod =
+Salary.salary.periods[
+    Salary.salary.currentIndex
+];
 
-            lastIncome:0,
+Salary.home={
 
-            lastWorkDate:"-",
+    lastIncome:
+    last.totalNominal,
 
-            weekIncome:0,
+    lastWorkDate:
+    last.tanggalText,
 
-            todayIncome:0,
+    weekIncome:
+    sum(
+        week,
+        "totalNominal"
+    ),
 
-            todayQty:0,
+    periodIncome:
+    currentPeriod
+    ?
+    currentPeriod.totalSalary
+    :
+    0,
 
-            todayWork:0,
+    periodDate:
+    currentPeriod
+    ?
+    currentPeriod.title
+    :
+    "-",
 
-            insight:null
+    todayIncome:
+    last.totalNominal,
 
-        };
+    todayQty:
+    last.totalQty,
+
+    todayWork:
+    last.workCount,
+
+    insight:null
+
+};
 
         return;
 
@@ -1564,12 +1592,12 @@ function processAll(){
 
     buildTimeline();
 
-    buildHome();
-
-    buildStatistic();
-
     buildSalaryPeriod();
 
     buildSalarySlip();
+
+    buildHome();
+
+    buildStatistic();
 
 }
