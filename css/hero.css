@@ -164,9 +164,9 @@
 
 .hero-message{
 
-    margin-top:26px;
+    margin:
 
-    width:100%;
+    12px 24px 0;
 
     min-height:82px;
 
@@ -178,29 +178,11 @@
 
     text-align:center;
 
-    padding:
+    padding:18px 24px;
 
-    18px
+    background:rgba(255,255,255,.20);
 
-    22px;
-
-    background:
-
-    rgba(
-
-        255,
-
-        255,
-
-        255,
-
-        .22
-
-    );
-
-    backdrop-filter:
-
-    blur(10px);
+    backdrop-filter:blur(10px);
 
     border-radius:20px;
 
