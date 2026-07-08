@@ -564,45 +564,27 @@ function buildHome(){
 
     ){
 
-        const currentPeriod =
-Salary.salary.periods[
-    Salary.salary.currentIndex
-];
+        Salary.home={
 
-Salary.home={
+            lastIncome:0,
 
-    lastIncome:
-    last.totalNominal,
+            lastWorkDate:"-",
 
-    lastWorkDate:
-    last.tanggalText,
+            weekIncome:0,
 
-    weekIncome:
-    sum(
-        week,
-        "totalNominal"
-    ),
+            periodIncome:0,
 
-    periodIncome:
+            periodDate:"-",
 
-periodIncome,
+            todayIncome:0,
 
-periodDate:
+            todayQty:0,
 
-periodDate,
+            todayWork:0,
 
-    todayIncome:
-    last.totalNominal,
+            insight:null
 
-    todayQty:
-    last.totalQty,
-
-    todayWork:
-    last.workCount,
-
-    insight:null
-
-};
+        };
 
         return;
 
@@ -610,116 +592,166 @@ periodDate,
 
     const last=
 
-timeline[0];
+    timeline[0];
 
-const week=
+    const week=
 
-timeline
+    timeline
 
-.slice(
+    .slice(
 
-    0,
+        0,
 
-    7
-
-);
-
-const today=
-
-new Date();
-
-let periodStart;
-
-if(
-
-    today.getDate()>=28
-
-){
-
-    periodStart=
-
-    new Date(
-
-        today.getFullYear(),
-
-        today.getMonth(),
-
-        28
+        7
 
     );
 
-}else{
+    /* =====================================
+       PAYROLL PERIOD (28 - TODAY)
+    ===================================== */
 
-    periodStart=
+    const today=
 
-    new Date(
+    new Date();
 
-        today.getFullYear(),
+    let periodStart;
 
-        today.getMonth()-1,
+    if(
 
-        28
+        today.getDate()>=28
+
+    ){
+
+        periodStart=
+
+        new Date(
+
+            today.getFullYear(),
+
+            today.getMonth(),
+
+            28
+
+        );
+
+    }
+
+    else{
+
+        periodStart=
+
+        new Date(
+
+            today.getFullYear(),
+
+            today.getMonth()-1,
+
+            28
+
+        );
+
+    }
+
+    const periodData=
+
+    Salary.data.kerja
+
+    .filter(
+
+        item=>
+
+        item.tanggal>=periodStart &&
+
+        item.tanggal<=today
 
     );
 
+    const periodIncome=
+
+    periodData.reduce(
+
+        (
+
+            total,
+
+            item
+
+        )=>
+
+        total+
+
+        item.nominal,
+
+        0
+
+    );
+
+    const periodDate=
+
+    `${
+
+        formatDate(
+
+            periodStart
+
+        )
+
+    } - ${
+
+        formatDate(
+
+            today
+
+        )
+
+    }`;
+
+    Salary.home={
+
+        lastIncome:
+
+        last.totalNominal,
+
+        lastWorkDate:
+
+        last.tanggalText,
+
+        weekIncome:
+
+        sum(
+
+            week,
+
+            "totalNominal"
+
+        ),
+
+        periodIncome:
+
+        periodIncome,
+
+        periodDate:
+
+        periodDate,
+
+        todayIncome:
+
+        last.totalNominal,
+
+        todayQty:
+
+        last.totalQty,
+
+        todayWork:
+
+        last.workCount,
+
+        insight:null
+
+    };
+
 }
 
-const periodData=
-
-Salary.data.kerja
-
-.filter(
-
-    item=>
-
-    item.tanggal>=periodStart &&
-
-    item.tanggal<=today
-
-);
-
-const periodIncome=
-
-periodData.reduce(
-
-    (
-
-        total,
-
-        item
-
-    )=>
-
-    total+
-
-    item.nominal,
-
-    0
-
-);
-
-const periodDate=
-
-`${
-
-formatDate(
-
-    periodStart
-
-)
-
-} - ${
-
-formatDate(
-
-    today
-
-)
-
-}`;
-   
-
-}
 
 /* =====================================================
    STATISTIC
