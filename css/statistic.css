@@ -154,3 +154,97 @@
     height:65px;
 
 }
+
+/* =====================================================
+   STATISTIC FILTER
+===================================================== */
+
+.statistic-filter{
+
+    margin-top:22px;
+
+    padding:0 20px;
+
+}
+
+.filter-scroll{
+
+    display:flex;
+
+    gap:12px;
+
+    overflow-x:auto;
+
+    scrollbar-width:none;
+
+    -ms-overflow-style:none;
+
+}
+
+.filter-scroll::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.filter-button{
+
+    border:none;
+
+    border-radius:999px;
+
+    padding:
+
+    12px
+
+    18px;
+
+    white-space:nowrap;
+
+    background:#F4F4F5;
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.filter-button.active{
+
+    background:#D94F8A;
+
+    color:#FFF;
+
+    box-shadow:var(--shadow-small);
+
+}
+
+/* =====================================================
+   WORK TIMELINE
+===================================================== */
+
+.timeline-section{
+
+    margin-top:28px;
+
+    padding:0 20px;
+
+}
+
+.timeline-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
