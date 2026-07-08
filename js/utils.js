@@ -179,6 +179,82 @@ function getCharacter(){
 }
 
 /* =====================================================
+   INSIGHT MESSAGE
+===================================================== */
+
+function getInsightMessage(){
+
+    const now=
+
+    new Date();
+
+    const day=
+
+    now.getDate();
+
+    const hour=
+
+    now.getHours();
+
+    let phase;
+
+    if(
+
+        day<=10
+
+    ){
+
+        phase=
+
+        MESSAGE.EARLY;
+
+    }
+
+    else if(
+
+        day<=20
+
+    ){
+
+        phase=
+
+        MESSAGE.MIDDLE;
+
+    }
+
+    else{
+
+        phase=
+
+        MESSAGE.LATE;
+
+    }
+
+    if(
+
+        hour<11
+
+    ){
+
+        return phase.MORNING;
+
+    }
+
+    if(
+
+        hour<15
+
+    ){
+
+        return phase.AFTERNOON;
+
+    }
+
+    return phase.EVENING;
+
+}
+
+/* =====================================================
    WEEKEND
 ===================================================== */
 
