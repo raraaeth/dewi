@@ -153,7 +153,7 @@ function renderChart(){
    RENDER SUMMARY
 ===================================================== */
 
-function renderSummary(){
+function renderStatisticSummary(){
 
     const summary=
 
@@ -526,7 +526,7 @@ function renderStatistic(){
 
     renderTimeline();
 
-    renderSummary();
+    renderStatisticSummary();
 
 }
 
