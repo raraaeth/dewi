@@ -2,9 +2,7 @@
    SALARY DIARY
    FILE : js/home.js
    DESCRIPTION : Home Renderer
-===================================================== */
-
-
+===================================================== *
 /* =====================================================
    HERO
 ===================================================== */
@@ -74,6 +72,14 @@ function renderHero(){
         Salary.home.insight ||
 
         randomGreeting()
+
+    );
+
+    setImage(
+
+        DOM.HERO.character,
+
+        `assets/images/${getCharacter()}`
 
     );
 
