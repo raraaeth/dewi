@@ -566,9 +566,13 @@ function buildHome(){
 
         Salary.home={
 
-            lastIncome:null,
+            lastIncome:0,
+
+            lastWorkDate:"-",
 
             weekIncome:0,
+
+            todayIncome:0,
 
             todayQty:0,
 
@@ -600,7 +604,13 @@ function buildHome(){
 
     Salary.home={
 
-        lastIncome:last,
+        lastIncome:
+
+        last.totalNominal,
+
+        lastWorkDate:
+
+        last.tanggalText,
 
         weekIncome:
 
@@ -611,6 +621,10 @@ function buildHome(){
             "totalNominal"
 
         ),
+
+        todayIncome:
+
+        last.totalNominal,
 
         todayQty:
 
