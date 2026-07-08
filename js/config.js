@@ -130,9 +130,9 @@ const FILTER={
 
 const EXT={
 
-    MEAL:"Makan",
+    MEAL:"makan",
 
-    BPJS:"BPJS"
+    BPJS:"bpjs"
 
 };
 
@@ -151,6 +151,15 @@ const TYPE={
 
 };
 
+/* =====================================================
+   DEPARTMENT
+===================================================== */
+
+const DEPARTMENT={
+
+    IRONING:"ironing"
+
+};
 
 /* =====================================================
    CHARACTER
