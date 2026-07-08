@@ -36,25 +36,25 @@ function toNumber(value){
 
 function formatCurrency(value){
 
-    return new Intl.NumberFormat(
+    return "Rp"+
+
+    new Intl.NumberFormat(
 
         FORMAT.DATE,
 
         {
 
-            style:"currency",
-
-            currency:FORMAT.CURRENCY,
-
-            minimumFractionDigits:0,
-
-            maximumFractionDigits:2
+            maximumFractionDigits:0
 
         }
 
     ).format(
 
-        value
+        toNumber(
+
+            value
+
+        )
 
     );
 
