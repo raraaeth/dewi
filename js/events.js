@@ -44,14 +44,13 @@ function onSalaryClick(){
 
 function onTimelineNext(){
 
-    // TODO
+    timelineNext();
 
 }
 
-
 function onTimelineBack(){
 
-    // TODO
+    timelineBack();
 
 }
 
@@ -78,23 +77,33 @@ function onSalaryBack(){
    FILTER
 ===================================================== */
 
-function onFilterMonth(){
+function onFilterWeek(){
 
-    // TODO
+    filterWeek();
 
 }
 
+function onFilterLastWeek(){
+
+    filterLastWeek();
+
+}
+
+function onFilterMonth(){
+
+    filterMonth();
+
+}
+
+function onFilterLastMonth(){
+
+    filterLastMonth();
+
+}
 
 function onFilterThreeMonth(){
 
-    // TODO
-
-}
-
-
-function onFilterSixMonth(){
-
-    // TODO
+    filterThreeMonth();
 
 }
 
@@ -213,34 +222,35 @@ function bindEvents(){
     ========================= */
 
     DOM.STATISTIC.month
+DOM.STATISTIC.filterWeek
+.addEventListener(
+    "click",
+    onFilterWeek
+);
 
-    .addEventListener(
+DOM.STATISTIC.filterLastWeek
+.addEventListener(
+    "click",
+    onFilterLastWeek
+);
 
-        "click",
+DOM.STATISTIC.filterMonth
+.addEventListener(
+    "click",
+    onFilterMonth
+);
 
-        onFilterMonth
+DOM.STATISTIC.filterLastMonth
+.addEventListener(
+    "click",
+    onFilterLastMonth
+);
 
-    );
-
-    DOM.STATISTIC.threeMonth
-
-    .addEventListener(
-
-        "click",
-
-        onFilterThreeMonth
-
-    );
-
-    DOM.STATISTIC.sixMonth
-
-    .addEventListener(
-
-        "click",
-
-        onFilterSixMonth
-
-    );
+DOM.STATISTIC.filterThreeMonth
+.addEventListener(
+    "click",
+    onFilterThreeMonth
+);
 
 
     /* =========================
