@@ -231,8 +231,7 @@ function renderTimeline(){
 
                 "beforeend",
 
-                `
-
+`
 <div class="timeline-card">
 
 <div class="timeline-header">
@@ -261,6 +260,26 @@ ${formatCurrency(day.totalNominal)}
 
 </div>
 
+<div class="timeline-total">
+
+<span>
+
+📦 Total Pekerjaan
+
+</span>
+
+<strong>
+
+${day.totalQty} pcs
+
+</strong>
+
+</div>
+
+<div class="timeline-divider">
+
+</div>
+
 <div class="timeline-body">
 
 ${day.items.map(item=>`
@@ -274,8 +293,6 @@ ${day.items.map(item=>`
 ${item.name}
 
 </b>
-
-<br>
 
 <small>
 
@@ -309,7 +326,8 @@ ${formatCurrency(item.nominal)}
 
     updateTimelineIndicator();
 
-   }
+}
+
 
 /* =====================================================
    TIMELINE INDICATOR
