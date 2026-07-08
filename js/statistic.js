@@ -19,15 +19,7 @@ function renderChart(){
 
     if(
 
-        typeof Chart==="undefined"
-
-    ){
-
-        return;
-
-    }
-
-    if(
+        typeof Chart==="undefined" ||
 
         !DOM.STATISTIC.chart
 
@@ -47,6 +39,30 @@ function renderChart(){
 
     }
 
+    const labels=
+
+    Salary.statistic.chart
+
+    .map(
+
+        item=>
+
+        item.label
+
+    );
+
+    const income=
+
+    Salary.statistic.chart
+
+    .map(
+
+        item=>
+
+        item.income
+
+    );
+
     statisticChart=
 
     new Chart(
@@ -59,15 +75,13 @@ function renderChart(){
 
             data:{
 
-                labels:[],
+                labels,
 
                 datasets:[{
 
-                    label:"Pendapatan",
+                    data:income,
 
-                    data:[],
-
-                    borderRadius:10,
+                    borderRadius:12,
 
                     backgroundColor:"#D94F8A"
 
@@ -117,7 +131,7 @@ function renderChart(){
 
     );
 
-      }
+}
 
 /* =====================================================
    RENDER FILTER
