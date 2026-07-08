@@ -209,7 +209,7 @@
 
 .hero-character{
 
-    width:42%;
+    flex:1;
 
     display:flex;
 
@@ -221,9 +221,11 @@
 
 .hero-character img{
 
-    width:170px;
+    width:210px;
 
-    max-width:100%;
+    max-width:45vw;
+
+    height:auto;
 
     object-fit:contain;
 
