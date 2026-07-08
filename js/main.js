@@ -23,7 +23,15 @@ async function init(){
 
     try{
 
-        Salary.loading=true;
+        Salary.ready=true;
+
+hideLoading();
+
+console.log(
+
+    "Application Ready ✅"
+
+);
 
         await loadData();
 
