@@ -1,4 +1,4 @@
-/* =====================================================
+=====================================================
    SALARY DIARY
    FILE : js/statistic.js
    DESCRIPTION : Statistic Renderer
@@ -9,50 +9,45 @@
    CHART
 ===================================================== */
 
-let monthlyChart=null;
-
+let statisticChart = null;
 
 /* =====================================================
-   MONTHLY CHART
+   RENDER CHART
 ===================================================== */
 
-function renderMonthlyChart(){
-
-    const data=
-
-    Salary.statistic.monthly;
-
-    const labels=
-
-    data.map(
-
-        item=>
-
-        item.label
-
-    );
-
-    const income=
-
-    data.map(
-
-        item=>
-
-        item.income
-
-    );
+function renderChart(){
 
     if(
 
-        monthlyChart
+        typeof Chart==="undefined"
 
     ){
 
-        monthlyChart.destroy();
+        return;
 
     }
 
-    monthlyChart=
+    if(
+
+        !DOM.STATISTIC.chart
+
+    ){
+
+        return;
+
+    }
+
+    if(
+
+        statisticChart
+
+    ){
+
+        statisticChart.destroy();
+
+    }
+
+    statisticChart=
 
     new Chart(
 
@@ -64,17 +59,17 @@ function renderMonthlyChart(){
 
             data:{
 
-                labels,
+                labels:[],
 
                 datasets:[{
 
-                    data:income,
+                    label:"Pendapatan",
 
-                    borderRadius:12,
+                    data:[],
 
-                    backgroundColor:
+                    borderRadius:10,
 
-                    COLOR.PRIMARY
+                    backgroundColor:"#D94F8A"
 
                 }]
 
@@ -122,135 +117,54 @@ function renderMonthlyChart(){
 
     );
 
-}
+      }
 
 /* =====================================================
-   SUMMARY
+   RENDER FILTER
 ===================================================== */
 
-function renderStatisticSummary(){
-
-    const summary=
-
-    Salary.statistic.summary;
-
-    setText(
-
-        DOM.STATISTIC.yesterdayIncome,
-
-        formatCurrency(
-
-            summary.yesterdayIncome
-
-        )
-
-    );
-
-    setText(
-
-        DOM.STATISTIC.bestWeekIncome,
-
-        formatCurrency(
-
-            summary.bestWeekIncome
-
-        )
-
-    );
-
-    setText(
-
-        DOM.STATISTIC.bestMonthIncome,
-
-        formatCurrency(
-
-            summary.bestMonthIncome
-
-        )
-
-    );
-
-    setText(
-
-        DOM.STATISTIC.workingDays,
-
-        summary.workingDays
-
-    );
-
-    setText(
-
-        DOM.STATISTIC.totalQty,
-
-        summary.totalQty
-
-    );
+function renderFilter(){
 
 }
 
+
 /* =====================================================
-   WORK SUMMARY
+   RENDER TIMELINE
+===================================================== */
+
+function renderTimeline(){
+
+}
+
+
+/* =====================================================
+   RENDER WORK SUMMARY
 ===================================================== */
 
 function renderWorkSummary(){
 
-    clear(
-
-        DOM.STATISTIC.workSummary
-
-    );
-
-    Object.entries(
-
-        Salary.statistic.summary.totalWork
-
-    )
-
-    .forEach(
-
-        ([name,qty])=>{
-
-            DOM.STATISTIC.workSummary
-
-            .insertAdjacentHTML(
-
-                "beforeend",
-
-                `
-
-<div class="work-item">
-
-    <span>${name}</span>
-
-    <strong>${qty}</strong>
-
-</div>
-
-`
-
-            );
-
-        }
-
-    );
-
 }
 
+
+
+
+
+
+
+
+
 /* =====================================================
-   STATISTIC
+   RENDER STATISTIC
 ===================================================== */
 
 function renderStatistic(){
 
-    if(typeof Chart!=="undefined"){
+    renderChart();
 
-        renderMonthlyChart();
+    renderFilter();
 
-    }
-
-    renderStatisticSummary();
+    renderTimeline();
 
     renderWorkSummary();
 
 }
-
