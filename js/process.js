@@ -646,7 +646,7 @@ function buildHome(){
 
 function buildStatistic(){
 
-    const timeline=
+    const source=
 
     Salary.timeline
 
@@ -658,15 +658,21 @@ function buildStatistic(){
 
         currentFilter:"week",
 
-        source:timeline,
+        source,
 
-        filtered:timeline,
+        filtered:[],
 
         chart:[],
 
-        timeline:[],
+        summary:{},
 
-        summary:{}
+        timeline:{
+
+            pages:[],
+
+            currentPage:0
+
+        }
 
     };
 
@@ -675,26 +681,96 @@ function buildStatistic(){
 }
 
 /* =====================================================
-   APPLY FILTER
+   APPLY STATISTIC FILTER
 ===================================================== */
 
 function applyStatisticFilter(){
-
-    const filter=
-
-    Salary.statistic.currentFilter;
 
     let data=
 
     [...Salary.statistic.source];
 
-    switch(filter){
+    switch(
+
+        Salary.statistic.currentFilter
+
+    ){
 
         case "week":
 
-            data=
+            data=data.slice(0,5);
 
-            data.slice(0,5);
+            break;
+
+        case "lastWeek":
+
+            data=data.slice(5,10);
+
+            break;
+
+        case "month":
+
+            {
+
+                const now=data[0];
+
+                data=data.filter(
+
+                    item=>
+
+                    item.bulan===now.bulan &&
+
+                    item.tahun===now.tahun
+
+                );
+
+            }
+
+            break;
+
+        case "lastMonth":
+
+            {
+
+                const now=data[0];
+
+                let bulan=
+
+                now.bulan-1;
+
+                let tahun=
+
+                now.tahun;
+
+                if(
+
+                    bulan<0
+
+                ){
+
+                    bulan=11;
+
+                    tahun--;
+
+                }
+
+                data=data.filter(
+
+                    item=>
+
+                    item.bulan===bulan &&
+
+                    item.tahun===tahun
+
+                );
+
+            }
+
+            break;
+
+        case "threeMonth":
+
+            data=data.slice(0,90);
 
             break;
 
@@ -702,13 +778,23 @@ function applyStatisticFilter(){
 
     Salary.statistic.filtered=data;
 
-    /* =====================================
-       CHART
-    ===================================== */
+    buildStatisticChart();
+
+    buildStatisticSummary();
+
+    buildStatisticTimeline();
+
+}
+
+/* =====================================================
+   BUILD CHART
+===================================================== */
+
+function buildStatisticChart(){
 
     Salary.statistic.chart=
 
-    data
+    Salary.statistic.filtered
 
     .slice()
 
@@ -736,284 +822,132 @@ function applyStatisticFilter(){
 
     );
 
-}
+           }
+/* =====================================================
+   BUILD SUMMARY
+===================================================== */
 
-    /* =====================================
-       MONTHLY INCOME
-    ===================================== */
+function buildStatisticSummary(){
 
-    const monthly={};
+    const data=
 
-    timeline.forEach(
+    Salary.statistic.filtered;
 
-        item=>{
+    const income=
 
-            const key=
-
-            `${item.tahun}-${item.bulan}`;
-
-            if(
-
-                !monthly[key]
-
-            ){
-
-                monthly[key]={
-
-                    label:
-
-                    `${
-
-                        item.bulanNama
-
-                    } ${
-
-                        item.tahun
-
-                    }`,
-
-                    income:0
-
-                };
-
-            }
-
-            monthly[key]
-
-            .income+=
-
-            item.totalNominal;
-
-        }
-
-    );
-
-    /* =====================================
-       SUMMARY
-    ===================================== */
-
-    const yesterday=
-
-    timeline[1] ||
-
-    null;
-
-    const recentWeek=
-
-    timeline.slice(
-
-        0,
-
-        7
-
-    );
-
-    const bestWeek=
-
-    recentWeek.reduce(
+    data.reduce(
 
         (
 
-            best,
+            total,
 
             item
 
         )=>
 
-        item.totalNominal>
+        total+
 
-        best.totalNominal
+        item.totalNominal,
 
-        ?
-
-        item
-
-        :
-
-        best,
-
-        recentWeek[0]
+        0
 
     );
 
-    const currentMonth=
+    const qty=
 
-    timeline.filter(
-
-        item=>
-
-        item.bulan===
-
-        timeline[0].bulan &&
-
-        item.tahun===
-
-        timeline[0].tahun
-
-    );
-
-    const bestMonth=
-
-    currentMonth.reduce(
+    data.reduce(
 
         (
 
-            best,
+            total,
 
             item
 
         )=>
 
-        item.totalNominal>
+        total+
 
-        best.totalNominal
+        item.totalQty,
+
+        0
+
+    );
+
+    Salary.statistic.summary={
+
+        workingDays:
+
+        data.length,
+
+        totalQty:qty,
+
+        income,
+
+        average:
+
+        data.length
 
         ?
 
-        item
+        income/
+
+        data.length
 
         :
 
-        best,
-
-        currentMonth[0]
-
-    );
-
-    const workMap={};
-
-    kerja.forEach(
-
-        item=>{
-
-            if(
-
-                !workMap[
-
-                    item.name
-
-                ]
-
-            ){
-
-                workMap[
-
-                    item.name
-
-                ]=0;
-
-            }
-
-            workMap[
-
-                item.name
-
-            ]+=
-
-            item.qty;
-
-        }
-
-    );
-
-    Salary.statistic={
-
-        monthly:
-
-        Object.values(
-
-            monthly
-
-        ).reverse(),
-
-        summary:{
-
-            yesterdayIncome:
-
-            yesterday
-
-            ?
-
-            yesterday.totalNominal
-
-            :
-
-            0,
-
-            bestWeekIncome:
-
-            bestWeek
-
-            ?
-
-            bestWeek.totalNominal
-
-            :
-
-            0,
-
-            bestMonthIncome:
-
-            bestMonth
-
-            ?
-
-            bestMonth.totalNominal
-
-            :
-
-            0,
-
-            workingDays:
-
-            timeline.length,
-
-            totalQty:
-
-            sum(
-
-                kerja,
-
-                "qty"
-
-            ),
-
-            totalWork:
-
-            workMap
-
-        },
-
-        filter:1
+        0
 
     };
 
-    /* =====================================
-       DEBUG
-    ===================================== */
+}
 
-    console.group(
+/* =====================================================
+   BUILD TIMELINE
+===================================================== */
 
-        "Statistic"
+function buildStatisticTimeline(){
 
-    );
+    const pages=[];
 
-    console.table(
+    const data=
 
-        Salary.statistic.monthly
+    Salary.statistic.filtered;
 
-    );
+    for(
 
-    console.log(
+        let i=0;
 
-        Salary.statistic.summary
+        i<data.length;
 
-    );
+        i+=5
 
-    console.groupEnd();
+    ){
+
+        pages.push(
+
+            data.slice(
+
+                i,
+
+                i+5
+
+            )
+
+        );
+
+    }
+
+    Salary.statistic.timeline={
+
+        pages,
+
+        currentPage:0
+
+    };
 
 }
-            
+
+
 
 /* =====================================================
    SALARY PERIOD
