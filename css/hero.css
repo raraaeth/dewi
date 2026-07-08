@@ -54,11 +54,11 @@
 
     justify-content:space-between;
 
-    align-items:center;
+    align-items:flex-start;
 
     padding:
 
-    40px
+    34px
 
     24px
 
@@ -125,7 +125,7 @@
 
 .hero-day{
 
-    margin-top:10px;
+    margin-top:12px;
 
     font-size:18px;
 
@@ -137,9 +137,9 @@
 
 .hero-date{
 
-    margin-top:4px;
+    margin-top:2px;
 
-    font-size:14px;
+    font-size:15px;
 
     color:
 
@@ -151,7 +151,7 @@
 
         255,
 
-        .85
+        .88
 
     );
 
@@ -164,13 +164,25 @@
 
 .hero-message{
 
-    margin-top:18px;
+    margin-top:26px;
+
+    width:100%;
+
+    min-height:82px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
 
     padding:
 
-    14px
+    18px
 
-    18px;
+    22px;
 
     background:
 
@@ -190,15 +202,13 @@
 
     blur(10px);
 
-    border-radius:
-
-    18px;
+    border-radius:20px;
 
     color:#FFFFFF;
 
-    font-size:14px;
+    font-size:15px;
 
-    line-height:1.6;
+    line-height:1.7;
 
 }
 
@@ -215,15 +225,17 @@
 
     justify-content:flex-end;
 
-    align-items:flex-end;
+    align-items:flex-start;
+
+    margin-top:24px;
 
 }
 
 .hero-character img{
 
-    width:230px;
+    width:235px;
 
-    max-width:none;
+    max-width:48vw;
 
     height:auto;
 
