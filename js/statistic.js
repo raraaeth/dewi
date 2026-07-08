@@ -148,6 +148,106 @@ function renderFilter(){
 
 function renderTimeline(){
 
+    if(
+
+        !DOM.TIMELINE.container
+
+    ){
+
+        return;
+
+    }
+
+    clear(
+
+        DOM.TIMELINE.container
+
+    );
+
+    Salary.statistic
+
+    .filtered
+
+    .forEach(
+
+        item=>{
+
+            DOM.TIMELINE.container
+
+            .insertAdjacentHTML(
+
+                "beforeend",
+
+                `
+
+<div class="timeline-card">
+
+<div class="timeline-top">
+
+<h3>
+
+${item.tanggalText}
+
+</h3>
+
+<span>
+
+${item.hari}
+
+</span>
+
+</div>
+
+<div class="timeline-list">
+
+${item.items.map(work=>`
+
+<div class="timeline-item">
+
+<span>
+
+${work.name}
+
+</span>
+
+<strong>
+
+${work.qty} × ${formatCurrency(work.harga)}
+
+</strong>
+
+</div>
+
+`).join("")}
+
+</div>
+
+<div class="timeline-total">
+
+<span>
+
+Total
+
+</span>
+
+<strong>
+
+${formatCurrency(item.totalNominal)}
+
+</strong>
+
+</div>
+
+</div>
+
+`
+
+            );
+
+        }
+
+    );
+
 }
 
 
