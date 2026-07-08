@@ -1630,4 +1630,4 @@ function processAll(){
 
     buildStatistic();
 
-}
+} 
