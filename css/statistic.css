@@ -1,337 +1,156 @@
 /* =====================================================
    SALARY DIARY
    FILE : css/statistic.css
-   DESCRIPTION : Statistic Section
+   DESCRIPTION : Statistic Page
 ===================================================== */
 
 
 /* =====================================================
-   STATISTIC HEADER
+   STATISTIC HERO
 ===================================================== */
 
-#statisticHeaderSection{
+.statistic-hero{
 
-    padding-top:28px;
+    position:relative;
 
-    padding-bottom:10px;
+    overflow:hidden;
 
-}
+    background:
 
+    linear-gradient(
 
-/* =====================================================
-   CHART
-===================================================== */
+        145deg,
 
-.chart-section{
+        #D94F8A,
 
-    padding-top:0;
+        #B83280
 
-}
+    );
 
-.chart-card{
+    min-height:190px;
 
-    background:var(--surface);
+    border-bottom-left-radius:36px;
 
-    border-radius:var(--radius-large);
-
-    padding:20px;
-
-    box-shadow:var(--shadow-medium);
+    border-bottom-right-radius:36px;
 
 }
 
 
-/* =====================================================
-   SUMMARY
-===================================================== */
-
-.stat-summary{
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:16px;
-
-}
-
-.stat-card{
-
-    background:var(--surface);
-
-    border-radius:20px;
-
-    padding:18px;
-
-    box-shadow:var(--shadow-small);
-
-}
-
-.stat-card p{
-
-    font-size:13px;
-
-    color:var(--text-light);
-
-}
-
-.stat-card h3{
-
-    margin-top:8px;
-
-    font-size:22px;
-
-    font-weight:700;
-
-    color:var(--primary);
-
-}
-
-
-/* =====================================================
-   FILTER
-===================================================== */
-
-.filter-section{
-
-    padding-top:10px;
-
-}
-
-.filter-group{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:12px;
-
-}
-
-.filter-button{
+.statistic-hero-content{
 
     padding:
 
-    10px
+    34px
 
-    20px;
+    24px
 
-    border-radius:
-
-    var(--radius-round);
-
-    background:#FFFFFF;
-
-    color:var(--text-light);
-
-    box-shadow:var(--shadow-small);
-
-    font-size:14px;
-
-    font-weight:600;
-
-}
-
-.filter-button.active{
-
-    background:var(--primary);
-
-    color:#FFFFFF;
+    70px;
 
 }
 
 
-/* =====================================================
-   TIMELINE
-===================================================== */
+.statistic-chip{
 
-.timeline-section{
-
-    padding-top:10px;
-
-}
-
-.timeline-container{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:18px;
-
-}
-
-
-/* =====================================================
-   TIMELINE CARD
-===================================================== */
-
-.timeline-card{
-
-    background:#FFFFFF;
-
-    border-radius:22px;
-
-    padding:20px;
-
-    box-shadow:var(--shadow-small);
-
-}
-
-.timeline-date{
-
-    font-size:14px;
-
-    font-weight:600;
-
-    color:var(--primary);
-
-}
-
-.timeline-income{
-
-    margin-top:10px;
-
-    font-size:28px;
-
-    font-weight:700;
-
-    color:var(--text);
-
-}
-
-.timeline-detail{
-
-    margin-top:16px;
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:8px;
-
-}
-
-.timeline-chip{
-
-    padding:
-
-    6px
-
-    12px;
-
-    border-radius:
-
-    var(--radius-round);
-
-    background:var(--primary-light);
-
-    color:var(--primary);
-
-    font-size:12px;
-
-    font-weight:600;
-
-}
-
-
-/* =====================================================
-   TIMELINE NAVIGATION
-===================================================== */
-
-.timeline-navigation{
-
-    margin-top:24px;
-
-    display:flex;
-
-    justify-content:space-between;
+    display:inline-flex;
 
     align-items:center;
 
-}
-
-.timeline-button{
-
     padding:
 
-    10px
+    8px
 
-    20px;
+    16px;
 
-    border-radius:
+    border-radius:999px;
 
-    var(--radius-round);
+    background:
 
-    background:var(--surface);
+    rgba(
 
-    box-shadow:var(--shadow-small);
+        255,
+
+        255,
+
+        255,
+
+        .20
+
+    );
+
+    color:#FFF;
+
+    font-size:13px;
 
     font-weight:600;
 
-}
-
-.timeline-indicator{
-
-    display:flex;
-
-    gap:8px;
+    backdrop-filter:blur(8px);
 
 }
 
-.timeline-dot{
 
-    width:10px;
+.statistic-hero h1{
 
-    height:10px;
+    margin-top:18px;
 
-    border-radius:50%;
+    color:#FFF;
 
-    background:#E5E5E5;
+    font-size:38px;
+
+    font-weight:700;
 
 }
 
-.timeline-dot.active{
 
-    background:var(--primary);
+.statistic-hero p{
+
+    margin-top:8px;
+
+    color:
+
+    rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        .88
+
+    );
+
+    font-size:15px;
+
+    line-height:1.6;
 
 }
 
 
 /* =====================================================
-   RESPONSIVE
+   STATISTIC WAVE
 ===================================================== */
 
-@media(max-width:390px){
+.statistic-wave{
 
-.stat-summary{
+    position:absolute;
 
-grid-template-columns:1fr;
+    left:0;
 
-}
+    right:0;
 
-.timeline-income{
+    bottom:-2px;
 
-font-size:24px;
-
-}
-
-.filter-group{
-
-gap:8px;
+    line-height:0;
 
 }
 
-.filter-button{
 
-padding:
+.statistic-wave svg{
 
-10px
+    display:block;
 
-16px;
+    width:100%;
 
-font-size:13px;
-
-}
+    height:65px;
 
 }
