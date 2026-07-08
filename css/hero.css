@@ -35,7 +35,7 @@
 
     );
 
-    min-height:290px;
+    min-height:300px;
 
     border-bottom-left-radius:36px;
 
@@ -158,42 +158,6 @@
 }
 
 
-/* =====================================================
-   HERO MESSAGE
-===================================================== */
-
-.hero-message{
-
-    margin:
-
-    -30px 24px 0;
-
-    min-height:82px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:18px 24px;
-
-    background:rgba(255,255,255,.20);
-
-    backdrop-filter:blur(10px);
-
-    border-radius:20px;
-
-    color:#FFFFFF;
-
-    font-size:15px;
-
-    line-height:1.7;
-
-}
-
 
 /* =====================================================
    HERO CHARACTER
@@ -209,13 +173,13 @@
 
     align-items:flex-start;
 
-    margin-top:-16px;
+    margin-top:24px;
 
 }
 
 .hero-character img{
 
-    width:235px;
+    width:240px;
 
     max-width:48vw;
 
@@ -378,6 +342,50 @@
     width:100%;
 
     height:65px;
+
+}
+
+/* =====================================================
+   HERO INSIGHT
+===================================================== */
+
+.hero-insight{
+
+    margin-top:-18px;
+
+    padding:0 24px;
+
+    position:relative;
+
+    z-index:8;
+
+}
+
+.hero-message{
+
+    min-height:88px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:18px 24px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.95);
+
+    box-shadow:var(--shadow-medium);
+
+    color:var(--text);
+
+    font-size:15px;
+
+    line-height:1.7;
 
 }
 
