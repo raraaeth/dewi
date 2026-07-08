@@ -630,71 +630,100 @@ timeline
 
 );
 
-const currentPeriod=
+const today=
 
-Salary.salary.periods[
-    Salary.salary.currentIndex
-];
+new Date();
 
-Salary.home={
+let periodStart;
 
-    lastIncome:
+if(
 
-    last.totalNominal,
+    today.getDate()>=28
 
-    lastWorkDate:
+){
 
-    last.tanggalText,
+    periodStart=
 
-    weekIncome:
+    new Date(
 
-    sum(
+        today.getFullYear(),
 
-        week,
+        today.getMonth(),
 
-        "totalNominal"
+        28
 
-    ),
+    );
 
-    periodIncome:
+}else{
 
-    currentPeriod
+    periodStart=
 
-    ?
+    new Date(
 
-    currentPeriod.totalSalary
+        today.getFullYear(),
 
-    :
+        today.getMonth()-1,
 
-    0,
+        28
 
-    periodDate:
+    );
 
-    currentPeriod
+}
 
-    ?
+const periodData=
 
-    currentPeriod.title
+Salary.data.kerja
 
-    :
+.filter(
 
-    "-",
+    item=>
 
-    todayIncome:
+    item.tanggal>=periodStart &&
 
-    last.totalNominal,
+    item.tanggal<=today
 
-    todayQty:
+);
 
-    last.totalQty,
+const periodIncome=
 
-    todayWork:
+periodData.reduce(
 
-    last.workCount,
+    (
 
-    insight:null
+        total,
 
-};
+        item
+
+    )=>
+
+    total+
+
+    item.nominal,
+
+    0
+
+);
+
+const periodDate=
+
+`${
+
+formatDate(
+
+    periodStart
+
+)
+
+} - ${
+
+formatDate(
+
+    today
+
+)
+
+}`;
+   
 
 }
 
