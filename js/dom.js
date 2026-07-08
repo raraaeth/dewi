@@ -103,7 +103,9 @@ const DOM={
 
     summaryIncome:$("#summaryIncome"),
 
-    summaryAverage:$("#summaryAverage")
+    summaryAverage:$("#summaryAverage"),
+
+    summaryPeriod:$("#summaryPeriod")
 
 },
 
