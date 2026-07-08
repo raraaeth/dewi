@@ -169,13 +169,9 @@ const CHARACTER={
 
     HAPPY:"happy.png",
 
-    EXCITED:"excited.png",
+    WORK:"work.png",
 
-    THINKING:"thinking.png",
-
-    SAD:"sad.png",
-
-    WARNING:"warning.png"
+    SALARY:"salary.png"
 
 };
 
