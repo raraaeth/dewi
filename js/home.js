@@ -198,7 +198,7 @@ function randomGreeting(){
    SUMMARY
 ===================================================== */
 
-function renderSummary(){
+function renderHomeSummary(){
 
     setText(
 
@@ -270,6 +270,6 @@ function renderHome(){
 
     renderHero();
 
-    renderSummary();
+    renderHomeSummary();
 
 }
