@@ -1026,13 +1026,15 @@ function buildStatisticTimeline(){
 
     Salary.statistic.filtered;
 
+    const CARD_PER_PAGE=3;
+
     for(
 
         let i=0;
 
         i<data.length;
 
-        i+=5
+        i+=CARD_PER_PAGE
 
     ){
 
@@ -1042,7 +1044,9 @@ function buildStatisticTimeline(){
 
                 i,
 
-                i+5
+                i+
+
+                CARD_PER_PAGE
 
             )
 
@@ -1059,7 +1063,6 @@ function buildStatisticTimeline(){
     };
 
 }
-
 
 
 /* =====================================================
