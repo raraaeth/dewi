@@ -231,6 +231,45 @@
 
 }
 
+/* =====================================================
+   INSIGHT CHARACTER
+===================================================== */
+
+.insight-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.insight-character{
+
+    width:90px;
+
+    flex-shrink:0;
+
+}
+
+.insight-character img{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+    object-fit:contain;
+
+}
+
+.insight-content{
+
+    flex:1;
+
+}
 
 /* =====================================================
    HERO WAVE
