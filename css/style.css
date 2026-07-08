@@ -298,6 +298,39 @@ canvas{
     color:#888;
 
 }
+.loading-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#FFF7FB;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    opacity:1;
+
+    visibility:visible;
+
+    transition:.35s ease;
+
+}
+
+.loading-screen.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+}
 
 
 /* =====================================================
