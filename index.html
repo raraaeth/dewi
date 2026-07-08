@@ -565,20 +565,33 @@ HOME PAGE END
 </main>
 
 <!-- ======================================
-STATISTIC PAGE
+STATISTIK PAGE
 ====================================== -->
-
 <main
 id="statisticPage"
 class="page">
 
 <!-- ======================================
-STATISTIC HEADER
+STATISTIC HERO
 ====================================== -->
 
 <section
-id="statisticHeaderSection"
-class="page-header">
+id="statisticHeroSection"
+class="statistic-hero">
+
+<div
+class="statistic-hero-content">
+
+<div
+class="statistic-hero-text">
+
+<span
+class="statistic-chip"
+id="statisticFilterChip">
+
+Minggu Ini
+
+</span>
 
 <h1>
 
@@ -588,287 +601,41 @@ Statistik
 
 <p>
 
-Pantau perkembangan pekerjaanmu
+Pantau perkembangan hasil kerjamu
 
 </p>
 
-</section>
+</div>
 
-<!-- ======================================
-MONTHLY CHART
-====================================== -->
-
-<section
-id="chartSection"
-class="chart-section">
+</div>
 
 <div
-id="chartCard"
-class="chart-card">
+class="statistic-wave">
 
-<canvas
-id="monthlyChart">
+<svg
+viewBox="0 0 1440 160"
+preserveAspectRatio="none">
 
-</canvas>
+<path
+fill="#FFF7FB"
+d="M0,96L80,90.7C160,85,320,75,480,80C640,85,800,107,960,117.3C1120,128,1280,128,1360,128L1440,128L1440,160L1360,160C1280,160,1120,160,960,160C800,160,640,160,480,160C320,160,160,160,80,160L0,160Z">
+
+</path>
+
+</svg>
 
 </div>
 
 </section>
 
-<!-- ======================================
-STATISTIC SUMMARY
-====================================== -->
 
-<section
-id="statSummarySection"
-class="stat-summary">
 
-<div
-id="yesterdayIncomeCard"
-class="stat-card">
 
-<p>
 
-Kemarin
 
-</p>
 
-<h3
-id="yesterdayIncome">
 
-Rp0
 
-</h3>
-
-</div>
-
-<div
-id="bestWeekIncomeCard"
-class="stat-card">
-
-<p>
-
-Terbaik Minggu Ini
-
-</p>
-
-<h3
-id="bestWeekIncome">
-
-Rp0
-
-</h3>
-
-</div>
-
-<div
-id="bestMonthIncomeCard"
-class="stat-card">
-
-<p>
-
-Terbaik Bulan Ini
-
-</p>
-
-<h3
-id="bestMonthIncome">
-
-Rp0
-
-</h3>
-
-</div>
-
-<div
-id="workingDayCard"
-class="stat-card">
-
-<p>
-
-Hari Kerja
-
-</p>
-
-<h3
-id="workingDays">
-
-0 Hari
-
-</h3>
-
-</div>
-
-</section>
-
-<!-- ======================================
-FILTER
-====================================== -->
-
-<section
-id="filterSection"
-class="filter-section">
-
-<div
-id="filterGroup"
-class="filter-group">
-
-<button
-id="filterMonthButton"
-class="filter-button active">
-
-1 Bulan
-
-</button>
-
-<button
-id="filterThreeMonthButton"
-class="filter-button">
-
-3 Bulan
-
-</button>
-
-<button
-id="filterSixMonthButton"
-class="filter-button">
-
-6 Bulan
-
-</button>
-
-</div>
-
-</section>
-
-<!-- ======================================
-WORK SUMMARY
-====================================== -->
-
-<section
-id="workSummarySection"
-class="work-summary">
-
-<div
-class="section-header">
-
-<h2>
-
-Ringkasan Pekerjaan
-
-</h2>
-
-<span>
-
-Total Produksi
-
-</span>
-
-</div>
-
-<div
-id="workSummary"
-class="work-summary-grid">
-
-<!-- Javascript -->
-
-</div>
-
-</section>
-
-<!-- ======================================
-WORK TIMELINE
-====================================== -->
-
-<section
-id="timelineSection"
-class="timeline-section">
-
-<div
-class="section-header">
-
-<h2>
-
-Riwayat Pekerjaan
-
-</h2>
-
-<span>
-
-5 Data Terbaru
-
-</span>
-
-</div>
-
-<div
-id="timelineContainer"
-class="timeline-container">
-
-<!-- Javascript -->
-
-</div>
-
-<!-- ======================================
-TIMELINE NAVIGATION
-====================================== -->
-
-<div
-class="timeline-navigation">
-
-<button
-id="timelineBackButton"
-class="nav-button">
-
-<span
-class="material-symbols-rounded">
-
-chevron_left
-
-</span>
-
-Back
-
-</button>
-
-<div
-class="timeline-indicators">
-
-<span
-class="timeline-indicator active">
-
-</span>
-
-<span
-class="timeline-indicator">
-
-</span>
-
-<span
-class="timeline-indicator">
-
-</span>
-
-</div>
-
-<button
-id="timelineNextButton"
-class="nav-button primary">
-
-Next
-
-<span
-class="material-symbols-rounded">
-
-chevron_right
-
-</span>
-
-</button>
-
-</div>
-
-</section>
   
 </main>
 
