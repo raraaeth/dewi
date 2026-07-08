@@ -646,10 +646,6 @@ function buildHome(){
 
 function buildStatistic(){
 
-    const kerja=
-
-    Salary.data.kerja;
-
     const timeline=
 
     Salary.timeline
@@ -658,25 +654,89 @@ function buildStatistic(){
 
     .flat();
 
-    if(
+    Salary.statistic={
 
-        timeline.length===0
+        currentFilter:"week",
 
-    ){
+        source:timeline,
 
-        Salary.statistic={
+        filtered:timeline,
 
-            monthly:[],
+        chart:[],
 
-            summary:{},
+        timeline:[],
 
-            filter:1
+        summary:{}
 
-        };
+    };
 
-        return;
+    applyStatisticFilter();
+
+}
+
+/* =====================================================
+   APPLY FILTER
+===================================================== */
+
+function applyStatisticFilter(){
+
+    const filter=
+
+    Salary.statistic.currentFilter;
+
+    let data=
+
+    [...Salary.statistic.source];
+
+    switch(filter){
+
+        case "week":
+
+            data=
+
+            data.slice(0,5);
+
+            break;
 
     }
+
+    Salary.statistic.filtered=data;
+
+    /* =====================================
+       CHART
+    ===================================== */
+
+    Salary.statistic.chart=
+
+    data
+
+    .slice()
+
+    .reverse()
+
+    .map(
+
+        item=>({
+
+            label:
+
+            item.hari.substring(
+
+                0,
+
+                3
+
+            ),
+
+            income:
+
+            item.totalNominal
+
+        })
+
+    );
+
+}
 
     /* =====================================
        MONTHLY INCOME
