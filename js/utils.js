@@ -142,6 +142,41 @@ function getMonthName(month){
 
 }
 
+/* =====================================================
+   CHARACTER
+===================================================== */
+
+function getCharacter(){
+
+    const day=
+
+    new Date()
+
+    .getDate();
+
+    if(
+
+        day<=10
+
+    ){
+
+        return CHARACTER.HAPPY;
+
+    }
+
+    if(
+
+        day<=20
+
+    ){
+
+        return CHARACTER.WORK;
+
+    }
+
+    return CHARACTER.SALARY;
+
+}
 
 /* =====================================================
    WEEKEND
