@@ -304,46 +304,61 @@ const DAY=[
 
 
 /* =====================================================
-   MESSAGE
+   INSIGHT MESSAGE
 ===================================================== */
 
 const MESSAGE={
 
-    MORNING:[
+    EARLY:{
 
-        "Selamat pagi ❤️ Semoga hari ini penuh semangat.",
+        MORNING:
 
-        "Jangan lupa sarapan ya 🌸",
+        "Selamat pagi ❤️ Awali bulan ini dengan semangat. Setiap pekerjaan hari ini adalah langkah menuju hasil yang membahagiakan.",
 
-        "Semoga pekerjaanmu lancar hari ini ✨"
+        AFTERNOON:
 
-    ],
+        "Selamat siang 🌸 Jangan lupa istirahat sejenak agar tenaga tetap terjaga untuk melanjutkan pekerjaan.",
 
-    AFTERNOON:[
+        EVENING:
 
-        "Selamat siang ❤️ Tetap semangat ya.",
+        "Selamat sore ❤️ Bulan baru saja dimulai. Terima kasih sudah bekerja keras hari ini."
 
-        "Jangan lupa istirahat sebentar 🌷"
+    },
 
-    ],
+    MIDDLE:{
 
-    EVENING:[
+        MORNING:
 
-        "Selamat sore 💖 Semoga hari ini menyenangkan.",
+        "Selamat pagi ❤️ Setengah perjalanan sudah dilewati. Tetap semangat sampai akhir periode.",
 
-        "Sedikit lagi selesai, semangat ❤️"
+        AFTERNOON:
 
-    ],
+        "Selamat siang 🌷 Jangan terlalu memaksakan diri. Istirahat juga bagian dari bekerja dengan baik.",
 
-    NIGHT:[
+        EVENING:
 
-        "Selamat malam 🌙 Saatnya beristirahat.",
+        "Selamat sore 💖 Hasil kerja kerasmu mulai terkumpul. Tetap konsisten setiap hari."
 
-        "Terima kasih sudah bekerja keras hari ini ❤️"
+    },
 
-    ]
+    LATE:{
+
+        MORNING:
+
+        "Selamat pagi 🎉 Sebentar lagi masa gajian tiba. Semangat menyelesaikan pekerjaan hari ini.",
+
+        AFTERNOON:
+
+        "Selamat siang ❤️ Tinggal sedikit lagi sebelum hasil kerja kerasmu dibayarkan. Tetap fokus ya.",
+
+        EVENING:
+
+        "Selamat sore 🌙 Perjuanganmu hampir selesai. Semoga gaji nanti membawa kebahagiaan untuk keluarga."
+
+    }
 
 };
+    
 
 /* =====================================================
    DEBUG
