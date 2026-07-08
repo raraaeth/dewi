@@ -221,9 +221,9 @@
 
 .hero-character img{
 
-    width:210px;
+    width:250px;
 
-    max-width:45vw;
+    max-width:none;
 
     height:auto;
 
