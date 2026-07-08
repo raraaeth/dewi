@@ -313,15 +313,15 @@ const MESSAGE={
 
         MORNING:
 
-        "Selamat pagi ❤️ Awali bulan ini dengan semangat. Setiap pekerjaan hari ini adalah langkah menuju hasil yang membahagiakan.",
+        "Awali bulan ini dengan semangat 💪. Setiap pekerjaan hari ini adalah langkah menuju hasil yang membahagiakan.",
 
         AFTERNOON:
 
-        "Selamat siang 🌸 Jangan lupa istirahat sejenak agar tenaga tetap terjaga untuk melanjutkan pekerjaan.",
+        "Jangan lupa istirahat sejenak agar tenaga tetap terjaga untuk melanjutkan pekerjaan.",
 
         EVENING:
 
-        "Selamat sore ❤️ Bulan baru saja dimulai. Terima kasih sudah bekerja keras hari ini."
+        "Bulan baru saja dimulai. Terima kasih sudah bekerja keras hari ini 👍."
 
     },
 
@@ -329,15 +329,15 @@ const MESSAGE={
 
         MORNING:
 
-        "Selamat pagi ❤️ Setengah perjalanan sudah dilewati. Tetap semangat sampai akhir periode.",
+        "Setengah perjalanan sudah dilewati. Tetap semangat sampai akhir periode.",
 
         AFTERNOON:
 
-        "Selamat siang 🌷 Jangan terlalu memaksakan diri. Istirahat juga bagian dari bekerja dengan baik.",
+        "Jangan terlalu memaksakan diri. Istirahat juga bagian dari bekerja dengan baik 🫶.",
 
         EVENING:
 
-        "Selamat sore 💖 Hasil kerja kerasmu mulai terkumpul. Tetap konsisten setiap hari."
+        "Hasil kerja kerasmu mulai terkumpul. Tetap konsisten setiap hari."
 
     },
 
@@ -345,15 +345,15 @@ const MESSAGE={
 
         MORNING:
 
-        "Selamat pagi 🎉 Sebentar lagi masa gajian tiba. Semangat menyelesaikan pekerjaan hari ini.",
+        "Sebentar lagi masa gajian tiba 🎉. Semangat menyelesaikan pekerjaan hari ini.",
 
         AFTERNOON:
 
-        "Selamat siang ❤️ Tinggal sedikit lagi sebelum hasil kerja kerasmu dibayarkan. Tetap fokus ya.",
+        "Tinggal sedikit lagi sebelum hasil kerja kerasmu dibayarkan. Tetap fokus ya 🫶.",
 
         EVENING:
 
-        "Selamat sore 🌙 Perjuanganmu hampir selesai. Semoga gaji nanti membawa kebahagiaan untuk keluarga."
+        "Perjuanganmu hampir selesai 💕. Semoga gaji nanti membawa kebahagiaan untuk keluarga."
 
     }
 
