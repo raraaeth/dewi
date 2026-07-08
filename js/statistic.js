@@ -242,7 +242,11 @@ function renderWorkSummary(){
 
 function renderStatistic(){
 
-    renderMonthlyChart();
+    if(typeof Chart!=="undefined"){
+
+        renderMonthlyChart();
+
+    }
 
     renderStatisticSummary();
 
