@@ -232,6 +232,26 @@ function renderHomeSummary(){
 
     );
 
+   setText(
+
+    DOM.SUMMARY.periodIncome,
+
+    formatCurrency(
+
+        Salary.home.periodIncome
+
+    )
+
+);
+
+setText(
+
+    DOM.SUMMARY.periodIncomeDate,
+
+    Salary.home.periodDate
+
+);
+
     setText(
 
         DOM.SUMMARY.todayIncome,
