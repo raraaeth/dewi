@@ -1105,3 +1105,136 @@
 
 }
 
+/* =====================================================
+   EXPORT MODAL
+===================================================== */
+
+.salary-export-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(6px);
+
+    z-index:9999;
+
+}
+
+.salary-export-modal.show{
+
+    display:flex;
+
+}
+
+.salary-export-dialog{
+
+    width:min(92%,420px);
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    background:#FFF;
+
+    border-radius:28px;
+
+    padding:24px;
+
+    animation:popup .25s ease;
+
+}
+
+.salary-export-dialog h2{
+
+    text-align:center;
+
+    margin-bottom:8px;
+
+}
+
+.salary-export-dialog p{
+
+    text-align:center;
+
+    color:var(--text-light);
+
+    margin-bottom:20px;
+
+}
+
+.salary-export-preview{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:20px;
+
+}
+
+.salary-export-preview img{
+
+    width:100%;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow-medium);
+
+}
+
+.salary-export-actions{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:14px;
+
+}
+
+.salary-close-button{
+
+    margin-top:16px;
+
+    width:100%;
+
+    height:52px;
+
+    border:none;
+
+    background:#F5F5F5;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+}
+
+@keyframes popup{
+
+from{
+
+opacity:0;
+
+transform:scale(.92);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
