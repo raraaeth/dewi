@@ -811,11 +811,7 @@
 
     top:0;
 
-    width:800px;
-
-    background:#F7F8FC;
-
-    padding:40px;
+    z-index:-1;
 
 }
 
