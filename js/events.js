@@ -339,4 +339,5 @@ document
 
 );
 }
+window.bindEvents = bindEvents;
 console.log("events.js loaded");
