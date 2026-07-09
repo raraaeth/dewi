@@ -551,6 +551,119 @@ function renderSalaryExport(){
     }
 
 /* =====================================================
+   SHOW EXPORT
+===================================================== */
+
+async function showSalaryExport(){
+
+    renderSalaryExport();
+
+    const canvas=
+
+    await html2canvas(
+
+        document.getElementById(
+
+            "salaryExport"
+
+        ),
+
+        {
+
+            scale:2,
+
+            backgroundColor:"#FFFFFF",
+
+            useCORS:true
+
+        }
+
+    );
+
+    Salary.exportCanvas=
+
+    canvas;
+
+    const preview=
+
+    document.getElementById(
+
+        "salaryExportPreview"
+
+    );
+
+    preview.innerHTML="";
+
+    preview.appendChild(canvas);
+
+    document
+
+    .getElementById(
+
+        "salaryExportModal"
+
+    )
+
+    .classList.add(
+
+        "show"
+
+    );
+
+}
+/* =====================================================
+   CLOSE EXPORT
+===================================================== */
+
+function closeSalaryExport(){
+
+    document
+
+    .getElementById(
+
+        "salaryExportModal"
+
+    )
+
+    .classList.remove(
+
+        "show"
+
+    );
+
+}
+
+/* =====================================================
+   DOWNLOAD IMAGE
+===================================================== */
+
+function downloadSalaryImage(){
+
+    const link=
+
+    document.createElement(
+
+        "a"
+
+    );
+
+    link.download=
+
+    "Slip Gaji.png";
+
+    link.href=
+
+    Salary.exportCanvas.toDataURL(
+
+        "image/png"
+
+    );
+
+    link.click();
+
+}
+
+/* =====================================================
    EXPORT IMAGE
 ===================================================== */
 
