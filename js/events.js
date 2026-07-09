@@ -114,7 +114,7 @@ function onFilterThreeMonth(){
 
 function onExportImage(){
 
-    // TODO
+    exportSalaryImage();
 
 }
 
