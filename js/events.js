@@ -339,3 +339,4 @@ document
 
 );
 }
+console.log("events.js loaded");
