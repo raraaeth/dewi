@@ -15,9 +15,9 @@
 
     overflow:hidden;
 
-    padding:34px 28px 110px;
+    padding:36px 28px 110px;
 
-    border-radius:0 0 40px 40px;
+    border-radius:0 0 42px 42px;
 
     background:
     linear-gradient(
@@ -38,21 +38,34 @@
 
     align-items:flex-start;
 
+    position:relative;
+
+    z-index:2;
+
 }
 
-.salary-hero-left h1{
+/* HTML menggunakan <div> biasa,
+   jadi langsung target child pertama */
 
-    font-size:44px;
+.salary-hero-top>div:first-child{
 
-    font-weight:700;
+    flex:1;
 
-    color:#FFF;
+}
+
+.salary-hero-top h1{
 
     margin:0;
 
+    font-size:46px;
+
+    font-weight:700;
+
+    color:#FFF !important;
+
 }
 
-.salary-hero-left p{
+.salary-hero-top p{
 
     margin-top:18px;
 
@@ -60,11 +73,13 @@
 
     line-height:1.6;
 
-    color:rgba(255,255,255,.92);
+    color:rgba(255,255,255,.92) !important;
 
 }
 
-.salary-hero-right{
+/* HTML memakai salary-hero-badge */
+
+.salary-hero-badge{
 
     display:flex;
 
@@ -84,37 +99,39 @@
 
     background:rgba(255,255,255,.18);
 
+    color:#FFF;
+
     font-size:13px;
 
     font-weight:600;
-
-    color:#FFF;
 
 }
 
 .salary-chip-icon{
 
-    font-size:46px;
+    font-size:46px !important;
 
-    color:rgba(255,255,255,.9);
+    color:#FFF;
 
 }
 
-.salary-hero-wave{
+/* HTML memakai salary-wave */
+
+.salary-wave{
 
     position:absolute;
 
     left:-10%;
 
-    bottom:-38px;
+    bottom:-42px;
 
     width:120%;
 
     height:90px;
 
-    background:#FFF;
+    background:#FFF7FB;
 
-    border-radius:100% 100% 0 0;
+    border-radius:50% 50% 0 0;
 
     z-index:1;
 
