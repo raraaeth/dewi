@@ -61,14 +61,14 @@ function onTimelineBack(){
 
 function onSalaryNext(){
 
-    // TODO
+    nextSalaryPeriod();
 
 }
 
 
 function onSalaryBack(){
 
-    // TODO
+    previousSalaryPeriod();
 
 }
 
