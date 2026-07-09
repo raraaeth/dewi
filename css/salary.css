@@ -24,7 +24,9 @@
 
 .salary-period{
 
-    padding-top:0;
+    padding:0 20px;
+
+    margin-top:16px;
 
 }
 
@@ -34,31 +36,33 @@
 
     linear-gradient(
 
-        135deg,
+        145deg,
 
-        var(--primary),
+        #D94F8A,
 
-        #FFB6D5
+        #B83280
 
     );
 
-    border-radius:
+    border-radius:30px;
 
-    var(--radius-xl);
-
-    padding:26px;
-
-    color:#FFFFFF;
+    padding:30px 24px;
 
     text-align:center;
 
-    box-shadow:
+    color:#FFF;
 
-    var(--shadow-medium);
+    box-shadow:var(--shadow-large);
 
 }
 
-.salary-period-card span{
+.salary-label{
+
+    display:block;
+
+    font-size:15px;
+
+    font-weight:500;
 
     color:
 
@@ -70,26 +74,99 @@
 
         255,
 
-        .85
+        .9
 
     );
-
-    font-size:14px;
 
 }
 
 .salary-period-card h2{
 
-    margin-top:10px;
+    margin-top:18px;
 
-    color:#FFFFFF;
+    color:#FFF;
 
-    font-size:24px;
+    font-size:30px;
 
-    line-height:1.5;
+    font-weight:700;
+
+    line-height:1.45;
 
 }
 
+.salary-navigation{
+
+    margin-top:28px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.salary-nav{
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:
+
+    rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        .18
+
+    );
+
+    color:#FFF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(10px);
+
+    transition:.25s;
+
+}
+
+.salary-nav:active{
+
+    transform:scale(.95);
+
+}
+
+.salary-nav:disabled{
+
+    opacity:.35;
+
+    cursor:not-allowed;
+
+}
+
+.salary-nav
+
+.material-symbols-rounded{
+
+    font-size:30px;
+
+}
 
 /* =====================================================
    SALARY SLIP
