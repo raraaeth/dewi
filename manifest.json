@@ -1,0 +1,30 @@
+{
+    "name": "Salary Diary",
+    "short_name": "Salary Diary",
+    "description": "Salary Diary - Catat pendapatan dan pantau gajimu setiap periode.",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#FFF7FB",
+    "theme_color": "#FF7EB6",
+    "lang": "id-ID",
+    "categories": [
+        "finance",
+        "productivity"
+    ],
+    "icons": [
+        {
+            "src": "assets/icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
