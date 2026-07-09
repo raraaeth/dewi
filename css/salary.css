@@ -2,7 +2,8 @@
    SALARY DIARY
    FILE : css/salary.css
    DESCRIPTION : Salary Page
-===========================================================
+===================================================== */
+
 
 /* =====================================================
    HERO
@@ -12,14 +13,13 @@
 
     position:relative;
 
-    overflow:visible;
+    overflow:hidden;
 
     padding:34px 28px 110px;
 
     border-radius:0 0 40px 40px;
 
     background:
-
     linear-gradient(
         135deg,
         #D94F8A,
@@ -30,21 +30,91 @@
 
 }
 
+.salary-hero-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+}
+
+.salary-hero-left h1{
+
+    font-size:44px;
+
+    font-weight:700;
+
+    color:#FFF;
+
+    margin:0;
+
+}
+
+.salary-hero-left p{
+
+    margin-top:18px;
+
+    font-size:18px;
+
+    line-height:1.6;
+
+    color:rgba(255,255,255,.92);
+
+}
+
+.salary-hero-right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.salary-chip{
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.18);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    color:#FFF;
+
+}
+
+.salary-chip-icon{
+
+    font-size:46px;
+
+    color:rgba(255,255,255,.9);
+
+}
+
 .salary-hero-wave{
 
     position:absolute;
 
-    left:-8%;
+    left:-10%;
 
-    bottom:-42px;
+    bottom:-38px;
 
-    width:116%;
+    width:120%;
 
     height:90px;
 
-    background:#FFF6FA;
+    background:#FFF;
 
-    border-radius:50%;
+    border-radius:100% 100% 0 0;
 
     z-index:1;
 
@@ -59,46 +129,34 @@
 
     position:relative;
 
-    margin-top:-30px;
+    margin-top:-8px;
 
-    z-index:10;
+    z-index:5;
 
 }
 
 .salary-period-card{
 
     background:
-
     linear-gradient(
         135deg,
-        #F89CCB,
-        #F47CB5
+        #F8A8D0,
+        #F58ABD
     );
 
     border-radius:30px;
 
     padding:30px 24px;
 
-    color:#FFF;
-
     text-align:center;
 
+    color:#FFF;
+
     box-shadow:
-
-    0 20px 40px
-
-    rgba(
-        217,
-        79,
-        138,
-        .16
-    );
+    0 16px 36px
+    rgba(217,79,138,.18);
 
 }
-
-
-
-
 
 .salary-label{
 
@@ -106,35 +164,19 @@
 
     font-size:15px;
 
-    font-weight:500;
-
-    color:
-
-    rgba(
-
-        255,
-
-        255,
-
-        255,
-
-        .9
-
-    );
+    color:rgba(255,255,255,.9);
 
 }
 
 .salary-period-card h2{
 
-    margin-top:18px;
-
-    color:#FFF;
+    margin-top:16px;
 
     font-size:30px;
 
-    font-weight:700;
-
     line-height:1.45;
+
+    color:#FFF;
 
 }
 
@@ -152,27 +194,15 @@
 
 .salary-nav{
 
-    width:48px;
+    width:50px;
 
-    height:48px;
+    height:50px;
 
     border:none;
 
     border-radius:50%;
 
-    background:
-
-    rgba(
-
-        255,
-
-        255,
-
-        255,
-
-        .18
-
-    );
+    background:rgba(255,255,255,.18);
 
     color:#FFF;
 
@@ -184,15 +214,25 @@
 
     cursor:pointer;
 
-    backdrop-filter:blur(10px);
-
     transition:.25s;
 
 }
 
-.salary-nav:active{
+.salary-nav:hover{
 
-    transform:scale(.95);
+    background:rgba(255,255,255,.28);
+
+}
+
+.salary-nav:disabled{
+
+    opacity:.35;
+
+}
+
+.salary-nav .material-symbols-rounded{
+
+    font-size:30px;
 
 }
 
@@ -203,7 +243,7 @@
 
 .salary-slip{
 
-    padding-top:20px;
+    padding-top:26px;
 
 }
 
@@ -226,11 +266,11 @@
 
     display:flex;
 
-    gap:16px;
+    justify-content:space-between;
 
     align-items:center;
 
-    background:#FFFFFF;
+    background:#FFF;
 
     border-radius:22px;
 
@@ -240,45 +280,17 @@
 
 }
 
-.salary-item-icon{
-
-    width:58px;
-
-    height:58px;
-
-    border-radius:50%;
+.salary-left{
 
     display:flex;
 
-    justify-content:center;
-
-    align-items:center;
-
-    background:var(--primary-light);
-
-    color:var(--primary);
-
-    flex-shrink:0;
+    flex-direction:column;
 
 }
 
-.salary-item-icon
+.salary-name{
 
-.material-symbols-rounded{
-
-    font-size:28px;
-
-}
-
-.salary-item-content{
-
-    flex:1;
-
-}
-
-.salary-item-title{
-
-    font-size:16px;
+    font-size:18px;
 
     font-weight:600;
 
@@ -286,31 +298,29 @@
 
 }
 
-.salary-item-detail{
+.salary-detail{
 
     margin-top:6px;
 
-    font-size:13px;
+    font-size:14px;
 
     color:var(--text-light);
 
 }
 
-.salary-item-price{
+.salary-right{
 
-    margin-top:10px;
-
-    font-size:24px;
+    font-size:20px;
 
     font-weight:700;
 
-    color:var(--primary);
+    color:var(--text);
 
 }
 
 
 /* =====================================================
-   SALARY TOTAL
+   TOTAL
 ===================================================== */
 
 .salary-total{
@@ -321,17 +331,13 @@
 
 .salary-total-card{
 
-    border-radius:
+    background:#FFF;
 
-    var(--radius-xl);
-
-    background:#FFFFFF;
+    border-radius:26px;
 
     padding:24px;
 
-    box-shadow:
-
-    var(--shadow-medium);
+    box-shadow:var(--shadow-medium);
 
 }
 
@@ -390,11 +396,9 @@
 
     margin-top:18px;
 
-    border-radius:
-
-    20px;
-
     background:#FFF0F6;
+
+    border-radius:20px;
 
     padding:18px;
 
@@ -429,9 +433,7 @@
 
     gap:16px;
 
-    padding-top:24px;
-
-    padding-bottom:30px;
+    padding:24px 0 30px;
 
 }
 
@@ -447,17 +449,13 @@
 
     gap:8px;
 
-    border-radius:
+    border-radius:999px;
 
-    var(--radius-round);
-
-    background:#FFFFFF;
+    background:#FFF;
 
     color:var(--text);
 
-    box-shadow:
-
-    var(--shadow-small);
+    box-shadow:var(--shadow-small);
 
     font-weight:600;
 
@@ -467,7 +465,7 @@
 
     background:var(--primary);
 
-    color:#FFFFFF;
+    color:#FFF;
 
 }
 
@@ -478,34 +476,53 @@
 
 @media(max-width:390px){
 
+.salary-hero{
+
+    padding:30px 22px 100px;
+
+}
+
+.salary-hero-left h1{
+
+    font-size:38px;
+
+}
+
+.salary-hero-left p{
+
+    font-size:16px;
+
+}
+
 .salary-period-card{
 
-padding:22px;
+    padding:24px;
 
 }
 
 .salary-period-card h2{
 
-font-size:20px;
+    font-size:24px;
 
 }
 
 .salary-item{
 
-padding:18px;
+    padding:18px;
 
 }
 
-.salary-item-price{
+.salary-right{
 
-font-size:20px;
+    font-size:18px;
 
 }
 
 .salary-row.total strong{
 
-font-size:26px;
+    font-size:26px;
 
 }
 
 }
+
