@@ -765,22 +765,116 @@ async function downloadSalaryImage(){
 
 
 /* =====================================================
-   EXPORT PDF
+   DOWNLOAD PDF
 ===================================================== */
 
-function downloadSalaryPdf(){
+async function downloadSalaryPdf(){
 
-    alert(
+    showLoading();
 
-        "Versi PDF akan ditambahkan setelah PNG selesai."
+    try{
 
-    );
+        const wrapper = document.createElement("div");
+
+        wrapper.style.position = "fixed";
+
+        wrapper.style.left = "-10000px";
+
+        wrapper.style.top = "0";
+
+        wrapper.style.width = "900px";
+
+        wrapper.innerHTML = buildSalaryExport();
+
+        document.body.appendChild(wrapper);
+
+        const sheet = wrapper.querySelector(".export-sheet");
+
+        const canvas = await html2canvas(
+
+            sheet,
+
+            {
+
+                scale:3,
+
+                backgroundColor:"#FFFFFF",
+
+                useCORS:true
+
+            }
+
+        );
+
+        const image = canvas.toDataURL(
+
+            "image/png"
+
+        );
+
+        const pdf = new jspdf.jsPDF(
+
+            "p",
+
+            "mm",
+
+            "a4"
+
+        );
+
+        const pageWidth =
+
+            pdf.internal.pageSize.getWidth();
+
+        const pageHeight =
+
+            canvas.height *
+
+            pageWidth /
+
+            canvas.width;
+
+        pdf.addImage(
+
+            image,
+
+            "PNG",
+
+            0,
+
+            0,
+
+            pageWidth,
+
+            pageHeight
+
+        );
+
+        const period = getCurrentPeriod();
+
+        pdf.save(
+
+            `Slip Gaji ${period.id}.pdf`
+
+        );
+
+        wrapper.remove();
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+    }
+
+    finally{
+
+        hideLoading();
+
+    }
 
 }
-
-
-        
-
         
     
 /* =====================================================
