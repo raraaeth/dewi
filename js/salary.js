@@ -767,6 +767,7 @@ function renderSalaryExport(){
 
 }
 
+
 /* =====================================================
    EXPORT MODAL
 ===================================================== */
@@ -834,6 +835,10 @@ async function showSalaryExport(){
     source.style.top = "0";
 
     source.style.zIndex = "9999";
+
+console.log(source);
+console.log(source.innerHTML.length);
+   
 
     const canvas =
 
