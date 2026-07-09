@@ -50,6 +50,116 @@ function renderSalaryPeriod(){
 
 }
 
+/* =====================================================
+   RENDER GROUP
+===================================================== */
+
+function renderSalaryGroup(
+
+    title,
+
+    icon,
+
+    items,
+
+    total,
+
+    negative=false
+
+){
+
+    if(
+
+        items.length===0
+
+    ){
+
+        return "";
+
+    }
+
+    return `
+
+<div class="salary-group">
+
+<div class="salary-group-header">
+
+<div>
+
+<span class="material-symbols-rounded">
+
+${icon}
+
+</span>
+
+<b>
+
+${title}
+
+</b>
+
+</div>
+
+<strong>
+
+${negative
+
+? "-"+formatCurrency(total)
+
+: formatCurrency(total)}
+
+</strong>
+
+</div>
+
+<div class="salary-group-body">
+
+${items.map(item=>`
+
+<div class="salary-item">
+
+<div class="salary-left">
+
+<div class="salary-name">
+
+${item.name}
+
+</div>
+
+<div class="salary-detail">
+
+${item.qty}
+
+×
+
+${formatDecimal(item.harga)}
+
+</div>
+
+</div>
+
+<div class="salary-right">
+
+${negative
+
+? "-"+formatCurrency(item.nominal)
+
+: formatCurrency(item.nominal)}
+
+</div>
+
+</div>
+
+`).join("")}
+
+</div>
+
+</div>
+
+`;
+
+}
+
 
 /* =====================================================
    SLIP
@@ -77,55 +187,75 @@ function renderSalarySlip(){
 
     );
 
-    period.slip.forEach(
+    const work=
 
-        item=>{
+    period.slip.filter(
 
-            DOM.SALARY.slip
+        item=>
 
-            .insertAdjacentHTML(
-
-                "beforeend",
-
-`
-
-<div class="salary-item">
-
-    <div class="salary-left">
-
-        <div class="salary-name">
-
-            ${item.name}
-
-        </div>
-
-        <div class="salary-detail">
-
-            ${item.qty}
-
-            ×
-
-            ${formatDecimal(item.harga)}
-
-        </div>
-
-    </div>
-
-    <div class="salary-right">
-
-        ${formatCurrency(item.nominal)}
-
-    </div>
-
-</div>
-
-`
-
-            );
-
-        }
+        item.type===TYPE.WORK
 
     );
+
+    const allowance=
+
+    period.slip.filter(
+
+        item=>
+
+        item.type===TYPE.ALLOWANCE
+
+    );
+
+    const deduction=
+
+    period.slip.filter(
+
+        item=>
+
+        item.type===TYPE.DEDUCTION
+
+    );
+
+    DOM.SALARY.slip.innerHTML=
+
+        renderSalaryGroup(
+
+            "Pendapatan",
+
+            "payments",
+
+            work,
+
+            period.totalWork
+
+        )+
+
+        renderSalaryGroup(
+
+            "Tunjangan",
+
+            "restaurant",
+
+            allowance,
+
+            period.totalAllowance
+
+        )+
+
+        renderSalaryGroup(
+
+            "Potongan",
+
+            "shield",
+
+            deduction,
+
+            period.totalDeduction,
+
+            true
+
+        );
 
 }
 
