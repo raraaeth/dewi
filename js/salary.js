@@ -774,88 +774,57 @@ async function downloadSalaryPdf(){
 
     try{
 
-        const wrapper = document.createElement("div");
+        const wrapper = buildSalaryExport();
 
-        wrapper.style.position = "fixed";
+        if(!wrapper){
 
-        wrapper.style.left = "-10000px";
+            return;
 
-        wrapper.style.top = "0";
+        }
 
-        wrapper.style.width = "900px";
+        document.body.appendChild(
+            wrapper
+        );
 
-        wrapper.innerHTML = buildSalaryExport();
-
-        document.body.appendChild(wrapper);
-
-        const sheet = wrapper.querySelector(".export-sheet");
-
-        const canvas = await html2canvas(
-
-            sheet,
-
+        const canvas =
+        await html2canvas(
+            wrapper,
             {
-
                 scale:3,
-
                 backgroundColor:"#FFFFFF",
-
                 useCORS:true
-
             }
-
         );
 
-        const image = canvas.toDataURL(
+        const image =
+        canvas.toDataURL("image/png");
 
-            "image/png"
-
-        );
-
-        const pdf = new jspdf.jsPDF(
-
+        const pdf =
+        new jspdf.jsPDF(
             "p",
-
             "mm",
-
-            "a4"
-
+            "a5"
         );
 
         const pageWidth =
-
-            pdf.internal.pageSize.getWidth();
+        pdf.internal.pageSize.getWidth();
 
         const pageHeight =
-
-            canvas.height *
-
-            pageWidth /
-
-            canvas.width;
+        canvas.height *
+        pageWidth /
+        canvas.width;
 
         pdf.addImage(
-
             image,
-
             "PNG",
-
             0,
-
             0,
-
             pageWidth,
-
             pageHeight
-
         );
 
-        const period = getCurrentPeriod();
-
         pdf.save(
-
-            `Slip Gaji ${period.id}.pdf`
-
+            `Slip Gaji ${getCurrentPeriod().id}.pdf`
         );
 
         wrapper.remove();
@@ -875,8 +844,8 @@ async function downloadSalaryPdf(){
     }
 
 }
-        
-    
+
+       
 /* =====================================================
    RENDER SALARY
 ===================================================== */
