@@ -437,6 +437,70 @@ function nextSalaryPeriod(){
 }
 
 /* =====================================================
+   SLIP DATA
+===================================================== */
+
+function getSalarySlipData(){
+
+    const period = getCurrentPeriod();
+
+    if(!period){
+
+        return null;
+
+    }
+
+    const workItems = period.slip.filter(
+
+        item => item.type === TYPE.WORK
+
+    );
+
+    const meal = period.slip.find(
+
+        item => item.type === TYPE.ALLOWANCE
+
+    );
+
+    const bpjs = period.slip.find(
+
+        item => item.type === TYPE.DEDUCTION
+
+    );
+
+    return{
+
+        period,
+
+        workItems,
+
+        meal,
+
+        bpjs,
+
+        workingDays:new Set(
+
+            period.items.map(
+
+                item=>item.tanggalText
+
+            )
+
+        ).size,
+
+        totalWork:period.totalWork,
+
+        totalAllowance:period.totalAllowance,
+
+        totalDeduction:period.totalDeduction,
+
+        totalSalary:period.totalSalary
+
+    };
+
+}
+
+/* =====================================================
    SALARY
 ===================================================== */
 
