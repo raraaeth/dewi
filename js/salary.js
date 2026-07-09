@@ -514,4 +514,328 @@ function renderSalary(){
 
     updateSalaryNavigation();
 
+    renderSalaryExport();
+
+    animateCard(
+
+        DOM.SALARY.slip
+
+    );
+
+    animateCard(
+
+        DOM.SALARY.totalCard
+
+    );
+
 }
+
+/* =====================================================
+   EXPORT
+===================================================== */
+
+function renderSalaryExport(){
+
+    const slip=
+
+    getSalarySlipData();
+
+    if(
+
+        !slip
+
+    ){
+
+        return;
+
+    }
+
+    /* =====================================
+       HEADER
+    ===================================== */
+
+    setText(
+
+        document.getElementById(
+
+            "exportPeriod"
+
+        ),
+
+        slip.period.title
+
+    );
+
+    /* =====================================
+       PROFILE
+    ===================================== */
+
+    setText(
+
+        document.getElementById(
+
+            "exportName"
+
+        ),
+
+        APP.USER?.name ||
+
+        "Dewi Nadzifah"
+
+    );
+
+    setText(
+
+        document.getElementById(
+
+            "exportNik"
+
+        ),
+
+        APP.USER?.nik ||
+
+        "18012PHL"
+
+    );
+
+    setText(
+
+        document.getElementById(
+
+            "exportDepartment"
+
+        ),
+
+        APP.USER?.department ||
+
+        "Ironing"
+
+    );
+
+    /* =====================================
+       WORKING DAYS
+    ===================================== */
+
+    setText(
+
+        document.getElementById(
+
+            "exportWorkingDays"
+
+        ),
+
+        `${
+
+            slip.workingDays
+
+        } Hari Kerja`
+
+    );
+
+    /* =====================================
+       INCOME LIST
+    ===================================== */
+
+    const container=
+
+    document.getElementById(
+
+        "exportIncomeList"
+
+    );
+
+    clear(
+
+        container
+
+    );
+
+    slip.workItems.forEach(
+
+        item=>{
+
+            container.insertAdjacentHTML(
+
+                "beforeend",
+
+`
+
+<div class="export-item">
+
+<div class="export-left">
+
+<b>
+
+${item.name}
+
+</b>
+
+<span>
+
+${item.qty}
+
+×
+
+${formatDecimal(
+
+item.harga
+
+)}
+
+</span>
+
+</div>
+
+<div class="export-right">
+
+${formatCurrency(
+
+item.nominal
+
+)}
+
+</div>
+
+</div>
+
+`
+
+            );
+
+        }
+
+    );
+
+    /* =====================================
+       TOTAL
+    ===================================== */
+
+    setText(
+
+        document.getElementById(
+
+            "exportIncomeTotal"
+
+        ),
+
+        formatCurrency(
+
+            slip.totalWork
+
+        )
+
+    );
+
+    setText(
+
+        document.getElementById(
+
+            "exportMeal"
+
+        ),
+
+        slip.meal
+
+        ?
+
+        formatCurrency(
+
+            slip.meal.nominal
+
+        )
+
+        :
+
+        "-"
+
+    );
+
+    setText(
+
+        document.getElementById(
+
+            "exportBpjs"
+
+        ),
+
+        slip.bpjs
+
+        ?
+
+        "-"+
+
+        formatCurrency(
+
+            slip.bpjs.nominal
+
+        )
+
+        :
+
+        "-"
+
+    );
+
+    setText(
+
+        document.getElementById(
+
+            "exportSalary"
+
+        ),
+
+        formatCurrency(
+
+            slip.totalSalary
+
+        )
+
+    );
+
+    /* =====================================
+       PRINT DATE
+    ===================================== */
+
+    const now=
+
+    new Date();
+
+    setText(
+
+        document.getElementById(
+
+            "exportPrintDate"
+
+        ),
+
+        `${
+
+            formatDate(
+
+                now
+
+            )
+
+        } • ${
+
+            now.toLocaleTimeString(
+
+                APP.LOCALE,
+
+                {
+
+                    hour:"2-digit",
+
+                    minute:"2-digit"
+
+                }
+
+            )
+
+        }`
+
+    );
+
+               }
+
+
