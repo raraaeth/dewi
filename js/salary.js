@@ -741,8 +741,89 @@ function closeSalaryExport(){
 
 }
 
+/* =====================================================
+   DOWNLOAD IMAGE
+===================================================== */
 
+async function downloadSalaryImage(){
 
+    const sheet =
+
+    document.querySelector(
+
+        ".export-sheet"
+
+    );
+
+    if(
+
+        !sheet
+
+    ){
+
+        return;
+
+    }
+
+    const canvas =
+
+    await html2canvas(
+
+        sheet,
+
+        {
+
+            scale:3,
+
+            backgroundColor:"#FFFFFF",
+
+            useCORS:true
+
+        }
+
+    );
+
+    const period =
+
+    getCurrentPeriod();
+
+    const link =
+
+    document.createElement(
+
+        "a"
+
+    );
+
+    link.download =
+
+    `Slip Gaji ${period.id}.png`;
+
+    link.href =
+
+    canvas.toDataURL(
+
+        "image/png"
+
+    );
+
+    link.click();
+
+}
+
+/* =====================================================
+   DOWNLOAD PDF
+===================================================== */
+
+function downloadSalaryPdf(){
+
+    alert(
+
+        "Export PDF akan dibuat setelah PNG selesai."
+
+    );
+
+}
 
 
     
