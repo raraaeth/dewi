@@ -114,25 +114,17 @@ function onFilterThreeMonth(){
 
 function onExportImage(){
 
+    alert("IMAGE CLICK");
+
     showSalaryExport();
 
 }
 
 function onExportPdf(){
 
+    alert("PDF CLICK");
+
     showSalaryExport();
-
-}
-
-function onDownloadImage(){
-
-    downloadSalaryImage();
-
-}
-
-function onCloseExport(){
-
-    closeSalaryExport();
 
 }
 
