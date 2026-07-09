@@ -355,6 +355,21 @@
     color:var(--primary);
 
 }
+.salary-group.deduction
+.salary-group-header
+strong{
+
+    color:#E53935;
+
+}
+
+.salary-group.deduction
+.salary-group-total
+strong{
+
+    color:#E53935;
+
+}
 
 
 /* =====================================================
@@ -483,13 +498,29 @@
 
 .salary-total-card{
 
-    background:#FFF;
+    background:#FFFFFF;
 
-    border-radius:26px;
+    border-radius:28px;
 
     padding:24px;
 
     box-shadow:var(--shadow-medium);
+
+}
+
+/* =====================================================
+   TOTAL TITLE
+===================================================== */
+
+.salary-total-title{
+
+    margin:0 0 14px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:var(--text);
 
 }
 
@@ -501,7 +532,7 @@
 
     align-items:center;
 
-    margin-bottom:16px;
+    padding:10px 0;
 
 }
 
@@ -518,6 +549,15 @@
     color:var(--text);
 
 }
+/* =====================================================
+   DEDUCTION
+===================================================== */
+
+.salary-row.deduction strong{
+
+    color:#E53935;
+
+}
 
 .salary-divider{
 
@@ -527,7 +567,7 @@
 
     background:var(--border);
 
-    margin:18px 0;
+    margin:22px 0 18px;
 
 }
 
@@ -535,7 +575,31 @@
 
     color:var(--primary);
 
-    font-size:30px;
+    font-size:34px;
+
+    font-weight:700;
+
+}
+/* =====================================================
+   TOTAL SALARY
+===================================================== */
+
+.salary-row.total{
+
+    margin-top:12px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:#FFF2F8;
+
+}
+.salary-row.total span{
+
+    color:var(--primary);
+
+    font-weight:600;
 
 }
 
@@ -634,15 +698,17 @@
 
 }
 
-.salary-hero-left h1{
+.salary-hero-top h1{
 
     font-size:38px;
 
 }
 
-.salary-hero-left p{
+.salary-hero-top p{
 
     font-size:16px;
+
+}
 
 }
 
