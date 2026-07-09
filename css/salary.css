@@ -157,7 +157,7 @@
 
 .salary-period{
 
-    margin-top:-42px;
+    margin-top:-20px;
 
     position:relative;
 
@@ -171,17 +171,33 @@
 
     background:
 
-    linear-gradient(
+linear-gradient(
 
-        145deg,
+135deg,
 
-        #D94F8A,
+#F78BC1,
 
-        #B83280
+#F16DA8
 
-    );
+);
+   
+box-shadow:
 
-    border-radius:30px;
+0 16px 40px
+
+rgba(
+
+217,
+
+79,
+
+138,
+
+.18
+
+);
+
+    border-radius:36px;
 
     padding:30px 24px;
 
