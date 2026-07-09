@@ -367,6 +367,46 @@
 
 }
 
+/* =====================================================
+   GROUP TOTAL
+===================================================== */
+
+.salary-group-total{
+
+    margin-top:12px;
+
+    padding-top:14px;
+
+    border-top:2px solid #F3F3F3;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.salary-group-total span{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:var(--text-light);
+
+}
+
+.salary-group-total strong{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
 
 /* =====================================================
    ITEM
