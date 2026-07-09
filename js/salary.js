@@ -12,9 +12,7 @@
 function getCurrentPeriod(){
 
     return Salary.salary.periods[
-
         Salary.salary.currentIndex
-
     ];
 
 }
@@ -26,32 +24,21 @@ function getCurrentPeriod(){
 
 function renderSalaryPeriod(){
 
-    const period=
+    const period = getCurrentPeriod();
 
-    getCurrentPeriod();
-
-    if(
-
-        !period
-
-    ){
-
+    if(!period){
         return;
-
     }
 
     setText(
-
         DOM.SALARY.period,
-
         period.title
-
     );
 
 }
 
 /* =====================================================
-   RENDER GROUP
+   GROUP RENDERER
 ===================================================== */
 
 function renderSalaryGroup(
@@ -64,13 +51,15 @@ function renderSalaryGroup(
 
     total,
 
-    negative=false
+    negative = false
 
 ){
 
     if(
 
-        items.length===0
+        !items ||
+
+        items.length === 0
 
     ){
 
@@ -78,204 +67,195 @@ function renderSalaryGroup(
 
     }
 
-    let groupClass="income";
-
-    if(
-
-        title==="Tunjangan"
-
-    ){
-
-        groupClass="allowance";
-
-    }
-
-    if(
-
-        title==="Potongan"
-
-    ){
-
-        groupClass="deduction";
-
-    }
-
     return `
 
-<div class="salary-group ${groupClass}">
+<div class="salary-group">
 
-<div class="salary-group-header">
+    <div class="salary-group-header">
 
-<div>
+        <div>
 
-<span class="material-symbols-rounded">
+            <span class="material-symbols-rounded">
 
-${icon}
+                ${icon}
 
-</span>
+            </span>
 
-<b>
+            <b>
 
-${title}
+                ${title}
 
-</b>
+            </b>
 
-</div>
+        </div>
 
-<strong>
+        <strong class="${
+            negative
+            ? "negative"
+            : ""
+        }">
 
-${negative
-?
-"-"+formatCurrency(total)
-:
-formatCurrency(total)}
+            ${
+                negative
+                ? "-" + formatCurrency(total)
+                : formatCurrency(total)
+            }
 
-</strong>
+        </strong>
 
-</div>
+    </div>
 
-<div class="salary-group-body">
+    <div class="salary-group-body">
 
-${items.map(item=>`
+        ${items.map(item => `
 
-<div class="salary-item">
+        <div class="salary-item">
 
-<div class="salary-left">
+            <div class="salary-left">
 
-<div class="salary-name">
+                <div class="salary-name">
 
-${item.name}
+                    ${item.name}
 
-</div>
+                </div>
 
-<div class="salary-detail">
+                <div class="salary-detail">
 
-${item.qty}
+                    ${item.qty}
 
-×
+                    ×
 
-${formatDecimal(item.harga)}
+                    ${formatDecimal(item.harga)}
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-<div class="salary-right ${negative?"negative":""}">
+            <div class="salary-right ${
 
-${negative
-?
-"-"+formatCurrency(item.nominal)
-:
-formatCurrency(item.nominal)}
+                negative
 
-</div>
+                ? "negative"
 
-</div>
+                : ""
 
-`).join("")}
+            }">
 
-<div class="salary-group-total">
+                ${
 
-<span>
+                    negative
 
-Total ${title}
+                    ? "-" +
 
-</span>
+                    formatCurrency(
 
-<strong>
+                        item.nominal
 
-${negative
-?
-"-"+formatCurrency(total)
-:
-formatCurrency(total)}
+                    )
 
-</strong>
+                    :
 
-</div>
+                    formatCurrency(
 
-</div>
+                        item.nominal
+
+                    )
+
+                }
+
+            </div>
+
+        </div>
+
+        `).join("")}
+
+        <div class="salary-group-total">
+
+            <span>
+
+                Total ${title}
+
+            </span>
+
+            <strong class="${
+                negative
+                ? "negative"
+                : ""
+            }">
+
+                ${
+                    negative
+                    ? "-" + formatCurrency(total)
+                    : formatCurrency(total)
+                }
+
+            </strong>
+
+        </div>
+
+    </div>
 
 </div>
 
 `;
-
-}
-
+   
+ }
 
 /* =====================================================
-   SLIP
+   RENDER SLIP
 ===================================================== */
 
 function renderSalarySlip(){
 
-    const period=
+    const period = getCurrentPeriod();
 
-    getCurrentPeriod();
-
-    if(
-
-        !period
-
-    ){
-
+    if(!period){
         return;
-
     }
 
     clear(
-
         DOM.SALARY.slip
+    );
+
+    const work = period.slip.filter(
+        item => item.type === TYPE.WORK
+    );
+
+    const allowance = period.slip.filter(
+        item => item.type === TYPE.ALLOWANCE
+    );
+
+    const deduction = period.slip.filter(
+        item => item.type === TYPE.DEDUCTION
+    );
+
+    let html = "";
+
+    /* =========================
+       PENDAPATAN
+    ========================= */
+
+    html += renderSalaryGroup(
+
+        "Pendapatan",
+
+        "payments",
+
+        work,
+
+        period.totalWork
 
     );
 
-    const work=
+    /* =========================
+       UANG MAKAN
+    ========================= */
 
-    period.slip.filter(
+    if(allowance.length){
 
-        item=>
+        html += renderSalaryGroup(
 
-        item.type===TYPE.WORK
-
-    );
-
-    const allowance=
-
-    period.slip.filter(
-
-        item=>
-
-        item.type===TYPE.ALLOWANCE
-
-    );
-
-    const deduction=
-
-    period.slip.filter(
-
-        item=>
-
-        item.type===TYPE.DEDUCTION
-
-    );
-
-    DOM.SALARY.slip.innerHTML=
-
-        renderSalaryGroup(
-
-            "Pendapatan",
-
-            "payments",
-
-            work,
-
-            period.totalWork
-
-        )+
-
-        renderSalaryGroup(
-
-            "Tunjangan",
+            "Uang Makan",
 
             "restaurant",
 
@@ -283,13 +263,21 @@ function renderSalarySlip(){
 
             period.totalAllowance
 
-        )+
+        );
 
-        renderSalaryGroup(
+    }
 
-            "Potongan",
+    /* =========================
+       BPJS
+    ========================= */
 
-            "shield",
+    if(deduction.length){
+
+        html += renderSalaryGroup(
+
+            "Tagihan BPJS",
+
+            "health_and_safety",
 
             deduction,
 
@@ -299,24 +287,22 @@ function renderSalarySlip(){
 
         );
 
+    }
+
+    DOM.SALARY.slip.innerHTML = html;
+
 }
 
 
 /* =====================================================
-   TOTAL
+   RENDER TOTAL
 ===================================================== */
 
 function renderSalaryTotal(){
 
-    const period=
+    const period = getCurrentPeriod();
 
-    getCurrentPeriod();
-
-    if(
-
-        !period
-
-    ){
+    if(!period){
 
         return;
 
@@ -350,6 +336,8 @@ function renderSalaryTotal(){
 
         DOM.SALARY.totalDeduction,
 
+        "-" +
+
         formatCurrency(
 
             period.totalDeduction
@@ -379,17 +367,18 @@ function renderSalaryTotal(){
 
 function updateSalaryNavigation(){
 
-    DOM.SALARY.back.disabled=
+    DOM.SALARY.back.disabled =
 
-    Salary.salary.currentIndex>=
+        Salary.salary.currentIndex >=
 
-    Salary.salary.periods.length-1;
+        Salary.salary.periods.length - 1;
 
-    DOM.SALARY.next.disabled=
+    DOM.SALARY.next.disabled =
 
-    Salary.salary.currentIndex<=0;
+        Salary.salary.currentIndex <= 0;
 
 }
+
 
 /* =====================================================
    PREVIOUS PERIOD
@@ -399,9 +388,9 @@ function previousSalaryPeriod(){
 
     if(
 
-        Salary.salary.currentIndex<
+        Salary.salary.currentIndex <
 
-        Salary.salary.periods.length-1
+        Salary.salary.periods.length - 1
 
     ){
 
@@ -422,9 +411,7 @@ function nextSalaryPeriod(){
 
     if(
 
-        Salary.salary.currentIndex>
-
-        0
+        Salary.salary.currentIndex > 0
 
     ){
 
@@ -460,13 +447,23 @@ function getSalarySlipData(){
 
         item => item.type === TYPE.ALLOWANCE
 
-    );
+    ) || null;
 
     const bpjs = period.slip.find(
 
         item => item.type === TYPE.DEDUCTION
 
-    );
+    ) || null;
+
+    const workingDays = new Set(
+
+        period.items.map(
+
+            item => item.tanggalText
+
+        )
+
+    ).size;
 
     return{
 
@@ -478,363 +475,37 @@ function getSalarySlipData(){
 
         bpjs,
 
-        workingDays:new Set(
+        workingDays,
 
-            period.items.map(
+        totalWork: period.totalWork,
 
-                item=>item.tanggalText
+        totalAllowance: period.totalAllowance,
 
-            )
+        totalDeduction: period.totalDeduction,
 
-        ).size,
-
-        totalWork:period.totalWork,
-
-        totalAllowance:period.totalAllowance,
-
-        totalDeduction:period.totalDeduction,
-
-        totalSalary:period.totalSalary
+        totalSalary: period.totalSalary
 
     };
 
 }
 
 /* =====================================================
-   SALARY
-===================================================== */
-
-function renderSalary(){
-
-    renderSalaryPeriod();
-
-    renderSalarySlip();
-
-    renderSalaryTotal();
-
-    updateSalaryNavigation();
-
-    renderSalaryExport();
-
-    animateCard(
-
-        DOM.SALARY.slip
-
-    );
-
-    animateCard(
-
-        DOM.SALARY.totalCard
-
-    );
-
-}
-
-/* =====================================================
-   EXPORT
+   RENDER EXPORT
 ===================================================== */
 
 function renderSalaryExport(){
 
-    const slip=
+    const slip = getSalarySlipData();
 
-    getSalarySlipData();
-
-    if(
-
-        !slip
-
-    ){
+    if(!slip){
 
         return;
 
     }
 
-
-/* =====================================================
-   SHOW EXPORT
-===================================================== */
-
-async function showSalaryExport(){
-
-    renderSalaryExport();
-
-    const source=
-
-    document.getElementById(
-
-        "salaryExport"
-
-    );
-
-    const preview=
-
-    document.getElementById(
-
-        "salaryExportPreview"
-
-    );
-
-    preview.innerHTML="";
-
-    const oldStyle={
-
-        position:source.style.position,
-
-        left:source.style.left,
-
-        top:source.style.top,
-
-        zIndex:source.style.zIndex
-
-    };
-
-    source.style.position="fixed";
-
-    source.style.left="0";
-
-    source.style.top="0";
-
-    source.style.zIndex="9999";
-
-    const canvas=
-
-    await html2canvas(
-
-        source,
-
-        {
-
-            scale:2,
-
-            backgroundColor:"#FFFFFF",
-
-            useCORS:true
-
-        }
-
-    );
-
-    Salary.exportCanvas=
-
-    canvas;
-
-    preview.appendChild(
-
-        canvas
-
-    );
-
-    source.style.position=
-
-    oldStyle.position;
-
-    source.style.left=
-
-    oldStyle.left;
-
-    source.style.top=
-
-    oldStyle.top;
-
-    source.style.zIndex=
-
-    oldStyle.zIndex;
-
-    document
-
-    .getElementById(
-
-        "salaryExportModal"
-
-    )
-
-    .classList.add(
-
-        "show"
-
-    );
-
-}
-
-    
-   
-/* =====================================================
-   CLOSE EXPORT
-===================================================== */
-
-function closeSalaryExport(){
-
-    document
-
-    .getElementById(
-
-        "salaryExportModal"
-
-    )
-
-    .classList.remove(
-
-        "show"
-
-    );
-
-}
-
-
-/* =====================================================
-   DOWNLOAD IMAGE
-===================================================== */
-
-function downloadSalaryImage(){
-
-    if(
-
-        !Salary.exportCanvas
-
-    ){
-
-        return;
-
-    }
-
-    const period=
-
-    getCurrentPeriod();
-
-    const link=
-
-    document.createElement(
-
-        "a"
-
-    );
-
-    link.download=
-
-    `Slip Gaji ${period.id}.png`;
-
-    link.href=
-
-    Salary.exportCanvas
-
-    .toDataURL(
-
-        "image/png"
-
-    );
-
-    link.click();
-
-}
-
-/* =====================================================
-   EXPORT IMAGE
-===================================================== */
-
-function exportSalaryImage(){
-
-    renderSalaryExport();
-
-    const exportView=
-
-    document.getElementById(
-
-        "salaryExport"
-
-    );
-
-    const oldStyle={
-
-        position:exportView.style.position,
-
-        left:exportView.style.left,
-
-        top:exportView.style.top
-
-    };
-
-    exportView.style.position="fixed";
-
-    exportView.style.left="0";
-
-    exportView.style.top="0";
-
-    html2canvas(
-
-        exportView,
-
-        {
-
-            scale:2,
-
-            backgroundColor:"#F7F8FC",
-
-            useCORS:true
-
-        }
-
-    ).then(
-
-        canvas=>{
-
-            const link=
-
-            document.createElement(
-
-                "a"
-
-            );
-
-            const period=
-
-            getCurrentPeriod();
-
-            link.download=
-
-            `Slip Gaji ${
-
-                period.id
-
-            }.png`;
-
-            link.href=
-
-            canvas.toDataURL(
-
-                "image/png"
-
-            );
-
-            link.click();
-
-        }
-
-    ).finally(
-
-        ()=>{
-
-            exportView.style.position=
-
-            oldStyle.position;
-
-            exportView.style.left=
-
-            oldStyle.left;
-
-            exportView.style.top=
-
-            oldStyle.top;
-
-        }
-
-    );
-
-}
-   
-    /* =====================================
+    /* =========================
        HEADER
-    ===================================== */
+    ========================= */
 
     setText(
 
@@ -848,9 +519,9 @@ function exportSalaryImage(){
 
     );
 
-    /* =====================================
+    /* =========================
        PROFILE
-    ===================================== */
+    ========================= */
 
     setText(
 
@@ -894,9 +565,9 @@ function exportSalaryImage(){
 
     );
 
-    /* =====================================
+    /* =========================
        WORKING DAYS
-    ===================================== */
+    ========================= */
 
     setText(
 
@@ -906,25 +577,21 @@ function exportSalaryImage(){
 
         ),
 
-        `${
-
-            slip.workingDays
-
-        } Hari Kerja`
+        `${slip.workingDays} Hari Kerja`
 
     );
 
-    /* =====================================
+    /* =========================
        INCOME LIST
-    ===================================== */
+    ========================= */
 
-    const container=
+    const container =
 
-    document.getElementById(
+        document.getElementById(
 
-        "exportIncomeList"
+            "exportIncomeList"
 
-    );
+        );
 
     clear(
 
@@ -941,45 +608,35 @@ function exportSalaryImage(){
                 "beforeend",
 
 `
-
 <div class="export-item">
 
-<div class="export-left">
+    <div class="export-left">
 
-<b>
+        <b>
 
-${item.name}
+            ${item.name}
 
-</b>
+        </b>
 
-<span>
+        <span>
 
-${item.qty}
+            ${item.qty}
 
-×
+            ×
 
-${formatDecimal(
+            ${formatDecimal(item.harga)}
 
-item.harga
+        </span>
 
-)}
+    </div>
 
-</span>
+    <div class="export-right">
 
-</div>
+        ${formatCurrency(item.nominal)}
 
-<div class="export-right">
-
-${formatCurrency(
-
-item.nominal
-
-)}
+    </div>
 
 </div>
-
-</div>
-
 `
 
             );
@@ -988,9 +645,9 @@ item.nominal
 
     );
 
-    /* =====================================
+    /* =========================
        TOTAL
-    ===================================== */
+    ========================= */
 
     setText(
 
@@ -1044,7 +701,7 @@ item.nominal
 
         ?
 
-        "-"+
+        "-" +
 
         formatCurrency(
 
@@ -1074,13 +731,11 @@ item.nominal
 
     );
 
-    /* =====================================
+    /* =========================
        PRINT DATE
-    ===================================== */
+    ========================= */
 
-    const now=
-
-    new Date();
+    const now = new Date();
 
     setText(
 
@@ -1090,15 +745,7 @@ item.nominal
 
         ),
 
-        `${
-
-            formatDate(
-
-                now
-
-            )
-
-        } • ${
+        `${formatDate(now)} • ${
 
             now.toLocaleTimeString(
 
@@ -1118,6 +765,247 @@ item.nominal
 
     );
 
-               }
+}
+
+/* =====================================================
+   EXPORT MODAL
+===================================================== */
+
+async function showSalaryExport(){
+
+    renderSalaryExport();
+
+    const source =
+
+    document.getElementById(
+
+        "salaryExport"
+
+    );
+
+    const modal =
+
+    document.getElementById(
+
+        "salaryExportModal"
+
+    );
+
+    const preview =
+
+    document.getElementById(
+
+        "salaryExportPreview"
+
+    );
+
+    if(
+
+        !source ||
+
+        !modal ||
+
+        !preview
+
+    ){
+
+        return;
+
+    }
+
+    preview.innerHTML = "";
+
+    const oldStyle = {
+
+        position:source.style.position,
+
+        left:source.style.left,
+
+        top:source.style.top,
+
+        zIndex:source.style.zIndex
+
+    };
+
+    source.style.position = "fixed";
+
+    source.style.left = "0";
+
+    source.style.top = "0";
+
+    source.style.zIndex = "9999";
+
+    const canvas =
+
+    await html2canvas(
+
+        source,
+
+        {
+
+            scale:2,
+
+            backgroundColor:"#FFFFFF",
+
+            useCORS:true
+
+        }
+
+    );
+
+    Salary.exportCanvas = canvas;
+
+    preview.appendChild(
+
+        canvas
+
+    );
+
+    source.style.position =
+
+    oldStyle.position;
+
+    source.style.left =
+
+    oldStyle.left;
+
+    source.style.top =
+
+    oldStyle.top;
+
+    source.style.zIndex =
+
+    oldStyle.zIndex;
+
+    modal.classList.add(
+
+        "show"
+
+    );
+
+}
+
+
+/* =====================================================
+   CLOSE EXPORT
+===================================================== */
+
+function closeSalaryExport(){
+
+    document
+
+    .getElementById(
+
+        "salaryExportModal"
+
+    )
+
+    .classList.remove(
+
+        "show"
+
+    );
+
+}
+
+
+/* =====================================================
+   DOWNLOAD IMAGE
+===================================================== */
+
+function downloadSalaryImage(){
+
+    if(
+
+        !Salary.exportCanvas
+
+    ){
+
+        return;
+
+    }
+
+    const period =
+
+    getCurrentPeriod();
+
+    const link =
+
+    document.createElement(
+
+        "a"
+
+    );
+
+    link.download =
+
+    `Slip Gaji ${period.id}.png`;
+
+    link.href =
+
+    Salary.exportCanvas
+
+    .toDataURL(
+
+        "image/png"
+
+    );
+
+    link.click();
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PDF
+===================================================== */
+
+function downloadSalaryPdf(){
+
+    alert(
+
+        "Export PDF akan ditambahkan pada tahap berikutnya."
+
+    );
+
+}
+
+/* =====================================================
+   RENDER SALARY
+===================================================== */
+
+function renderSalary(){
+
+    renderSalaryPeriod();
+
+    renderSalarySlip();
+
+    renderSalaryTotal();
+
+    renderSalaryExport();
+
+    updateSalaryNavigation();
+
+    if(
+
+        typeof animateCard === "function"
+
+    ){
+
+        animateCard(
+
+            DOM.SALARY.slip
+
+        );
+
+        animateCard(
+
+            DOM.SALARY.totalCard
+
+        );
+
+    }
+
+}
 
 
