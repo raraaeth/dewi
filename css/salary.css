@@ -332,10 +332,6 @@
 
     border-radius:50%;
 
-    background:var(--primary-light);
-
-    color:var(--primary);
-
     font-size:22px;
 
 }
@@ -352,20 +348,74 @@
 
     font-size:20px;
 
-    color:var(--primary);
+    font-weight:700;
 
 }
+
+/* =========================
+   PENDAPATAN
+========================= */
+
+.salary-group.income
+.material-symbols-rounded{
+
+    background:#FFE7F2;
+
+    color:#D94F8A;
+
+}
+
+.salary-group.income
+.salary-group-header strong,
+
+.salary-group.income
+.salary-group-total strong{
+
+    color:#D94F8A;
+
+}
+
+/* =========================
+   TUNJANGAN
+========================= */
+
+.salary-group.allowance
+.material-symbols-rounded{
+
+    background:#EAFBF0;
+
+    color:#2EAD63;
+
+}
+
+.salary-group.allowance
+.salary-group-header strong,
+
+.salary-group.allowance
+.salary-group-total strong{
+
+    color:#2EAD63;
+
+}
+
+/* =========================
+   POTONGAN
+========================= */
+
 .salary-group.deduction
-.salary-group-header
-strong{
+.material-symbols-rounded{
+
+    background:#FFF1F1;
 
     color:#E53935;
 
 }
 
 .salary-group.deduction
-.salary-group-total
-strong{
+.salary-group-header strong,
+
+.salary-group.deduction
+.salary-group-total strong{
 
     color:#E53935;
 
@@ -482,6 +532,11 @@ strong{
     font-weight:700;
 
     color:var(--text);
+
+}
+.salary-right.negative{
+
+    color:#E53935;
 
 }
 
