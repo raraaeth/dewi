@@ -799,7 +799,259 @@
 
 }
 
+/* =====================================================
+  MULAI SECTION EXPORT
+===================================================== */
 
+/* =====================================================
+   EXPORT
+===================================================== */
 
+.export-sheet{
 
+    width:100%;
+
+    background:#FFFFFF;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    font-family:'Poppins',sans-serif;
+
+    color:#333;
+
+}
+
+.export-header{
+
+    padding:34px;
+
+    text-align:center;
+
+    background:linear-gradient(
+        135deg,
+        #D94F8A,
+        #B83479
+    );
+
+    color:#FFF;
+
+}
+
+.export-header h1{
+
+    margin:0;
+
+    font-size:34px;
+
+    font-weight:700;
+
+}
+
+.export-header p{
+
+    margin:10px 0 6px;
+
+    font-size:18px;
+
+    opacity:.95;
+
+}
+
+.export-header span{
+
+    font-size:15px;
+
+    opacity:.85;
+
+}
+
+.export-profile{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:16px;
+
+    padding:26px;
+
+}
+
+.export-profile div{
+
+    background:#FFF4F9;
+
+    border-radius:18px;
+
+    padding:16px;
+
+}
+
+.export-profile small{
+
+    display:block;
+
+    color:#888;
+
+    font-size:13px;
+
+}
+
+.export-profile strong{
+
+    display:block;
+
+    margin-top:8px;
+
+    font-size:17px;
+
+}
+
+.export-section{
+
+    padding:0 26px 24px;
+
+}
+
+.export-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.export-title span{
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.export-title small{
+
+    color:#888;
+
+}
+
+.export-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:16px 0;
+
+    border-bottom:1px dashed #E6E6E6;
+
+}
+
+.export-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.export-row b{
+
+    display:block;
+
+    font-size:16px;
+
+}
+
+.export-row small{
+
+    color:#888;
+
+    font-size:13px;
+
+}
+
+.export-row strong{
+
+    font-size:16px;
+
+}
+
+.export-summary{
+
+    margin:0 26px;
+
+    padding:20px 0;
+
+    border-top:2px solid #F2F2F2;
+
+}
+
+.export-summary-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:10px 0;
+
+}
+
+.export-summary-row span{
+
+    color:#666;
+
+}
+
+.export-summary-row strong{
+
+    font-size:16px;
+
+    font-weight:700;
+
+}
+
+.export-total{
+
+    margin:26px;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    background:#FFF2F8;
+
+    text-align:center;
+
+}
+
+.export-total span{
+
+    display:block;
+
+    color:#D94F8A;
+
+    font-weight:600;
+
+}
+
+.export-total h2{
+
+    margin-top:12px;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:#D94F8A;
+
+}
 
