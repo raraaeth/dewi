@@ -803,18 +803,6 @@
    EXPORT SLIP
 ===================================================== */
 
-.salary-export{
-
-    position:fixed;
-
-    left:-9999px;
-
-    top:0;
-
-    z-index:-1;
-
-}
-
 .export-sheet{
 
     background:#FFFFFF;
