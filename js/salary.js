@@ -550,6 +550,7 @@ function renderSalaryExport(){
 
     }
 
+
 /* =====================================================
    SHOW EXPORT
 ===================================================== */
@@ -558,15 +559,49 @@ async function showSalaryExport(){
 
     renderSalaryExport();
 
+    const source=
+
+    document.getElementById(
+
+        "salaryExport"
+
+    );
+
+    const preview=
+
+    document.getElementById(
+
+        "salaryExportPreview"
+
+    );
+
+    preview.innerHTML="";
+
+    const oldStyle={
+
+        position:source.style.position,
+
+        left:source.style.left,
+
+        top:source.style.top,
+
+        zIndex:source.style.zIndex
+
+    };
+
+    source.style.position="fixed";
+
+    source.style.left="0";
+
+    source.style.top="0";
+
+    source.style.zIndex="9999";
+
     const canvas=
 
     await html2canvas(
 
-        document.getElementById(
-
-            "salaryExport"
-
-        ),
+        source,
 
         {
 
@@ -584,17 +619,27 @@ async function showSalaryExport(){
 
     canvas;
 
-    const preview=
+    preview.appendChild(
 
-    document.getElementById(
-
-        "salaryExportPreview"
+        canvas
 
     );
 
-    preview.innerHTML="";
+    source.style.position=
 
-    preview.appendChild(canvas);
+    oldStyle.position;
+
+    source.style.left=
+
+    oldStyle.left;
+
+    source.style.top=
+
+    oldStyle.top;
+
+    source.style.zIndex=
+
+    oldStyle.zIndex;
 
     document
 
@@ -611,6 +656,7 @@ async function showSalaryExport(){
     );
 
 }
+   
 /* =====================================================
    CLOSE EXPORT
 ===================================================== */
@@ -639,6 +685,20 @@ function closeSalaryExport(){
 
 function downloadSalaryImage(){
 
+    if(
+
+        !Salary.exportCanvas
+
+    ){
+
+        return;
+
+    }
+
+    const period=
+
+    getCurrentPeriod();
+
     const link=
 
     document.createElement(
@@ -649,11 +709,13 @@ function downloadSalaryImage(){
 
     link.download=
 
-    "Slip Gaji.png";
+    `Slip Gaji ${period.id}.png`;
 
     link.href=
 
-    Salary.exportCanvas.toDataURL(
+    Salary.exportCanvas
+
+    .toDataURL(
 
         "image/png"
 
