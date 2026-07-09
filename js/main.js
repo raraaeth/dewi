@@ -45,6 +45,8 @@ console.log(
 
         bindEvents();
 
+        closeSalaryExport();
+
         Salary.ready=true;
 
         console.log(
