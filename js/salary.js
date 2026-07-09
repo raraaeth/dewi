@@ -550,6 +550,110 @@ function renderSalaryExport(){
 
     }
 
+/* =====================================================
+   EXPORT IMAGE
+===================================================== */
+
+function exportSalaryImage(){
+
+    renderSalaryExport();
+
+    const exportView=
+
+    document.getElementById(
+
+        "salaryExport"
+
+    );
+
+    const oldStyle={
+
+        position:exportView.style.position,
+
+        left:exportView.style.left,
+
+        top:exportView.style.top
+
+    };
+
+    exportView.style.position="fixed";
+
+    exportView.style.left="0";
+
+    exportView.style.top="0";
+
+    html2canvas(
+
+        exportView,
+
+        {
+
+            scale:2,
+
+            backgroundColor:"#F7F8FC",
+
+            useCORS:true
+
+        }
+
+    ).then(
+
+        canvas=>{
+
+            const link=
+
+            document.createElement(
+
+                "a"
+
+            );
+
+            const period=
+
+            getCurrentPeriod();
+
+            link.download=
+
+            `Slip Gaji ${
+
+                period.id
+
+            }.png`;
+
+            link.href=
+
+            canvas.toDataURL(
+
+                "image/png"
+
+            );
+
+            link.click();
+
+        }
+
+    ).finally(
+
+        ()=>{
+
+            exportView.style.position=
+
+            oldStyle.position;
+
+            exportView.style.left=
+
+            oldStyle.left;
+
+            exportView.style.top=
+
+            oldStyle.top;
+
+        }
+
+    );
+
+}
+   
     /* =====================================
        HEADER
     ===================================== */
