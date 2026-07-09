@@ -219,6 +219,50 @@ function updateSalaryNavigation(){
 
 }
 
+/* =====================================================
+   PREVIOUS PERIOD
+===================================================== */
+
+function previousSalaryPeriod(){
+
+    if(
+
+        Salary.salary.currentIndex<
+
+        Salary.salary.periods.length-1
+
+    ){
+
+        Salary.salary.currentIndex++;
+
+        renderSalary();
+
+    }
+
+}
+
+
+/* =====================================================
+   NEXT PERIOD
+===================================================== */
+
+function nextSalaryPeriod(){
+
+    if(
+
+        Salary.salary.currentIndex>
+
+        0
+
+    ){
+
+        Salary.salary.currentIndex--;
+
+        renderSalary();
+
+    }
+
+}
 
 /* =====================================================
    SALARY
