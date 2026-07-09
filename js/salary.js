@@ -656,6 +656,8 @@ async function showSalaryExport(){
     );
 
 }
+
+    
    
 /* =====================================================
    CLOSE EXPORT
@@ -678,6 +680,7 @@ function closeSalaryExport(){
     );
 
 }
+
 
 /* =====================================================
    DOWNLOAD IMAGE
