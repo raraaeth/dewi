@@ -151,20 +151,9 @@ const DOM={
 
     exportImage:$("#exportImageButton"),
 
-    exportPdf:$("#exportPdfButton"),
-
-    exportModal:$("#salaryExportModal"),
-
-    exportPreview:$("#salaryExportPreview"),
-
-    downloadImage:$("#downloadImageButton"),
-
-    downloadPdf:$("#downloadPdfButton"),
-
-    closeExport:$("#closeExportButton")
+    exportPdf:$("#exportPdfButton")
 
 },
-
     BUTTON:{
 
         home:$("#homeButton"),
