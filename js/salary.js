@@ -103,9 +103,7 @@ ${title}
 <strong>
 
 ${negative
-
-? "-"+formatCurrency(total)
-
+? "-" + formatCurrency(total)
 : formatCurrency(total)}
 
 </strong>
@@ -128,11 +126,7 @@ ${item.name}
 
 <div class="salary-detail">
 
-${item.qty}
-
-×
-
-${formatDecimal(item.harga)}
+${item.qty} × ${formatDecimal(item.harga)}
 
 </div>
 
@@ -141,9 +135,7 @@ ${formatDecimal(item.harga)}
 <div class="salary-right">
 
 ${negative
-
-? "-"+formatCurrency(item.nominal)
-
+? "-" + formatCurrency(item.nominal)
 : formatCurrency(item.nominal)}
 
 </div>
@@ -151,6 +143,24 @@ ${negative
 </div>
 
 `).join("")}
+
+<div class="salary-group-total">
+
+<span>
+
+Total ${title}
+
+</span>
+
+<strong>
+
+${negative
+? "-" + formatCurrency(total)
+: formatCurrency(total)}
+
+</strong>
+
+</div>
 
 </div>
 
