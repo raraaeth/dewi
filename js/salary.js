@@ -78,9 +78,31 @@ function renderSalaryGroup(
 
     }
 
+    let groupClass="income";
+
+    if(
+
+        title==="Tunjangan"
+
+    ){
+
+        groupClass="allowance";
+
+    }
+
+    if(
+
+        title==="Potongan"
+
+    ){
+
+        groupClass="deduction";
+
+    }
+
     return `
 
-<div class="salary-group">
+<div class="salary-group ${groupClass}">
 
 <div class="salary-group-header">
 
@@ -103,8 +125,10 @@ ${title}
 <strong>
 
 ${negative
-? "-" + formatCurrency(total)
-: formatCurrency(total)}
+?
+"-"+formatCurrency(total)
+:
+formatCurrency(total)}
 
 </strong>
 
@@ -126,17 +150,23 @@ ${item.name}
 
 <div class="salary-detail">
 
-${item.qty} × ${formatDecimal(item.harga)}
+${item.qty}
+
+×
+
+${formatDecimal(item.harga)}
 
 </div>
 
 </div>
 
-<div class="salary-right">
+<div class="salary-right ${negative?"negative":""}">
 
 ${negative
-? "-" + formatCurrency(item.nominal)
-: formatCurrency(item.nominal)}
+?
+"-"+formatCurrency(item.nominal)
+:
+formatCurrency(item.nominal)}
 
 </div>
 
@@ -155,8 +185,10 @@ Total ${title}
 <strong>
 
 ${negative
-? "-" + formatCurrency(total)
-: formatCurrency(total)}
+?
+"-"+formatCurrency(total)
+:
+formatCurrency(total)}
 
 </strong>
 
