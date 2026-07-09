@@ -799,7 +799,229 @@
 
 }
 
+/* =====================================================
+   EXPORT MODAL - Mulai css export
+===================================================== */
 
+.salary-export-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+    background:rgba(0,0,0,.55);
+
+    backdrop-filter:blur(8px);
+
+    z-index:9999;
+
+}
+
+.salary-export-modal.show{
+
+    display:flex;
+
+}
+
+
+/* =====================================================
+   EXPORT DIALOG
+===================================================== */
+
+.salary-export-dialog{
+
+    width:100%;
+
+    max-width:430px;
+
+    max-height:92vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    border-radius:30px;
+
+    background:#FFFFFF;
+
+    box-shadow:
+
+    0 25px 60px rgba(0,0,0,.18);
+
+    animation:exportPopup .28s ease;
+
+}
+
+.salary-export-dialog h2{
+
+    margin:28px 24px 6px;
+
+    text-align:center;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+}
+
+.salary-export-dialog p{
+
+    margin:0 24px 22px;
+
+    text-align:center;
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+
+/* =====================================================
+   PREVIEW
+===================================================== */
+
+.salary-export-preview{
+
+    flex:1;
+
+    overflow:auto;
+
+    padding:0 20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+}
+
+
+/* =====================================================
+   EXPORT SHEET
+===================================================== */
+
+.export-sheet{
+
+    width:100%;
+
+    max-width:360px;
+
+    background:#FFFFFF;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+    0 12px 30px rgba(0,0,0,.08);
+
+}
+
+
+/* =====================================================
+   ACTION
+===================================================== */
+
+.salary-export-actions{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:14px;
+
+    padding:22px 24px 0;
+
+}
+
+.salary-close-button{
+
+    margin:16px 24px 24px;
+
+    height:56px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#F3F4F6;
+
+    color:var(--text);
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.salary-close-button:hover{
+
+    background:#E8E8E8;
+
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.salary-export-preview::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+.salary-export-preview::-webkit-scrollbar-thumb{
+
+    background:#D8D8D8;
+
+    border-radius:999px;
+
+}
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes exportPopup{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px) scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
 
 
 
