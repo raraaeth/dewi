@@ -837,8 +837,8 @@ async function showSalaryExport(){
     source.style.zIndex = "9999";
 
 console.log(source);
-console.log(source.innerHTML.length);
-   
+console.log(source.offsetWidth);
+console.log(source.offsetHeight);
 
     const canvas =
 
