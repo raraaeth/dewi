@@ -2,131 +2,39 @@
    SALARY DIARY
    FILE : css/salary.css
    DESCRIPTION : Salary Page
-===================================================== */
-
+===========================================================
 
 /* =====================================================
    HERO
 ===================================================== */
 
-#salaryHero{
+.salary-hero{
 
     position:relative;
 
     overflow:hidden;
 
-    padding:36px 28px 80px;
+    padding:34px 28px 80px;
 
     border-radius:0 0 36px 36px;
 
     background:
 
     linear-gradient(
+
         135deg,
+
         #D94F8A,
+
         #B83479
+
     );
 
-    color:#FFFFFF;
+    color:#FFF;
 
 }
 
-#salaryHero .hero-content{
-
-    position:relative;
-
-    z-index:2;
-
-}
-
-#salaryHero .hero-chip{
-
-    display:inline-block;
-
-    padding:8px 16px;
-
-    border-radius:999px;
-
-    background:
-
-    rgba(255,255,255,.18);
-
-    font-size:13px;
-
-    font-weight:600;
-
-}
-
-#salaryHero h1{
-
-    margin-top:16px;
-
-    font-size:42px;
-
-    font-weight:700;
-
-    color:#FFFFFF;
-
-}
-
-#salaryHero p{
-
-    margin-top:10px;
-
-    font-size:18px;
-
-    line-height:1.6;
-
-    color:
-
-    rgba(
-        255,
-        255,
-        255,
-        .9
-    );
-
-}
-
-#salaryHero .hero-image{
-
-    position:absolute;
-
-    right:24px;
-
-    top:28px;
-
-    opacity:.18;
-
-}
-
-#salaryHero .hero-image
-.material-symbols-rounded{
-
-    font-size:150px;
-
-}
-
-#salaryHero .hero-wave{
-
-    position:absolute;
-
-    left:0;
-
-    right:0;
-
-    bottom:-2px;
-
-    height:65px;
-
-    background:#FFF;
-
-    border-radius:
-
-    100% 100% 0 0;
-
-}
-.hero-top{
+.salary-hero-top{
 
     display:flex;
 
@@ -136,7 +44,41 @@
 
 }
 
-.hero-badge{
+.salary-hero h1{
+
+    font-size:44px;
+
+    font-weight:700;
+
+    color:#FFF;
+
+    margin:0;
+
+}
+
+.salary-hero p{
+
+    margin-top:18px;
+
+    font-size:18px;
+
+    line-height:1.6;
+
+    color:rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        .92
+
+    );
+
+}
+
+.salary-hero-right{
 
     display:flex;
 
@@ -144,17 +86,27 @@
 
     align-items:center;
 
-    gap:8px;
+    gap:10px;
 
 }
 
-.hero-chip{
+.salary-chip{
 
-    padding:8px 16px;
+    padding:8px 18px;
 
     border-radius:999px;
 
-    background:rgba(255,255,255,.18);
+    background:rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        .18
+
+    );
 
     font-size:13px;
 
@@ -162,11 +114,39 @@
 
 }
 
-.hero-badge-icon{
+.salary-chip-icon{
 
-    font-size:36px;
+    font-size:42px;
 
-    color:rgba(255,255,255,.85);
+    color:rgba(
+
+        255,
+
+        255,
+
+        255,
+
+        .85
+
+    );
+
+}
+
+.salary-hero-wave{
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:-2px;
+
+    height:60px;
+
+    background:#FFF;
+
+    border-radius:100% 100% 0 0;
 
 }
 
