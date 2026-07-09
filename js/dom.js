@@ -129,29 +129,41 @@ const DOM={
 
 },
 
-    SALARY:{
+ SALARY:{
 
-        period:$("#salaryPeriod"),
+    period:$("#salaryPeriod"),
 
-        slip:$("#salarySlipContainer"),
+    slip:$("#salarySlipContainer"),
 
-        totalWork:$("#salaryGross"),
+    totalWork:$("#salaryGross"),
 
-        totalAllowance:$("#salaryMeal"),
+    totalAllowance:$("#salaryMeal"),
 
-        totalDeduction:$("#salaryBpjs"),
+    totalDeduction:$("#salaryBpjs"),
 
-        totalSalary:$("#salaryNet"),
+    totalSalary:$("#salaryNet"),
 
-        back:$("#salaryBackButton"),
+    totalCard:$("#salaryTotalCard"),
 
-        next:$("#salaryNextButton"),
+    back:$("#salaryBackButton"),
 
-        exportImage:$("#exportImageButton"),
+    next:$("#salaryNextButton"),
 
-        exportPdf:$("#exportPdfButton")
+    exportImage:$("#exportImageButton"),
 
-    },
+    exportPdf:$("#exportPdfButton"),
+
+    exportModal:$("#salaryExportModal"),
+
+    exportPreview:$("#salaryExportPreview"),
+
+    downloadImage:$("#downloadImageButton"),
+
+    downloadPdf:$("#downloadPdfButton"),
+
+    closeExport:$("#closeExportButton")
+
+},
 
     BUTTON:{
 
