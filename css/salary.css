@@ -799,3 +799,313 @@
 
 }
 
+/* =====================================================
+   EXPORT SLIP
+===================================================== */
+
+.salary-export{
+
+    position:fixed;
+
+    left:-9999px;
+
+    top:0;
+
+    width:800px;
+
+    background:#F7F8FC;
+
+    padding:40px;
+
+}
+
+.export-sheet{
+
+    background:#FFFFFF;
+
+    border-radius:28px;
+
+    padding:36px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+
+/* =====================================================
+   EXPORT HEADER
+===================================================== */
+
+.export-header{
+
+    text-align:center;
+
+    padding-bottom:24px;
+
+    border-bottom:2px solid #F2F2F2;
+
+}
+
+.export-header h1{
+
+    margin:0;
+
+    font-size:34px;
+
+    color:var(--primary);
+
+}
+
+.export-header h2{
+
+    margin:10px 0;
+
+    font-size:22px;
+
+    color:var(--text);
+
+}
+
+.export-header p{
+
+    color:var(--text-light);
+
+}
+
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+.export-profile{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+    margin:28px 0;
+
+}
+
+.export-profile div{
+
+    background:#FFF5FA;
+
+    border-radius:18px;
+
+    padding:16px;
+
+}
+
+.export-profile span{
+
+    display:block;
+
+    font-size:13px;
+
+    color:var(--text-light);
+
+}
+
+.export-profile strong{
+
+    display:block;
+
+    margin-top:8px;
+
+    font-size:17px;
+
+    color:var(--text);
+
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.export-section{
+
+    margin-top:20px;
+
+}
+
+.export-section-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.export-section-header h3{
+
+    margin:0;
+
+    color:var(--primary);
+
+}
+
+.export-section-header span{
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+
+/* =====================================================
+   LIST
+===================================================== */
+
+.export-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 0;
+
+    border-bottom:1px dashed #E8E8E8;
+
+}
+
+.export-left{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+
+}
+
+.export-left b{
+
+    font-size:16px;
+
+}
+
+.export-left span{
+
+    font-size:13px;
+
+    color:var(--text-light);
+
+}
+
+.export-right{
+
+    font-weight:700;
+
+}
+
+
+/* =====================================================
+   TOTAL
+===================================================== */
+
+.export-total{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:18px;
+
+    padding-top:16px;
+
+    border-top:2px solid #EFEFEF;
+
+    font-weight:700;
+
+}
+
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.export-summary-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 0;
+
+}
+
+.export-summary-row strong{
+
+    font-weight:700;
+
+}
+
+
+/* =====================================================
+   GRAND TOTAL
+===================================================== */
+
+.export-grand-total{
+
+    margin-top:24px;
+
+    padding:24px;
+
+    border-radius:22px;
+
+    background:#FFF2F8;
+
+    text-align:center;
+
+}
+
+.export-grand-total span{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+.export-grand-total h2{
+
+    margin-top:10px;
+
+    font-size:40px;
+
+    color:var(--primary);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.export-footer{
+
+    margin-top:36px;
+
+    text-align:center;
+
+    color:var(--text-light);
+
+    font-size:13px;
+
+}
+
