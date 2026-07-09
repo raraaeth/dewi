@@ -114,20 +114,33 @@ function onFilterThreeMonth(){
 
 function onExportImage(){
 
-    alert("IMAGE CLICK");
-
     showSalaryExport();
 
 }
 
 function onExportPdf(){
 
-    alert("PDF CLICK");
-
     showSalaryExport();
 
 }
 
+function onDownloadImage(){
+
+    downloadSalaryImage();
+
+}
+
+function onDownloadPdf(){
+
+    downloadSalaryPdf();
+
+}
+
+function onCloseExport(){
+
+    closeSalaryExport();
+
+}
 
 /* =====================================================
    BIND EVENTS
@@ -319,6 +332,22 @@ document
 
 .getElementById(
 
+    "downloadPdfButton"
+
+)
+
+.addEventListener(
+
+    "click",
+
+    onDownloadPdf
+
+);
+
+document
+
+.getElementById(
+
     "closeExportButton"
 
 )
@@ -330,6 +359,3 @@ document
     onCloseExport
 
 );
-}
-window.bindEvents = bindEvents;
-console.log("events.js loaded");
