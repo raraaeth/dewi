@@ -276,7 +276,100 @@
 
 
 /* =====================================================
-   SALARY ITEM
+   SALARY GROUP
+===================================================== */
+
+.salary-group{
+
+    background:#FFFFFF;
+
+    border-radius:26px;
+
+    padding:22px;
+
+    box-shadow:var(--shadow-small);
+
+    margin-bottom:18px;
+
+}
+
+.salary-group-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding-bottom:16px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.salary-group-header div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.salary-group-header
+.material-symbols-rounded{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+    font-size:22px;
+
+}
+
+.salary-group-header b{
+
+    font-size:18px;
+
+    color:var(--text);
+
+}
+
+.salary-group-header strong{
+
+    font-size:20px;
+
+    color:var(--primary);
+
+}
+
+
+/* =====================================================
+   GROUP BODY
+===================================================== */
+
+.salary-group-body{
+
+    padding-top:8px;
+
+}
+
+
+/* =====================================================
+   ITEM
 ===================================================== */
 
 .salary-item{
@@ -287,13 +380,15 @@
 
     align-items:center;
 
-    background:#FFF;
+    padding:14px 0;
 
-    border-radius:22px;
+    border-bottom:1px dashed #ECECEC;
 
-    padding:20px;
+}
 
-    box-shadow:var(--shadow-small);
+.salary-item:last-child{
+
+    border-bottom:none;
 
 }
 
@@ -303,11 +398,13 @@
 
     flex-direction:column;
 
+    gap:4px;
+
 }
 
 .salary-name{
 
-    font-size:18px;
+    font-size:15px;
 
     font-weight:600;
 
@@ -317,9 +414,7 @@
 
 .salary-detail{
 
-    margin-top:6px;
-
-    font-size:14px;
+    font-size:13px;
 
     color:var(--text-light);
 
@@ -327,7 +422,7 @@
 
 .salary-right{
 
-    font-size:20px;
+    font-size:16px;
 
     font-weight:700;
 
