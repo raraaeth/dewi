@@ -114,14 +114,25 @@ function onFilterThreeMonth(){
 
 function onExportImage(){
 
-    exportSalaryImage();
+    showSalaryExport();
 
 }
 
-
 function onExportPdf(){
 
-    // TODO
+    showSalaryExport();
+
+}
+
+function onDownloadImage(){
+
+    downloadSalaryImage();
+
+}
+
+function onCloseExport(){
+
+    closeSalaryExport();
 
 }
 
@@ -272,28 +283,58 @@ DOM.STATISTIC.filterThreeMonth
 );
 
 
-    /* =========================
-       EXPORT
-    ========================= */
+/* =========================
+   EXPORT
+========================= */
 
-    DOM.SALARY.exportImage
+DOM.SALARY.exportImage
 
-    .addEventListener(
+.addEventListener(
 
-        "click",
+    "click",
 
-        onExportImage
+    onExportImage
 
-    );
+);
 
-    DOM.SALARY.exportPdf
+DOM.SALARY.exportPdf
 
-    .addEventListener(
+.addEventListener(
 
-        "click",
+    "click",
 
-        onExportPdf
+    onExportPdf
 
-    );
+);
 
-}
+document
+
+.getElementById(
+
+    "downloadImageButton"
+
+)
+
+.addEventListener(
+
+    "click",
+
+    onDownloadImage
+
+);
+
+document
+
+.getElementById(
+
+    "closeExportButton"
+
+)
+
+.addEventListener(
+
+    "click",
+
+    onCloseExport
+
+);
