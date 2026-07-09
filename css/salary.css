@@ -12,123 +12,21 @@
 
     position:relative;
 
-    overflow:hidden;
+    overflow:visible;
 
-    padding:34px 28px 80px;
+    padding:34px 28px 110px;
 
-    border-radius:0 0 36px 36px;
+    border-radius:0 0 40px 40px;
 
     background:
 
     linear-gradient(
-
         135deg,
-
         #D94F8A,
-
         #B83479
-
     );
 
     color:#FFF;
-
-}
-
-.salary-hero-top{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:flex-start;
-
-}
-
-.salary-hero h1{
-
-    font-size:44px;
-
-    font-weight:700;
-
-    color:#FFF;
-
-    margin:0;
-
-}
-
-.salary-hero p{
-
-    margin-top:18px;
-
-    font-size:18px;
-
-    line-height:1.6;
-
-    color:rgba(
-
-        255,
-
-        255,
-
-        255,
-
-        .92
-
-    );
-
-}
-
-.salary-hero-right{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:10px;
-
-}
-
-.salary-chip{
-
-    padding:8px 18px;
-
-    border-radius:999px;
-
-    background:rgba(
-
-        255,
-
-        255,
-
-        255,
-
-        .18
-
-    );
-
-    font-size:13px;
-
-    font-weight:600;
-
-}
-
-.salary-chip-icon{
-
-    font-size:42px;
-
-    color:rgba(
-
-        255,
-
-        255,
-
-        255,
-
-        .85
-
-    );
 
 }
 
@@ -136,17 +34,19 @@
 
     position:absolute;
 
-    left:-10%;
+    left:-8%;
 
-    width:120%;
+    bottom:-42px;
 
-    bottom:-35px;
+    width:116%;
 
-    height:80px;
+    height:90px;
 
-    background:#FFF;
+    background:#FFF6FA;
 
-    border-radius:50% 50% 0 0;
+    border-radius:50%;
+
+    z-index:1;
 
 }
 
@@ -157,58 +57,48 @@
 
 .salary-period{
 
-    margin-top:3;
-
     position:relative;
 
-    top:14px;
+    margin-top:-30px;
 
-    z-index:5;
+    z-index:10;
 
 }
-    
 
 .salary-period-card{
 
     background:
 
-linear-gradient(
+    linear-gradient(
+        135deg,
+        #F89CCB,
+        #F47CB5
+    );
 
-135deg,
-
-#F78BC1,
-
-#F16DA8
-
-);
-   
-box-shadow:
-
-0 16px 40px
-
-rgba(
-
-217,
-
-79,
-
-138,
-
-.18
-
-);
-
-    border-radius:36px;
+    border-radius:30px;
 
     padding:30px 24px;
 
-    text-align:center;
-
     color:#FFF;
 
-    box-shadow:var(--shadow-large);
+    text-align:center;
+
+    box-shadow:
+
+    0 20px 40px
+
+    rgba(
+        217,
+        79,
+        138,
+        .16
+    );
 
 }
+
+
+
+
 
 .salary-label{
 
@@ -306,21 +196,6 @@ rgba(
 
 }
 
-.salary-nav:disabled{
-
-    opacity:.35;
-
-    cursor:not-allowed;
-
-}
-
-.salary-nav
-
-.material-symbols-rounded{
-
-    font-size:30px;
-
-}
 
 /* =====================================================
    SALARY SLIP
