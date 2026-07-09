@@ -715,29 +715,17 @@ function showSalaryExport(){
 
 function closeSalaryExport(){
 
-    const modal =
-
-    document.getElementById(
-
+    const modal = document.getElementById(
         "salaryExportModal"
-
     );
 
-    if(
+    if(modal){
 
-        !modal
-
-    ){
-
-        return;
+        modal.classList.remove(
+            "show"
+        );
 
     }
-
-    modal.classList.remove(
-
-        "show"
-
-    );
 
 }
 
