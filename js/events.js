@@ -114,31 +114,13 @@ function onFilterThreeMonth(){
 
 function onExportImage(){
 
-    showSalaryExport();
+    downloadSalaryImage();
 
 }
 
 function onExportPdf(){
 
-    showSalaryExport();
-
-}
-
-function onDownloadImage(){
-
-    downloadSalaryImage();
-
-}
-
-function onDownloadPdf(){
-
     downloadSalaryPdf();
-
-}
-
-function onCloseExport(){
-
-    closeSalaryExport();
 
 }
 
@@ -309,54 +291,6 @@ DOM.SALARY.exportPdf
     "click",
 
     onExportPdf
-
-);
-
-document
-
-.getElementById(
-
-    "downloadImageButton"
-
-)
-
-.addEventListener(
-
-    "click",
-
-    onDownloadImage
-
-);
-
-document
-
-.getElementById(
-
-    "downloadPdfButton"
-
-)
-
-.addEventListener(
-
-    "click",
-
-    onDownloadPdf
-
-);
-
-document
-
-.getElementById(
-
-    "closeExportButton"
-
-)
-
-.addEventListener(
-
-    "click",
-
-    onCloseExport
 
 );
 
