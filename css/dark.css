@@ -500,27 +500,54 @@ body.dark-mode
   }
 
 /* =====================================================
-   HOME DAILY SUMMARY
+   STATISTIC HERO DARK
+/* =====================================================
+   STATISTIC HERO DARK
 ===================================================== */
 
 body.dark-mode
-.stat-summary-grid{
+.statistic-hero{
 
-    gap:16px;
+    background:
+
+    linear-gradient(
+
+        145deg,
+
+        #913963 0%,
+
+        #6D315F 48%,
+
+        #472A59 100%
+
+    );
 
 }
 
 
 /* =====================================================
-   HOME DAILY SUMMARY CARD
+   STATISTIC HERO WAVE DARK
 ===================================================== */
 
 body.dark-mode
-.stat-card{
+.statistic-wave path{
+
+    fill:
+
+    var(--background);
+
+}
+
+/* =====================================================
+   STATISTIC TIMELINE DARK
+===================================================== */
+
+body.dark-mode
+.timeline-card{
 
     background:
 
-    #211B30;
+    var(--surface);
 
     border:
 
@@ -530,18 +557,283 @@ body.dark-mode
         255,
         130,
         183,
-        .06
+        .08
     );
 
     box-shadow:
 
-    0 10px 26px
+    var(--shadow-medium);
+
+}
+
+
+/* =====================================================
+   TIMELINE TITLE
+===================================================== */
+
+body.dark-mode
+.timeline-header h3{
+
+    color:
+
+    var(--text);
+
+}
+
+
+body.dark-mode
+.timeline-header p{
+
+    color:
+
+    var(--text-light);
+
+}
+
+
+body.dark-mode
+.timeline-header strong{
+
+    color:
+
+    var(--primary);
+
+}
+
+
+/* =====================================================
+   TIMELINE TOTAL
+===================================================== */
+
+body.dark-mode
+.timeline-total{
+
+    color:
+
+    var(--text-light);
+
+}
+
+
+body.dark-mode
+.timeline-total strong{
+
+    color:
+
+    var(--text);
+
+}
+
+
+/* =====================================================
+   TIMELINE DIVIDER
+===================================================== */
+
+body.dark-mode
+.timeline-divider{
+
+    background:
+
+    var(--border);
+
+}
+
+
+/* =====================================================
+   TIMELINE ITEM
+===================================================== */
+
+body.dark-mode
+.timeline-item b{
+
+    color:
+
+    var(--text);
+
+}
+
+
+body.dark-mode
+.timeline-item small{
+
+    color:
+
+    var(--text-light);
+
+}
+
+
+body.dark-mode
+.timeline-item span{
+
+    color:
+
+    var(--text);
+
+}
+
+
+/* =====================================================
+   STATISTIC WORK SUMMARY DARK
+===================================================== */
+
+body.dark-mode
+.work-summary-card{
+
+    background:
+
+    var(--surface);
+
+    border:
+
+    1px solid
 
     rgba(
-        4,
-        2,
-        10,
+        255,
+        130,
+        183,
+        .08
+    );
+
+    box-shadow:
+
+    var(--shadow-medium);
+
+}
+
+
+/* =====================================================
+   WORK SUMMARY ICON
+===================================================== */
+
+body.dark-mode
+.work-summary-card
+.material-symbols-rounded{
+
+    color:
+
+    var(--primary);
+
+}
+
+
+/* =====================================================
+   WORK SUMMARY VALUE
+===================================================== */
+
+body.dark-mode
+.work-summary-card h3{
+
+    color:
+
+    var(--text);
+
+}
+
+
+/* =====================================================
+   WORK SUMMARY LABEL
+===================================================== */
+
+body.dark-mode
+.work-summary-card p{
+
+    color:
+
+    var(--text-light);
+
+   }
+
+/* =====================================================
+   STATISTIC TIMELINE NAVIGATION DARK
+===================================================== */
+
+body.dark-mode
+.timeline-nav-button{
+
+    background:
+
+    var(--surface);
+
+    color:
+
+    var(--text-light);
+
+    border:
+
+    1px solid
+
+    rgba(
+        255,
+        130,
+        183,
+        .08
+    );
+
+    box-shadow:
+
+    var(--shadow-small);
+
+}
+
+
+/* =====================================================
+   PRIMARY TIMELINE BUTTON
+===================================================== */
+
+body.dark-mode
+.timeline-nav-button.primary{
+
+    background:
+
+    var(--primary);
+
+    color:
+
+    #FFFFFF;
+
+    border-color:
+
+    transparent;
+
+    box-shadow:
+
+    0 8px 20px
+
+    rgba(
+        255,
+        130,
+        183,
         .22
     );
 
 }
+
+
+/* =====================================================
+   TIMELINE INDICATOR
+===================================================== */
+
+body.dark-mode
+.timeline-dot{
+
+    background:
+
+    #4A4055;
+
+}
+
+
+/* =====================================================
+   ACTIVE TIMELINE INDICATOR
+===================================================== */
+
+body.dark-mode
+.timeline-dot.active{
+
+    background:
+
+    var(--primary);
+
+}
+
