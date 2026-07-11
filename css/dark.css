@@ -1011,3 +1011,183 @@ body.dark-mode
     var(--text-light);
 
 }
+/* =====================================================
+   FINAL DARK CARD CORRECTION
+===================================================== */
+
+
+/* =====================================================
+   HOME CARD
+===================================================== */
+
+body.dark-mode
+.summary-card,
+
+body.dark-mode
+.insight-card{
+
+    background:
+
+    var(--surface) !important;
+
+    color:
+
+    var(--text);
+
+}
+
+
+/* =====================================================
+   HOME SUMMARY TEXT
+===================================================== */
+
+body.dark-mode
+.summary-body h2{
+
+    color:
+
+    var(--text);
+
+}
+
+
+body.dark-mode
+.summary-body p{
+
+    color:
+
+    var(--text-light);
+
+}
+
+
+body.dark-mode
+.summary-body span{
+
+    color:
+
+    var(--text-soft);
+
+}
+
+
+/* =====================================================
+   HOME INSIGHT TEXT
+===================================================== */
+
+body.dark-mode
+.insight-content h3{
+
+    color:
+
+    var(--text);
+
+}
+
+
+body.dark-mode
+.insight-content p{
+
+    color:
+
+    var(--text-light);
+
+}
+
+
+/* =====================================================
+   SALARY TOTAL CARD
+===================================================== */
+
+body.dark-mode
+.salary-total-card{
+
+    background:
+
+    var(--surface) !important;
+
+    color:
+
+    var(--text);
+
+}
+
+
+/* =====================================================
+   SALARY TOTAL TEXT
+===================================================== */
+
+body.dark-mode
+.salary-total-title{
+
+    color:
+
+    var(--text);
+
+}
+
+
+body.dark-mode
+.salary-row span{
+
+    color:
+
+    var(--text-light);
+
+}
+
+
+body.dark-mode
+.salary-row strong{
+
+    color:
+
+    var(--text);
+
+}
+
+
+/* =====================================================
+   SALARY DIVIDER
+===================================================== */
+
+body.dark-mode
+.salary-divider{
+
+    background:
+
+    var(--border);
+
+}
+
+
+/* =====================================================
+   SALARY FINAL TOTAL
+===================================================== */
+
+body.dark-mode
+.salary-row.total{
+
+    background:
+
+    rgba(
+        255,
+        130,
+        183,
+        .12
+    );
+
+}
+
+
+body.dark-mode
+.salary-row.total span,
+
+body.dark-mode
+.salary-row.total strong{
+
+    color:
+
+    var(--primary);
+
+}
