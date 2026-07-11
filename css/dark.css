@@ -1191,3 +1191,355 @@ body.dark-mode
     var(--primary);
 
 }
+/* =====================================================
+   SALARY HERO DARK
+===================================================== */
+
+body.dark-mode
+.salary-hero{
+
+    background:
+
+    linear-gradient(
+
+        145deg,
+
+        #913963 0%,
+
+        #6D315F 48%,
+
+        #472A59 100%
+
+    );
+
+}
+
+
+/* =====================================================
+   SALARY HERO TITLE
+===================================================== */
+
+body.dark-mode
+.salary-hero h1{
+
+    color:
+
+    #FFFFFF;
+
+}
+
+
+/* =====================================================
+   SALARY HERO DESCRIPTION
+===================================================== */
+
+body.dark-mode
+.salary-hero p{
+
+    color:
+
+    rgba(
+        255,
+        255,
+        255,
+        .88
+    );
+
+}
+
+
+/* =====================================================
+   SALARY HERO CHIP
+===================================================== */
+
+body.dark-mode
+.salary-chip{
+
+    background:
+
+    rgba(
+        255,
+        255,
+        255,
+        .14
+    );
+
+    color:
+
+    #FFFFFF;
+
+    border:
+
+    1px solid
+
+    rgba(
+        255,
+        255,
+        255,
+        .10
+    );
+
+    box-shadow:
+
+    0 8px 22px
+
+    rgba(
+        24,
+        10,
+        34,
+        .16
+    );
+
+}
+
+
+/* =====================================================
+   SALARY HERO ICON
+===================================================== */
+
+body.dark-mode
+.salary-chip-icon{
+
+    color:
+
+    #FFFFFF;
+
+}
+
+
+/* =====================================================
+   SALARY WAVE DARK
+===================================================== */
+
+body.dark-mode
+.salary-wave{
+
+    background:
+
+    var(--background);
+
+}
+
+
+/* =====================================================
+   SALARY PERIOD CARD DARK
+===================================================== */
+
+body.dark-mode
+.salary-period-card{
+
+    background:
+
+    linear-gradient(
+
+        145deg,
+
+        #43263E 0%,
+
+        #35243D 52%,
+
+        #292139 100%
+
+    );
+
+    border:
+
+    1px solid
+
+    rgba(
+        255,
+        130,
+        183,
+        .10
+    );
+
+    box-shadow:
+
+    var(--shadow-large);
+
+}
+
+
+/* =====================================================
+   SALARY PERIOD LABEL
+===================================================== */
+
+body.dark-mode
+.salary-label{
+
+    color:
+
+    var(--text-light);
+
+}
+
+
+/* =====================================================
+   SALARY PERIOD VALUE
+===================================================== */
+
+body.dark-mode
+.salary-period-card h2{
+
+    color:
+
+    var(--text);
+
+}
+
+
+/* =====================================================
+   SALARY PERIOD NAVIGATION
+===================================================== */
+
+body.dark-mode
+.salary-nav{
+
+    background:
+
+    rgba(
+        255,
+        255,
+        255,
+        .07
+    );
+
+    color:
+
+    var(--text);
+
+    border:
+
+    1px solid
+
+    rgba(
+        255,
+        255,
+        255,
+        .05
+    );
+
+}
+
+
+/* =====================================================
+   EXPORT IMAGE DARK
+===================================================== */
+
+body.dark-mode
+.salary-action
+.action-button{
+
+    background:
+
+    var(--surface);
+
+    color:
+
+    var(--text);
+
+    border:
+
+    1px solid
+
+    rgba(
+        255,
+        130,
+        183,
+        .10
+    );
+
+    box-shadow:
+
+    var(--shadow-small);
+
+}
+
+
+/* =====================================================
+   EXPORT IMAGE ICON
+===================================================== */
+
+body.dark-mode
+.salary-action
+.action-button
+.material-symbols-rounded{
+
+    color:
+
+    var(--primary);
+
+}
+
+
+/* =====================================================
+   EXPORT PDF DARK
+===================================================== */
+
+body.dark-mode
+.salary-action
+.action-button.primary{
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #C94F87,
+
+        #A94076
+
+    );
+
+    color:
+
+    #FFFFFF;
+
+    border-color:
+
+    transparent;
+
+    box-shadow:
+
+    0 10px 26px
+
+    rgba(
+        201,
+        79,
+        135,
+        .24
+    );
+
+}
+
+
+/* =====================================================
+   EXPORT PDF ICON
+===================================================== */
+
+body.dark-mode
+.salary-action
+.action-button.primary
+.material-symbols-rounded{
+
+    color:
+
+    #FFFFFF;
+
+}
+
+
+/* =====================================================
+   EXPORT BUTTON PRESS
+===================================================== */
+
+body.dark-mode
+.salary-action
+.action-button:active{
+
+    transform:
+
+    scale(.96);
+
+}
