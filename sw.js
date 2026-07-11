@@ -5,7 +5,7 @@
 ===================================================== */
 
 const CACHE_NAME =
-"dewi-nadzifah-v2";
+"dewi-nadzifah-v3";
 
 const APP_FILES = [
 
