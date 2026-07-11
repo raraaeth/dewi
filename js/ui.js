@@ -296,6 +296,196 @@ function showPage(page){
 
 }
 
+/* =====================================================
+   THEME
+===================================================== */
+
+const THEME_STORAGE_KEY =
+
+"salary-diary-theme";
+
+
+/* =====================================================
+   APPLY THEME
+===================================================== */
+
+function applyTheme(
+
+    theme
+
+){
+
+    const isDark =
+
+        theme === "dark";
+
+
+    /*
+    Aktifkan class dark mode
+    */
+
+    document.body.classList.toggle(
+
+        "dark-mode",
+
+        isDark
+
+    );
+
+
+    /*
+    Update icon
+    */
+
+    setText(
+
+        DOM.THEME.icon,
+
+        isDark
+
+        ? "light_mode"
+
+        : "dark_mode"
+
+    );
+
+
+    /*
+    Update text
+    */
+
+    setText(
+
+        DOM.THEME.text,
+
+        isDark
+
+        ? "Mode Terang"
+
+        : "Mode Malam"
+
+    );
+
+
+    /*
+    Update aksesibilitas
+    */
+
+    DOM.THEME.toggle?.setAttribute(
+
+        "aria-label",
+
+        isDark
+
+        ? "Aktifkan mode terang"
+
+        : "Aktifkan mode malam"
+
+    );
+
+
+    DOM.THEME.toggle?.setAttribute(
+
+        "aria-pressed",
+
+        String(
+
+            isDark
+
+        )
+
+    );
+
+
+    /*
+    Class untuk animasi switch
+    */
+
+    DOM.THEME.toggle?.classList.toggle(
+
+        "active",
+
+        isDark
+
+    );
+
+}
+
+
+/* =====================================================
+   LOAD THEME
+===================================================== */
+
+function loadTheme(){
+
+    const savedTheme =
+
+        localStorage.getItem(
+
+            THEME_STORAGE_KEY
+
+        );
+
+
+    const theme =
+
+        savedTheme === "dark"
+
+        ? "dark"
+
+        : "light";
+
+
+    applyTheme(
+
+        theme
+
+    );
+
+}
+
+
+/* =====================================================
+   TOGGLE THEME
+===================================================== */
+
+function toggleTheme(){
+
+    const isDark =
+
+        document.body.classList.contains(
+
+            "dark-mode"
+
+        );
+
+
+    const newTheme =
+
+        isDark
+
+        ? "light"
+
+        : "dark";
+
+
+    localStorage.setItem(
+
+        THEME_STORAGE_KEY,
+
+        newTheme
+
+    );
+
+
+    applyTheme(
+
+        newTheme
+
+    );
+
+}
+
 
 /* =====================================================
    LOADING
