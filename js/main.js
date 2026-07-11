@@ -11,6 +11,14 @@
 
 async function init(){
 
+    /*
+    Terapkan tema tersimpan
+    sebelum aplikasi dirender
+    */
+
+    loadTheme();
+
+
     console.clear();
 
     console.log(
