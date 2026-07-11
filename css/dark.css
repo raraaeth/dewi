@@ -837,3 +837,63 @@ body.dark-mode
 
 }
 
+/* =====================================================
+   STATISTIC FILTER DARK
+===================================================== */
+
+body.dark-mode
+.filter-button{
+
+    background:
+
+    #292238;
+
+    color:
+
+    var(--text-light);
+
+    border:
+
+    1px solid
+
+    rgba(
+        255,
+        130,
+        183,
+        .06
+    );
+
+}
+
+
+/* =====================================================
+   STATISTIC FILTER ACTIVE
+===================================================== */
+
+body.dark-mode
+.filter-button.active{
+
+    background:
+
+    var(--primary);
+
+    color:
+
+    #FFFFFF;
+
+    border-color:
+
+    transparent;
+
+    box-shadow:
+
+    0 8px 20px
+
+    rgba(
+        255,
+        130,
+        183,
+        .24
+    );
+
+}
