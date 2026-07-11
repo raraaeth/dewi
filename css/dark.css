@@ -1545,20 +1545,31 @@ body.dark-mode
 }
 
 /* =====================================================
-   HOME SUMMARY CARD FINAL FIX
+   HOME QUICK SUMMARY DARK
 ===================================================== */
 
 body.dark-mode
-.summary
-.summary-card{
+#quickStatGrid
+.quick-card{
 
     background:
 
-    var(--surface) !important;
+    #211B30 !important;
 
-    color:
+    background-color:
 
-    var(--text) !important;
+    #211B30 !important;
+
+    border:
+
+    1px solid
+
+    rgba(
+        255,
+        130,
+        183,
+        .08
+    );
 
     box-shadow:
 
@@ -1568,48 +1579,49 @@ body.dark-mode
 
 
 /* =====================================================
-   SUMMARY VALUE
+   QUICK SUMMARY ICON
 ===================================================== */
 
 body.dark-mode
-.summary
-.summary-card
-.summary-body h2{
+#quickStatGrid
+.quick-card >
+.material-symbols-rounded{
 
     color:
 
-    var(--text) !important;
+    #FF82B7 !important;
 
 }
 
 
 /* =====================================================
-   SUMMARY LABEL
+   QUICK SUMMARY VALUE
 ===================================================== */
 
 body.dark-mode
-.summary
-.summary-card
-.summary-body p{
+#quickStatGrid
+.quick-card h3{
 
     color:
 
-    var(--text-light) !important;
+    #FFF5FA !important;
 
 }
 
 
 /* =====================================================
-   SUMMARY DETAIL
+   QUICK SUMMARY LABEL
 ===================================================== */
 
 body.dark-mode
-.summary
-.summary-card
-.summary-body span{
+#quickStatGrid
+.quick-card p{
 
     color:
 
-    var(--text-soft) !important;
+    #C7BACB !important;
 
 }
+
+
+    
