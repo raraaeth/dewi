@@ -641,3 +641,41 @@ width:150px;
     );
 
 }
+
+/* =====================================================
+   THEME TOGGLE ACTIVE
+===================================================== */
+
+.theme-toggle.active
+.theme-toggle-switch{
+
+    background:
+
+    rgba(
+        255,
+        255,
+        255,
+        .42
+    );
+
+}
+
+
+.theme-toggle.active
+.theme-toggle-thumb{
+
+    transform:
+
+    translateX(16px);
+
+}
+
+
+.theme-toggle.active
+.theme-toggle-icon{
+
+    transform:
+
+    rotate(180deg);
+
+}
