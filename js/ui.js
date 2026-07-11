@@ -409,6 +409,24 @@ function applyTheme(
 
     );
 
+   /*
+Update warna chart
+*/
+
+if(
+
+    typeof renderChart === "function" &&
+
+    typeof Salary !== "undefined" &&
+
+    Salary.statistic?.chart
+
+){
+
+    renderChart();
+
+}
+
 }
 
 
