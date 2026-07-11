@@ -1623,5 +1623,121 @@ body.dark-mode
 
 }
 
+/* =====================================================
+   BOTTOM NAVIGATION DARK
+===================================================== */
 
+body.dark-mode
+.bottom-navigation{
+
+    background:
+
+    rgba(
+        33,
+        27,
+        48,
+        .96
+    ) !important;
+
+    border:
+
+    1px solid
+
+    rgba(
+        255,
+        130,
+        183,
+        .08
+    );
+
+    box-shadow:
+
+    0 14px 38px
+
+    rgba(
+        4,
+        2,
+        10,
+        .42
+    );
+
+}
+
+
+/* =====================================================
+   NAVIGATION DEFAULT ICON
+===================================================== */
+
+body.dark-mode
+.bottom-navigation
+.nav-button
+.material-symbols-rounded{
+
+    color:
+
+    #988CA3 !important;
+
+}
+
+
+/* =====================================================
+   NAVIGATION DEFAULT TEXT
+===================================================== */
+
+body.dark-mode
+.bottom-navigation
+.nav-button > span:last-child{
+
+    color:
+
+    #988CA3 !important;
+
+}
+
+
+/* =====================================================
+   ACTIVE NAVIGATION ICON
+===================================================== */
+
+body.dark-mode
+.bottom-navigation
+.nav-button.active
+.material-symbols-rounded{
+
+    color:
+
+    #FF82B7 !important;
+
+}
+
+
+/* =====================================================
+   ACTIVE NAVIGATION TEXT
+===================================================== */
+
+body.dark-mode
+.bottom-navigation
+.nav-button.active >
+span:last-child{
+
+    color:
+
+    #FF82B7 !important;
+
+}
+
+
+/* =====================================================
+   NAVIGATION BUTTON
+===================================================== */
+
+body.dark-mode
+.bottom-navigation
+.nav-button{
+
+    background:
+
+    transparent !important;
+
+}
     
