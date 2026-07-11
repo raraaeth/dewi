@@ -381,24 +381,242 @@ function updateSalaryNavigation(){
 
 
 /* =====================================================
+   SALARY PERIOD TRANSITION
+===================================================== */
+
+let salaryTransitionRunning = false;
+
+
+/* =====================================================
+   GET TRANSITION ELEMENTS
+===================================================== */
+
+function getSalaryTransitionElements(){
+
+    return [
+
+        document.getElementById(
+
+            "salaryPeriodCard"
+
+        ),
+
+        document.getElementById(
+
+            "salarySlipContainer"
+
+        ),
+
+        document.getElementById(
+
+            "salaryTotalCard"
+
+        )
+
+    ].filter(
+
+        element=>element
+
+    );
+
+}
+
+
+/* =====================================================
+   CHANGE SALARY PERIOD
+===================================================== */
+
+function changeSalaryPeriod(
+
+    newIndex,
+
+    direction
+
+){
+
+    if(
+
+        salaryTransitionRunning
+
+    ){
+
+        return;
+
+    }
+
+
+    if(
+
+        newIndex < 0 ||
+
+        newIndex >=
+
+        Salary.salary.periods.length
+
+    ){
+
+        return;
+
+    }
+
+
+    salaryTransitionRunning = true;
+
+
+    const elements =
+
+        getSalaryTransitionElements();
+
+
+    /*
+    Animasi konten lama keluar
+    */
+
+    elements.forEach(
+
+        element=>{
+
+            element.classList.remove(
+
+                "salary-enter-left",
+
+                "salary-enter-right"
+
+            );
+
+
+            element.classList.add(
+
+                direction === "left"
+
+                ? "salary-leave-right"
+
+                : "salary-leave-left"
+
+            );
+
+        }
+
+    );
+
+
+    setTimeout(
+
+        ()=>{
+
+
+            /*
+            Ganti periode dan render data baru
+            */
+
+            Salary.salary.currentIndex =
+
+                newIndex;
+
+
+            renderSalary();
+
+
+            /*
+            Ambil ulang elemen setelah render
+            */
+
+            const updatedElements =
+
+                getSalaryTransitionElements();
+
+
+            updatedElements.forEach(
+
+                element=>{
+
+                    element.classList.remove(
+
+                        "salary-leave-left",
+
+                        "salary-leave-right"
+
+                    );
+
+
+                    element.classList.add(
+
+                        direction === "left"
+
+                        ? "salary-enter-left"
+
+                        : "salary-enter-right"
+
+                    );
+
+                }
+
+            );
+
+
+            /*
+            Bersihkan class animasi
+            */
+
+            setTimeout(
+
+                ()=>{
+
+                    updatedElements.forEach(
+
+                        element=>{
+
+                            element.classList.remove(
+
+                                "salary-enter-left",
+
+                                "salary-enter-right"
+
+                            );
+
+                        }
+
+                    );
+
+
+                    salaryTransitionRunning =
+
+                        false;
+
+                },
+
+                380
+
+            );
+
+
+        },
+
+        180
+
+    );
+
+}
+
+
+/* =====================================================
    PREVIOUS PERIOD
 ===================================================== */
 
 function previousSalaryPeriod(){
 
-    if(
+    const newIndex =
 
-        Salary.salary.currentIndex <
+        Salary.salary.currentIndex + 1;
 
-        Salary.salary.periods.length - 1
 
-    ){
+    changeSalaryPeriod(
 
-        Salary.salary.currentIndex++;
+        newIndex,
 
-        renderSalary();
+        "left"
 
-    }
+    );
 
 }
 
@@ -409,17 +627,18 @@ function previousSalaryPeriod(){
 
 function nextSalaryPeriod(){
 
-    if(
+    const newIndex =
 
-        Salary.salary.currentIndex > 0
+        Salary.salary.currentIndex - 1;
 
-    ){
 
-        Salary.salary.currentIndex--;
+    changeSalaryPeriod(
 
-        renderSalary();
+        newIndex,
 
-    }
+        "right"
+
+    );
 
 }
 
