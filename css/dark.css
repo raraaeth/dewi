@@ -1543,3 +1543,73 @@ body.dark-mode
     scale(.96);
 
 }
+
+/* =====================================================
+   HOME SUMMARY CARD FINAL FIX
+===================================================== */
+
+body.dark-mode
+.summary
+.summary-card{
+
+    background:
+
+    var(--surface) !important;
+
+    color:
+
+    var(--text) !important;
+
+    box-shadow:
+
+    var(--shadow-medium);
+
+}
+
+
+/* =====================================================
+   SUMMARY VALUE
+===================================================== */
+
+body.dark-mode
+.summary
+.summary-card
+.summary-body h2{
+
+    color:
+
+    var(--text) !important;
+
+}
+
+
+/* =====================================================
+   SUMMARY LABEL
+===================================================== */
+
+body.dark-mode
+.summary
+.summary-card
+.summary-body p{
+
+    color:
+
+    var(--text-light) !important;
+
+}
+
+
+/* =====================================================
+   SUMMARY DETAIL
+===================================================== */
+
+body.dark-mode
+.summary
+.summary-card
+.summary-body span{
+
+    color:
+
+    var(--text-soft) !important;
+
+}
