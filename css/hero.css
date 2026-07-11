@@ -423,3 +423,221 @@ width:150px;
 }
 
 }
+
+/* =====================================================
+   THEME TOGGLE
+===================================================== */
+
+.theme-toggle{
+
+    position:relative;
+
+    z-index:5;
+
+    width:max-content;
+
+    min-width:166px;
+
+    height:42px;
+
+    margin-top:18px;
+
+    padding:0 12px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    border:1px solid
+    rgba(
+        255,
+        255,
+        255,
+        .28
+    );
+
+    border-radius:999px;
+
+    background:
+    rgba(
+        255,
+        255,
+        255,
+        .16
+    );
+
+    color:#FFFFFF;
+
+    box-shadow:
+
+    0 8px 22px
+
+    rgba(
+        112,
+        31,
+        72,
+        .14
+    );
+
+    backdrop-filter:
+
+    blur(10px);
+
+    -webkit-backdrop-filter:
+
+    blur(10px);
+
+    cursor:pointer;
+
+    transition:
+
+    transform .2s ease,
+
+    background .3s ease,
+
+    border-color .3s ease,
+
+    box-shadow .3s ease;
+
+}
+
+
+/* =====================================================
+   TOGGLE PRESS
+===================================================== */
+
+.theme-toggle:active{
+
+    transform:
+
+    scale(.96);
+
+}
+
+
+/* =====================================================
+   TOGGLE ICON
+===================================================== */
+
+.theme-toggle-icon{
+
+    flex-shrink:0;
+
+    font-size:19px !important;
+
+    color:#FFFFFF;
+
+    transition:
+
+    transform .4s ease;
+
+}
+
+
+/* =====================================================
+   TOGGLE TEXT
+===================================================== */
+
+.theme-toggle-text{
+
+    white-space:nowrap;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    color:#FFFFFF;
+
+}
+
+
+/* =====================================================
+   TOGGLE SWITCH
+===================================================== */
+
+.theme-toggle-switch{
+
+    position:relative;
+
+    flex-shrink:0;
+
+    width:38px;
+
+    height:22px;
+
+    margin-left:auto;
+
+    border-radius:999px;
+
+    background:
+
+    rgba(
+        255,
+        255,
+        255,
+        .24
+    );
+
+    box-shadow:
+
+    inset 0 0 0 1px
+
+    rgba(
+        255,
+        255,
+        255,
+        .18
+    );
+
+    transition:
+
+    background .35s ease;
+
+}
+
+
+/* =====================================================
+   TOGGLE THUMB
+===================================================== */
+
+.theme-toggle-thumb{
+
+    position:absolute;
+
+    top:3px;
+
+    left:3px;
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+
+    background:#FFFFFF;
+
+    box-shadow:
+
+    0 3px 8px
+
+    rgba(
+        65,
+        22,
+        47,
+        .25
+    );
+
+    transition:
+
+    transform .35s
+
+    cubic-bezier(
+        .22,
+        1,
+        .36,
+        1
+    );
+
+}
