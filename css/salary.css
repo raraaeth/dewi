@@ -1055,3 +1055,249 @@
 
 }
 
+/* =====================================================
+   SALARY PERIOD TRANSITION
+===================================================== */
+
+#salaryPeriodCard,
+
+#salarySlipContainer,
+
+#salaryTotalCard{
+
+    will-change:
+
+    opacity,
+
+    transform;
+
+}
+
+
+/* =====================================================
+   OLD PERIOD LEAVE LEFT
+===================================================== */
+
+.salary-leave-left{
+
+    animation:
+
+    salaryLeaveLeft
+
+    .18s
+
+    ease
+
+    forwards;
+
+}
+
+
+/* =====================================================
+   OLD PERIOD LEAVE RIGHT
+===================================================== */
+
+.salary-leave-right{
+
+    animation:
+
+    salaryLeaveRight
+
+    .18s
+
+    ease
+
+    forwards;
+
+}
+
+
+/* =====================================================
+   NEW PERIOD ENTER LEFT
+===================================================== */
+
+.salary-enter-left{
+
+    animation:
+
+    salaryEnterLeft
+
+    .38s
+
+    cubic-bezier(
+        .22,
+        1,
+        .36,
+        1
+    )
+
+    forwards;
+
+}
+
+
+/* =====================================================
+   NEW PERIOD ENTER RIGHT
+===================================================== */
+
+.salary-enter-right{
+
+    animation:
+
+    salaryEnterRight
+
+    .38s
+
+    cubic-bezier(
+        .22,
+        1,
+        .36,
+        1
+    )
+
+    forwards;
+
+}
+
+
+/* =====================================================
+   LEAVE LEFT
+===================================================== */
+
+@keyframes salaryLeaveLeft{
+
+    from{
+
+        opacity:1;
+
+        transform:
+
+        translateX(0);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:
+
+        translateX(-18px);
+
+    }
+
+}
+
+
+/* =====================================================
+   LEAVE RIGHT
+===================================================== */
+
+@keyframes salaryLeaveRight{
+
+    from{
+
+        opacity:1;
+
+        transform:
+
+        translateX(0);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:
+
+        translateX(18px);
+
+    }
+
+}
+
+
+/* =====================================================
+   ENTER LEFT
+===================================================== */
+
+@keyframes salaryEnterLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        translateX(-22px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+        translateX(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   ENTER RIGHT
+===================================================== */
+
+@keyframes salaryEnterRight{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+        translateX(22px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+        translateX(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media(
+    prefers-reduced-motion:
+    reduce
+){
+
+    .salary-leave-left,
+
+    .salary-leave-right,
+
+    .salary-enter-left,
+
+    .salary-enter-right{
+
+        animation-duration:
+
+        .01ms;
+
+    }
+
+}
+
