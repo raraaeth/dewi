@@ -156,12 +156,29 @@ const DOM={
 },
     BUTTON:{
 
-        home:$("#homeButton"),
+    home:$("#homeButton"),
 
-        statistic:$("#statisticButton"),
+    statistic:$("#statisticButton"),
 
-        salary:$("#salaryButton")
+    salary:$("#salaryButton")
 
-    }
+},
+
+
+/* =====================================================
+   THEME
+===================================================== */
+
+THEME:{
+
+    toggle:$("#themeToggle"),
+
+    icon:$("#themeToggleIcon"),
+
+    text:$("#themeToggleText"),
+
+    thumb:$("#themeToggleThumb")
+
+}
 
 };
