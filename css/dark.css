@@ -900,3 +900,114 @@ body.dark-mode
     );
 
 }
+/* =====================================================
+   SALARY GROUP DARK
+===================================================== */
+
+body.dark-mode .salary-slip .salary-group{
+
+    background:
+
+    var(--surface) !important;
+
+    color:
+
+    var(--text);
+
+    box-shadow:
+
+    var(--shadow-medium);
+
+}
+
+
+/* =====================================================
+   SALARY GROUP HEADER
+===================================================== */
+
+body.dark-mode
+.salary-group-header{
+
+    border-bottom-color:
+
+    var(--border);
+
+}
+
+
+body.dark-mode
+.salary-group-header b{
+
+    color:
+
+    var(--text);
+
+}
+
+
+/* =====================================================
+   SALARY ITEM
+===================================================== */
+
+body.dark-mode
+.salary-item{
+
+    border-bottom-color:
+
+    var(--border);
+
+}
+
+
+body.dark-mode
+.salary-name{
+
+    color:
+
+    var(--text);
+
+}
+
+
+body.dark-mode
+.salary-detail{
+
+    color:
+
+    var(--text-light);
+
+}
+
+
+body.dark-mode
+.salary-right{
+
+    color:
+
+    var(--text);
+
+}
+
+
+/* =====================================================
+   SALARY GROUP TOTAL
+===================================================== */
+
+body.dark-mode
+.salary-group-total{
+
+    border-top-color:
+
+    var(--border);
+
+}
+
+
+body.dark-mode
+.salary-group-total span{
+
+    color:
+
+    var(--text-light);
+
+}
