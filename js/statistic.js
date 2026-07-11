@@ -11,7 +11,6 @@
 
 let statisticChart=null;
 
-
 /* =====================================================
    RENDER CHART
 ===================================================== */
@@ -22,13 +21,58 @@ function renderChart(){
 
         !DOM.STATISTIC.chart ||
 
-        typeof Chart==="undefined"
+        typeof Chart === "undefined"
 
     ){
 
         return;
 
     }
+
+
+    /* =========================
+       THEME
+    ========================= */
+
+    const isDark =
+
+    document.body.classList.contains(
+
+        "dark-mode"
+
+    );
+
+
+    const chartTextColor =
+
+    isDark
+
+    ? "#C7BACB"
+
+    : "#7F7F7F";
+
+
+    const chartGridColor =
+
+    isDark
+
+    ? "rgba(255,130,183,.10)"
+
+    : "rgba(0,0,0,.06)";
+
+
+    const chartBarColor =
+
+    isDark
+
+    ? "#FF82B7"
+
+    : "#D94F8A";
+
+
+    /* =========================
+       DESTROY OLD CHART
+    ========================= */
 
     if(
 
@@ -40,31 +84,42 @@ function renderChart(){
 
     }
 
-    const labels=
+
+    /* =========================
+       DATA
+    ========================= */
+
+    const labels =
 
     Salary.statistic.chart
 
     .map(
 
-        item=>
+        item =>
 
         item.label
 
     );
 
-    const income=
+
+    const income =
 
     Salary.statistic.chart
 
     .map(
 
-        item=>
+        item =>
 
         item.income
 
     );
 
-    statisticChart=
+
+    /* =========================
+       CREATE CHART
+    ========================= */
+
+    statisticChart =
 
     new Chart(
 
@@ -73,6 +128,7 @@ function renderChart(){
         {
 
             type:"bar",
+
 
             data:{
 
@@ -84,7 +140,9 @@ function renderChart(){
 
                     borderRadius:12,
 
-                    backgroundColor:"#D94F8A",
+                    backgroundColor:
+
+                    chartBarColor,
 
                     borderSkipped:false
 
@@ -92,11 +150,24 @@ function renderChart(){
 
             },
 
+
             options:{
 
                 responsive:true,
 
                 maintainAspectRatio:false,
+
+
+                animation:{
+
+                    duration:700,
+
+                    easing:
+
+                    "easeOutQuart"
+
+                },
+
 
                 plugins:{
 
@@ -104,29 +175,157 @@ function renderChart(){
 
                         display:false
 
+                    },
+
+
+                    tooltip:{
+
+                        backgroundColor:
+
+                        isDark
+
+                        ? "#2A2138"
+
+                        : "#FFFFFF",
+
+
+                        titleColor:
+
+                        isDark
+
+                        ? "#FFF5FA"
+
+                        : "#3E3E3E",
+
+
+                        bodyColor:
+
+                        isDark
+
+                        ? "#C7BACB"
+
+                        : "#7F7F7F",
+
+
+                        borderColor:
+
+                        isDark
+
+                        ? "rgba(255,130,183,.18)"
+
+                        : "rgba(217,79,138,.15)",
+
+
+                        borderWidth:1,
+
+
+                        padding:12,
+
+
+                        displayColors:false,
+
+
+                        callbacks:{
+
+                            label:
+
+                            context =>
+
+                            formatCurrency(
+
+                                context.raw
+
+                            )
+
+                        }
+
                     }
 
                 },
+
 
                 scales:{
 
                     x:{
 
+                        border:{
+
+                            display:false
+
+                        },
+
+
                         grid:{
 
                             display:false
+
+                        },
+
+
+                        ticks:{
+
+                            color:
+
+                            chartTextColor,
+
+
+                            font:{
+
+                                family:
+
+                                "Poppins",
+
+                                size:11
+
+                            }
 
                         }
 
                     },
 
+
                     y:{
 
                         beginAtZero:true,
 
+
+                        border:{
+
+                            display:false
+
+                        },
+
+
+                        grid:{
+
+                            color:
+
+                            chartGridColor
+
+                        },
+
+
                         ticks:{
 
-                            callback:value=>
+                            color:
+
+                            chartTextColor,
+
+
+                            font:{
+
+                                family:
+
+                                "Poppins",
+
+                                size:11
+
+                            },
+
+
+                            callback:
+
+                            value =>
 
                             formatCurrency(
 
