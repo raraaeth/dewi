@@ -4,52 +4,295 @@
    DESCRIPTION : UI Helper
 ===================================================== */
 
-
 /* =====================================================
    PAGE
 ===================================================== */
 
-function showPage(page){
+let pageTransitionRunning = false;
 
-    DOM.PAGE.home.classList.remove("active");
 
-    DOM.PAGE.statistic.classList.remove("active");
+function getActivePage(){
 
-    DOM.PAGE.salary.classList.remove("active");
+    return document.querySelector(
 
-    DOM.BUTTON.home.classList.remove("active");
+        ".page.active"
 
-    DOM.BUTTON.statistic.classList.remove("active");
+    );
 
-    DOM.BUTTON.salary.classList.remove("active");
+}
+
+
+function getTargetPage(page){
 
     switch(page){
 
         case "home":
 
-            DOM.PAGE.home.classList.add("active");
-
-            DOM.BUTTON.home.classList.add("active");
-
-        break;
+            return DOM.PAGE.home;
 
         case "statistic":
 
-            DOM.PAGE.statistic.classList.add("active");
-
-            DOM.BUTTON.statistic.classList.add("active");
-
-        break;
+            return DOM.PAGE.statistic;
 
         case "salary":
 
-            DOM.PAGE.salary.classList.add("active");
+            return DOM.PAGE.salary;
 
-            DOM.BUTTON.salary.classList.add("active");
+        default:
+
+            return null;
+
+    }
+
+}
+
+
+function updateActiveNavigation(page){
+
+    DOM.BUTTON.home.classList.remove(
+
+        "active"
+
+    );
+
+    DOM.BUTTON.statistic.classList.remove(
+
+        "active"
+
+    );
+
+    DOM.BUTTON.salary.classList.remove(
+
+        "active"
+
+    );
+
+
+    switch(page){
+
+        case "home":
+
+            DOM.BUTTON.home.classList.add(
+
+                "active"
+
+            );
+
+        break;
+
+
+        case "statistic":
+
+            DOM.BUTTON.statistic.classList.add(
+
+                "active"
+
+            );
+
+        break;
+
+
+        case "salary":
+
+            DOM.BUTTON.salary.classList.add(
+
+                "active"
+
+            );
 
         break;
 
     }
+
+}
+
+
+function showPage(page){
+
+    const currentPage =
+
+        getActivePage();
+
+
+    const targetPage =
+
+        getTargetPage(page);
+
+
+    if(
+
+        !targetPage
+
+    ){
+
+        return;
+
+    }
+
+
+    /*
+    Jangan jalankan animasi
+    jika halaman sudah aktif
+    */
+
+    if(
+
+        currentPage === targetPage
+
+    ){
+
+        return;
+
+    }
+
+
+    /*
+    Mencegah klik berkali-kali
+    selama transisi berjalan
+    */
+
+    if(
+
+        pageTransitionRunning
+
+    ){
+
+        return;
+
+    }
+
+
+    pageTransitionRunning = true;
+
+
+    /*
+    Update bottom navigation
+    */
+
+    updateActiveNavigation(
+
+        page
+
+    );
+
+
+    /*
+    Animasi halaman lama
+    */
+
+    if(
+
+        currentPage
+
+    ){
+
+        currentPage.classList.add(
+
+            "page-leave"
+
+        );
+
+    }
+
+
+    setTimeout(
+
+        ()=>{
+
+
+            /*
+            Sembunyikan semua halaman
+            */
+
+            DOM.PAGE.home.classList.remove(
+
+                "active",
+
+                "page-leave",
+
+                "page-enter"
+
+            );
+
+
+            DOM.PAGE.statistic.classList.remove(
+
+                "active",
+
+                "page-leave",
+
+                "page-enter"
+
+            );
+
+
+            DOM.PAGE.salary.classList.remove(
+
+                "active",
+
+                "page-leave",
+
+                "page-enter"
+
+            );
+
+
+            /*
+            Tampilkan halaman tujuan
+            */
+
+            targetPage.classList.add(
+
+                "active",
+
+                "page-enter"
+
+            );
+
+
+            /*
+            Kembali ke bagian atas
+            */
+
+            window.scrollTo({
+
+                top:0,
+
+                behavior:"instant"
+
+            });
+
+
+            /*
+            Hapus class animasi
+            setelah selesai
+            */
+
+            setTimeout(
+
+                ()=>{
+
+                    targetPage.classList.remove(
+
+                        "page-enter"
+
+                    );
+
+
+                    pageTransitionRunning = false;
+
+                },
+
+                320
+
+            );
+
+
+        },
+
+        180
+
+    );
 
 }
 
