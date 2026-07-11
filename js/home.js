@@ -193,6 +193,209 @@ function randomGreeting(){
 
 }
 
+/* =====================================================
+   NUMBER ANIMATION
+===================================================== */
+
+function animateNumber(
+
+    element,
+
+    target,
+
+    options = {}
+
+){
+
+    if(
+
+        !element
+
+    ){
+
+        return;
+
+    }
+
+
+    const duration =
+
+        options.duration ||
+
+        3000;
+
+
+    const currency =
+
+        options.currency ||
+
+        false;
+
+
+    const startTime =
+
+        performance.now();
+
+
+    const finalValue =
+
+        Number(target) || 0;
+
+
+    function updateNumber(
+
+        currentTime
+
+    ){
+
+        const elapsed =
+
+            currentTime -
+
+            startTime;
+
+
+        const progress =
+
+            Math.min(
+
+                elapsed /
+
+                duration,
+
+                1
+
+            );
+
+
+        /*
+        Gerakan cepat di awal
+        dan melambat mendekati akhir
+        */
+
+        const easeOut =
+
+            1 -
+
+            Math.pow(
+
+                1 - progress,
+
+                4
+
+            );
+
+
+        const currentValue =
+
+            Math.round(
+
+                finalValue *
+
+                easeOut
+
+            );
+
+
+        if(
+
+            currency
+
+        ){
+
+            setText(
+
+                element,
+
+                formatCurrency(
+
+                    currentValue
+
+                )
+
+            );
+
+        }
+
+        else{
+
+            setText(
+
+                element,
+
+                currentValue
+
+            );
+
+        }
+
+
+        if(
+
+            progress < 1
+
+        ){
+
+            requestAnimationFrame(
+
+                updateNumber
+
+            );
+
+        }
+
+        else{
+
+            /*
+            Memastikan angka terakhir
+            selalu sama dengan data asli
+            */
+
+            if(
+
+                currency
+
+            ){
+
+                setText(
+
+                    element,
+
+                    formatCurrency(
+
+                        finalValue
+
+                    )
+
+                );
+
+            }
+
+            else{
+
+                setText(
+
+                    element,
+
+                    finalValue
+
+                );
+
+            }
+
+        }
+
+    }
+
+
+    requestAnimationFrame(
+
+        updateNumber
+
+    );
+
+}
+
 
 /* =====================================================
    SUMMARY
@@ -200,17 +403,26 @@ function randomGreeting(){
 
 function renderHomeSummary(){
 
-    setText(
+    /* =========================
+       LAST INCOME
+    ========================= */
+
+    animateNumber(
 
         DOM.SUMMARY.lastIncome,
 
-        formatCurrency(
+        Salary.home.lastIncome,
 
-            Salary.home.lastIncome
+        {
 
-        )
+            currency:true,
+
+            duration:3000
+
+        }
 
     );
+
 
     setText(
 
@@ -220,67 +432,117 @@ function renderHomeSummary(){
 
     );
 
-    setText(
+
+    /* =========================
+       WEEK INCOME
+    ========================= */
+
+    animateNumber(
 
         DOM.SUMMARY.weekIncome,
 
-        formatCurrency(
+        Salary.home.weekIncome,
 
-            Salary.home.weekIncome
+        {
 
-        )
+            currency:true,
+
+            duration:3000
+
+        }
 
     );
 
-   setText(
 
-    DOM.SUMMARY.periodIncome,
+    /* =========================
+       PERIOD INCOME
+    ========================= */
 
-    formatCurrency(
+    animateNumber(
 
-        Salary.home.periodIncome
+        DOM.SUMMARY.periodIncome,
 
-    )
+        Salary.home.periodIncome,
 
-);
+        {
 
-setText(
+            currency:true,
 
-    DOM.SUMMARY.periodIncomeDate,
+            duration:3000
 
-    Salary.home.periodDate
+        }
 
-);
+    );
+
 
     setText(
+
+        DOM.SUMMARY.periodIncomeDate,
+
+        Salary.home.periodDate
+
+    );
+
+
+    /* =========================
+       TODAY INCOME
+    ========================= */
+
+    animateNumber(
 
         DOM.SUMMARY.todayIncome,
 
-        formatCurrency(
+        Salary.home.todayIncome,
 
-            Salary.home.todayIncome
+        {
 
-        )
+            currency:true,
+
+            duration:3000
+
+        }
 
     );
 
-    setText(
+
+    /* =========================
+       TODAY QUANTITY
+    ========================= */
+
+    animateNumber(
 
         DOM.SUMMARY.todayQty,
 
-        Salary.home.todayQty
+        Salary.home.todayQty,
+
+        {
+
+            duration:3000
+
+        }
 
     );
 
-    setText(
+
+    /* =========================
+       TODAY WORK
+    ========================= */
+
+    animateNumber(
 
         DOM.SUMMARY.todayWork,
 
-        Salary.home.todayWork
+        Salary.home.todayWork,
+
+        {
+
+            duration:3000
+
+        }
 
     );
 
-}
+       }
 
 /* =====================================================
    HOME
