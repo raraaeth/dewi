@@ -541,6 +541,61 @@ function renderHomeSummary(){
         }
 
     );
+   /* =========================
+   PERIOD QUICK SUMMARY
+========================= */
+
+animateNumber(
+
+    DOM.SUMMARY.periodQuickIncome,
+
+    Salary.home.periodIncome,
+
+    {
+
+        currency:true,
+
+        duration:3000
+
+    }
+
+);
+
+animateNumber(
+
+    DOM.SUMMARY.periodQuickQty,
+
+    Salary.home.periodQty,
+
+    {
+
+        duration:3000
+
+    }
+
+);
+
+animateNumber(
+
+    DOM.SUMMARY.periodWorkingDays,
+
+    Salary.home.periodWorkingDays,
+
+    {
+
+        duration:3000
+
+    }
+
+);
+
+setText(
+
+    DOM.SUMMARY.periodQuickDate,
+
+    Salary.home.periodDate
+
+);
 
        }
 
