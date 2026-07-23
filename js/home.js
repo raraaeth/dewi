@@ -543,27 +543,7 @@ animateNumber(
     }
 );
 
-setTimeout(
 
-    ()=>{
-
-        setText(
-
-            DOM.SUMMARY.todayIncome,
-
-            formatCurrencyShort(
-
-                Salary.home.todayIncome
-
-            )
-
-        );
-
-    },
-
-    3000
-
-);
 
 
     /* =========================
@@ -615,9 +595,9 @@ animateNumber(
 
     {
 
-        currency:true,
+        duration:3000,
 
-        duration:3000
+        formatter:formatCurrencyShort
 
     }
 
@@ -625,25 +605,6 @@ animateNumber(
 
 setTimeout(
 
-    ()=>{
-
-        setText(
-
-            DOM.SUMMARY.periodQuickIncome,
-
-            formatCurrencyShort(
-
-                Salary.home.periodIncome
-
-            )
-
-        );
-
-    },
-
-    3000
-
-);
 
 animateNumber(
 
