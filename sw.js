@@ -5,7 +5,7 @@
 ===================================================== */
 
 const CACHE_NAME =
-"dewi-nadzifah-v5";
+"dewi-nadzifah-v6";
 
 const APP_FILES = [
 
@@ -16,13 +16,14 @@ const APP_FILES = [
     "./manifest.json",
 
     "./css/style.css",
-    "./css/theme.css",
-    "./css/hero.css",
-    "./css/summary.css",
-    "./css/statistic.css",
-    "./css/salary.css",
-    "./css/bottomnav.css",
-    "./css/responsive.css",
+"./css/theme.css",
+"./css/hero.css",
+"./css/summary.css",
+"./css/quickstat.css",
+"./css/statistic.css",
+"./css/salary.css",
+"./css/bottomnav.css",
+"./css/responsive.css",
 
     "./js/config.js",
     "./js/utils.js",
