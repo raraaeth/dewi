@@ -601,7 +601,19 @@ animateNumber(
 
 );
 
+animateNumber(
 
+    DOM.SUMMARY.periodQuickQty,
+
+    Salary.home.periodQty,
+
+    {
+
+        duration:3000
+
+    }
+
+);
 
 animateNumber(
 
