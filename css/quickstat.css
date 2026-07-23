@@ -1,0 +1,235 @@
+/* =====================================================
+   SALARY DIARY
+   FILE : css/quickstat.css
+   DESCRIPTION : Home Quick Statistic
+===================================================== */
+
+
+/* =====================================================
+   QUICK STAT SECTION
+===================================================== */
+
+.quick-stat{
+
+    margin-top:24px;
+
+    padding:0 20px;
+
+}
+
+
+/* =====================================================
+   WRAPPER
+===================================================== */
+
+.quick-wrapper{
+
+    display:flex;
+
+    gap:16px;
+
+    align-items:flex-start;
+
+}
+
+
+/* =====================================================
+   COLUMN
+===================================================== */
+
+.quick-column{
+
+    flex:1;
+
+}
+
+
+/* =====================================================
+   COLUMN TITLE
+===================================================== */
+
+.quick-column-title{
+
+    margin-bottom:14px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+}
+
+.quick-column-title span{
+
+    display:block;
+
+    margin-top:4px;
+
+    font-size:12px;
+
+    font-weight:500;
+
+    color:var(--text-light);
+
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.quick-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:12px;
+
+    padding:14px 16px;
+
+    background:var(--surface);
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow-small);
+
+}
+
+
+.quick-card:last-child{
+
+    margin-bottom:0;
+
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.quick-card .material-symbols-rounded{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+    font-size:22px;
+
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.quick-card div{
+
+    flex:1;
+
+}
+
+
+.quick-card h3{
+
+    font-size:16px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+    line-height:1.2;
+
+    word-break:break-word;
+
+}
+
+
+.quick-card p{
+
+    margin-top:2px;
+
+    font-size:12px;
+
+    color:var(--text-light);
+
+}
+
+
+/* =====================================================
+   EFFECT
+===================================================== */
+
+.quick-card:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow-medium);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:390px){
+
+    .quick-stat{
+
+        padding:0 16px;
+
+    }
+
+    .quick-wrapper{
+
+        gap:12px;
+
+    }
+
+    .quick-card{
+
+        padding:12px;
+
+    }
+
+    .quick-card .material-symbols-rounded{
+
+        width:38px;
+
+        height:38px;
+
+        font-size:20px;
+
+    }
+
+    .quick-card h3{
+
+        font-size:15px;
+
+    }
+
+    .quick-column-title{
+
+        font-size:15px;
+
+    }
+
+}
