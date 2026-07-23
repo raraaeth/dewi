@@ -231,6 +231,12 @@ function animateNumber(
 
         false;
 
+   const formatter =
+
+    options.formatter ||
+
+    null;
+
 
     const startTime =
 
@@ -299,35 +305,55 @@ function animateNumber(
 
         if(
 
-            currency
+    formatter
 
-        ){
+){
 
-            setText(
+    setText(
 
-                element,
+        element,
 
-                formatCurrency(
+        formatter(
 
-                    currentValue
+            currentValue
 
-                )
+        )
 
-            );
+    );
 
-        }
+}
 
-        else{
+else if(
 
-            setText(
+    currency
 
-                element,
+){
 
-                currentValue
+    setText(
 
-            );
+        element,
 
-        }
+        formatCurrency(
+
+            currentValue
+
+        )
+
+    );
+
+}
+
+else{
+
+    setText(
+
+        element,
+
+        currentValue
+
+    );
+
+}
 
 
         if(
@@ -353,35 +379,55 @@ function animateNumber(
 
             if(
 
-                currency
+    formatter
 
-            ){
+){
 
-                setText(
+    setText(
 
-                    element,
+        element,
 
-                    formatCurrency(
+        formatter(
 
-                        finalValue
+            finalValue
 
-                    )
+        )
 
-                );
+    );
 
-            }
+}
 
-            else{
+else if(
 
-                setText(
+    currency
 
-                    element,
+){
 
-                    finalValue
+    setText(
 
-                );
+        element,
 
-            }
+        formatCurrency(
+
+            finalValue
+
+        )
+
+    );
+
+}
+
+else{
+
+    setText(
+
+        element,
+
+        finalValue
+
+    );
+
+}
 
         }
 
@@ -489,19 +535,12 @@ function renderHomeSummary(){
 ========================= */
 
 animateNumber(
-
     DOM.SUMMARY.todayIncome,
-
     Salary.home.todayIncome,
-
     {
-
-        currency:true,
-
-        duration:3000
-
+        duration:3000,
+        formatter:formatCurrencyShort
     }
-
 );
 
 setTimeout(
@@ -563,6 +602,7 @@ setTimeout(
         }
 
     );
+
    /* =========================
    PERIOD QUICK SUMMARY
 ========================= */
