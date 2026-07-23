@@ -449,6 +449,8 @@ else{
 
 function renderHomeSummary(){
 
+   DOM.SUMMARY.todayIncome.textContent = "TEST";
+
     /* =========================
        LAST INCOME
     ========================= */
