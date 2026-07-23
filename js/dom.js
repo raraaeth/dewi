@@ -59,29 +59,45 @@ const DOM={
 
     SUMMARY:{
 
-        lastIncome:$("#lastIncome"),
+    lastIncome:$("#lastIncome"),
 
-        lastDate:$("#lastIncomeDate"),
+    lastDate:$("#lastIncomeDate"),
 
-        weekIncome:$("#weekIncome"),
+    weekIncome:$("#weekIncome"),
 
-        weekDate:$("#weekIncomeDate"),
+    weekDate:$("#weekIncomeDate"),
 
-        periodIncome:$("#periodIncome"),
+    periodIncome:$("#periodIncome"),
 
-        periodIncomeDate:$("#periodIncomeDate"),
+    periodIncomeDate:$("#periodIncomeDate"),
 
-        todayIncome:$("#todayIncome"),
+    todayIncome:$("#todayIncome"),
 
-        todayQty:$("#todayQty"),
+    todayQty:$("#todayQty"),
 
-        todayWork:$("#todayWork"),
+    todayWork:$("#todayWork"),
 
-        insightTitle:$("#insightTitle"),
+    /* =========================
+       QUICK SUMMARY
+    ========================= */
 
-        insightText:$("#insightText")
+    periodQuickIncome:$("#periodQuickIncome"),
 
-    },
+    periodQuickQty:$("#periodQuickQty"),
+
+    periodWorkingDays:$("#periodWorkingDays"),
+
+    periodQuickDate:$("#periodQuickDate"),
+
+    /* =========================
+       INSIGHT
+    ========================= */
+
+    insightTitle:$("#insightTitle"),
+
+    insightText:$("#insightText")
+
+},
 
     STATISTIC:{
 
