@@ -485,24 +485,46 @@ function renderHomeSummary(){
 
 
     /* =========================
-       TODAY INCOME
-    ========================= */
+   TODAY INCOME
+========================= */
 
-    animateNumber(
+animateNumber(
 
-        DOM.SUMMARY.todayIncome,
+    DOM.SUMMARY.todayIncome,
 
-        Salary.home.todayIncome,
+    Salary.home.todayIncome,
 
-        {
+    {
 
-            currency:true,
+        currency:true,
 
-            duration:3000
+        duration:3000
 
-        }
+    }
 
-    );
+);
+
+setTimeout(
+
+    ()=>{
+
+        setText(
+
+            DOM.SUMMARY.todayIncome,
+
+            formatCurrencyShort(
+
+                Salary.home.todayIncome
+
+            )
+
+        );
+
+    },
+
+    3000
+
+);
 
 
     /* =========================
@@ -558,6 +580,28 @@ animateNumber(
         duration:3000
 
     }
+
+);
+
+setTimeout(
+
+    ()=>{
+
+        setText(
+
+            DOM.SUMMARY.periodQuickIncome,
+
+            formatCurrencyShort(
+
+                Salary.home.periodIncome
+
+            )
+
+        );
+
+    },
+
+    3000
 
 );
 
