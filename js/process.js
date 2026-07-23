@@ -606,105 +606,76 @@ function buildHome(){
 
     );
 
+    
     /* =====================================
-       PAYROLL PERIOD (28 - TODAY)
-    ===================================== */
+   PAYROLL PERIOD (28 - TODAY)
+===================================== */
 
-    const today=
+const today =
+new Date();
 
-    new Date();
+let periodStart;
 
-    let periodStart;
+if(
+    today.getDate() >= 28
+){
 
-    if(
-
-        today.getDate()>=28
-
-    ){
-
-        periodStart=
-
-        new Date(
-
-            today.getFullYear(),
-
-            today.getMonth(),
-
-            28
-
-        );
-
-    }
-
-    else{
-
-        periodStart=
-
-        new Date(
-
-            today.getFullYear(),
-
-            today.getMonth()-1,
-
-            28
-
-        );
-
-    }
-
-    const periodData=
-
-    Salary.data.kerja
-
-    .filter(
-
-        item=>
-
-        item.tanggal>=periodStart &&
-
-        item.tanggal<=today
-
+    periodStart =
+    new Date(
+        today.getFullYear(),
+        today.getMonth(),
+        28
     );
 
-    const periodIncome=
+}
+else{
 
-    periodData.reduce(
-
-        (
-
-            total,
-
-            item
-
-        )=>
-
-        total+
-
-        item.nominal,
-
-        0
-
+    periodStart =
+    new Date(
+        today.getFullYear(),
+        today.getMonth()-1,
+        28
     );
 
-    const periodDate=
+}
 
-    `${
+const periodData =
+Salary.data.kerja.filter(
+    item =>
+    item.tanggal >= periodStart &&
+    item.tanggal <= today
+);
 
-        formatDate(
+const periodIncome =
+periodData.reduce(
+    (
+        total,
+        item
+    ) =>
+    total + item.nominal,
+    0
+);
 
-            periodStart
+const periodQty =
+periodData.reduce(
+    (
+        total,
+        item
+    ) =>
+    total + item.qty,
+    0
+);
 
-        )
+const periodWorkingDays =
+new Set(
+    periodData.map(
+        item =>
+        item.tanggalText
+    )
+).size;
 
-    } - ${
-
-        formatDate(
-
-            today
-
-        )
-
-    }`;
+const periodDate =
+`${formatDate(periodStart)} - ${formatDate(today)}`;
 
     Salary.home={
 
@@ -727,12 +698,16 @@ function buildHome(){
         ),
 
         periodIncome:
+periodIncome,
 
-        periodIncome,
+periodQty:
+periodQty,
 
-        periodDate:
+periodWorkingDays:
+periodWorkingDays,
 
-        periodDate,
+periodDate:
+periodDate,
 
         todayIncome:
 
