@@ -87,22 +87,75 @@
 
     gap:12px;
 
-    margin-bottom:12px;
+    padding:16px;
 
-    padding:14px 16px;
+    background:var(--card);
 
-    background:var(--surface);
+    border-radius:22px;
 
-    border-radius:18px;
-
-    box-shadow:var(--shadow-small);
+    box-shadow:var(--shadow);
 
 }
 
+.quick-card-icon{
 
-.quick-card:last-child{
+    width:52px;
 
-    margin-bottom:0;
+    height:52px;
+
+    border-radius:16px;
+
+    background:var(--primary-soft);
+
+    color:var(--primary);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+}
+
+.quick-card-icon i{
+
+    font-size:24px;
+
+}
+
+.quick-card-content{
+
+    flex:1;
+
+    min-width:0;
+
+}
+
+.quick-card-value{
+
+    font-size:1.9rem;
+
+    font-weight:700;
+
+    line-height:1.1;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+.quick-card-label{
+
+    margin-top:2px;
+
+    font-size:.95rem;
+
+    color:var(--text-light);
 
 }
 
