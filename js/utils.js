@@ -60,6 +60,55 @@ function formatCurrency(value){
 
 }
 
+/* =====================================================
+   SHORT CURRENCY
+===================================================== */
+
+function formatCurrencyShort(value){
+
+    const number =
+    toNumber(value);
+
+    if(
+        number < 1000
+    ){
+
+        return "Rp" + number;
+
+    }
+
+    if(
+        number < 1000000
+    ){
+
+        return "Rp" +
+        new Intl.NumberFormat(
+            FORMAT.DATE,
+            {
+                maximumFractionDigits:0
+            }
+        ).format(
+            Math.round(
+                number/1000
+            )
+        ) +
+        "k";
+
+    }
+
+    return "Rp" +
+    new Intl.NumberFormat(
+        FORMAT.DATE,
+        {
+            minimumFractionDigits:0,
+            maximumFractionDigits:2
+        }
+    ).format(
+        number/1000000
+    ) +
+    "jt";
+
+}
 
 /* =====================================================
    DECIMAL
